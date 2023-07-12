@@ -1,5 +1,5 @@
-name: sideswap_endpoint
-description: Sideswap local endpoint package
+name: sideswap_websocket
+description: Sideswap local endpoint websocket
 version: 0.0.1
 publish_to: none
 

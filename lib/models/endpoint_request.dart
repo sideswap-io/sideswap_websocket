@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:sideswap_endpoint/models/endpoint_exceptions.dart';
+import 'package:sideswap_websocket/models/endpoint_exceptions.dart';
 
 part 'endpoint_request.freezed.dart';
 part 'endpoint_request.g.dart';

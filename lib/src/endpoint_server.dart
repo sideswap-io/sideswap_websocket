@@ -5,12 +5,13 @@ import 'dart:io';
 import 'package:fpdart/fpdart.dart';
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
-import 'package:sideswap_endpoint/sideswap_endpoint.dart';
-import 'package:sideswap_endpoint/src/endpoint_logger.dart';
+import 'package:sideswap_websocket/models/endpoint_exceptions.dart';
+import 'package:sideswap_websocket/models/endpoint_reply.dart';
+import 'package:sideswap_websocket/models/endpoint_request.dart';
+import 'package:sideswap_websocket/src/default_settings.dart';
+import 'package:sideswap_websocket/src/endpoint_logger.dart';
 import 'package:uuid/uuid.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
-
-import 'package:sideswap_endpoint/src/default_settings.dart';
 
 typedef OnRequest = void Function(EndpointRequest request, String channelId);
 
