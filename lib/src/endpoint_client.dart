@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:custom_logger/custom_logger.dart';
 import 'package:fpdart/fpdart.dart';
+import 'package:sideswap_endpoint/src/endpoint_logger.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 import 'package:sideswap_endpoint/sideswap_endpoint.dart';

@@ -16,8 +16,9 @@ dependencies:
   shelf_web_socket: ^1.0.4
   uuid: ^3.0.7
   web_socket_channel: ^2.4.0
-  custom_logger:
-    path: ../custom_logger
+  sideswap_logger:
+    git:
+      url: https://github.com/malcolmpl/sideswap_logger.git
   json_annotation: ^4.8.1
   fpdart: ^0.6.0
 
