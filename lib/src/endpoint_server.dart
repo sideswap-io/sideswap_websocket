@@ -45,6 +45,9 @@ class EndpointServer {
   }
 
   Future<void> stop({bool force = false}) async {
+    for (var channelId in _sockets.keys) {
+      _closeChannel(channelId: channelId);
+    }
     server?.close(force: force);
     server = null;
 
@@ -75,6 +78,15 @@ class EndpointServer {
 
   void _onEvent(dynamic event, String channelId) {
     (switch (event) {
+      String nonNullableString? when nonNullableString == "ping" => () {
+          final channel = _sockets[channelId];
+          (switch (channel) {
+            WebSocketChannel(closeCode: final closeCode)
+                when closeCode == null =>
+              channel.sink.add("ping"),
+            _ => () {}(),
+          });
+        }(),
       String nonNullableString? => () {
           try {
             final json = jsonDecode(nonNullableString) as Map<String, dynamic>;
@@ -83,11 +95,6 @@ class EndpointServer {
             final type = value.request?.type;
 
             (switch (type) {
-              // immediately handle ping request
-              EndpointRequestType.ping => sendReply(
-                  const EndpointReplyModel(
-                      reply: EndpointReply(type: EndpointReplyType.pong)),
-                  channelId),
               var _? => onRequest?.call(value.request!, channelId),
               _ => throw EndpointMissingTypeParameter(),
             });
