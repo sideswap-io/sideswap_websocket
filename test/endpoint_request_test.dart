@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:sideswap_websocket/models/models.dart';
 import 'package:test/test.dart';
-import 'package:sideswap_endpoint/models/models.dart';
 
 void main() {
   group('request ping', () {
