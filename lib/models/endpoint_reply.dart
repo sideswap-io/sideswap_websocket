@@ -10,7 +10,9 @@ part 'endpoint_reply.g.dart';
 )
 enum EndpointReplyType {
   pong,
-  newAddress;
+  newAddress,
+  success,
+  error;
 }
 
 class EndpointReplyConverter
@@ -38,6 +40,15 @@ class EndpointReplyConverter
               data: EndpointReplyDataNewAddress.fromJson(
                   json['data'] as Map<String, dynamic>));
         }(),
+      EndpointReplyType.success =>
+        const EndpointReply(type: EndpointReplyType.success),
+      EndpointReplyType.error => () {
+          isDataTypeExist(json);
+          return EndpointReply(
+              type: EndpointReplyType.error,
+              data: EndpointReplyDataError.fromJson(
+                  json['data'] as Map<String, dynamic>));
+        }(),
     };
   }
 
@@ -56,7 +67,18 @@ class EndpointReplyConverter
             _ => throw EndpointMissingOrInvalidDataParameter(),
           };
         }(),
-      _ => throw EndpointInvalidTypeValue(),
+      EndpointReplyType.success =>
+        const EndpointReply(type: EndpointReplyType.success).toJson(),
+      EndpointReplyType.error => () {
+          return switch (value.data) {
+            EndpointReplyDataError(message: final message) => EndpointReply(
+                type: EndpointReplyType.error,
+                data: EndpointReplyDataError(message: message),
+              ).toJson(),
+            _ => throw EndpointMissingOrInvalidDataParameter(),
+          };
+        }(),
+      _ => throw EndpointMissingOrInvalidDataParameter()
     };
   }
 }
@@ -87,6 +109,9 @@ class EndpointReplyData with _$EndpointReplyData {
   const factory EndpointReplyData.pong() = EndpointReplyDataPong;
   const factory EndpointReplyData.newAddress({required String address}) =
       EndpointReplyDataNewAddress;
+  const factory EndpointReplyData.success() = EndpointReplyDataSuccess;
+  const factory EndpointReplyData.error({required String message}) =
+      EndpointReplyDataError;
 
   factory EndpointReplyData.fromJson(Map<String, dynamic> json) =>
       _$EndpointReplyDataFromJson(json);

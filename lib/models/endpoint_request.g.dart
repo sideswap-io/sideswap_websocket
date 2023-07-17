@@ -49,7 +49,7 @@ Map<String, dynamic> _$$_EndpointRequestToJson(_$_EndpointRequest instance) =>
 const _$EndpointRequestTypeEnumMap = {
   EndpointRequestType.ping: 'ping',
   EndpointRequestType.newAddress: 'new_address',
-  EndpointRequestType.swaptionFund: 'swaption_fund',
+  EndpointRequestType.createTransaction: 'create_transaction',
 };
 
 _$EndpointRequestDataPing _$$EndpointRequestDataPingFromJson(
@@ -76,22 +76,21 @@ Map<String, dynamic> _$$EndpointRequestDataNewAddressToJson(
       'runtimeType': instance.$type,
     };
 
-_$EndpointRequestDataSwaptionFund _$$EndpointRequestDataSwaptionFundFromJson(
-        Map<String, dynamic> json) =>
-    _$EndpointRequestDataSwaptionFund(
-      deliveryAddress: json['delivery_address'] as String?,
-      fromAsset: json['from_asset'] as String?,
-      fromAmount: json['from_amount'] as String?,
-      toAsset: json['to_asset'] as String?,
-      $type: json['runtimeType'] as String?,
-    );
+_$EndpointRequestDataCreateTransaction
+    _$$EndpointRequestDataCreateTransactionFromJson(
+            Map<String, dynamic> json) =>
+        _$EndpointRequestDataCreateTransaction(
+          address: json['address'] as String?,
+          assetId: json['asset_id'] as String?,
+          amount: json['amount'] as String?,
+          $type: json['runtimeType'] as String?,
+        );
 
-Map<String, dynamic> _$$EndpointRequestDataSwaptionFundToJson(
-        _$EndpointRequestDataSwaptionFund instance) =>
+Map<String, dynamic> _$$EndpointRequestDataCreateTransactionToJson(
+        _$EndpointRequestDataCreateTransaction instance) =>
     <String, dynamic>{
-      'delivery_address': instance.deliveryAddress,
-      'from_asset': instance.fromAsset,
-      'from_amount': instance.fromAmount,
-      'to_asset': instance.toAsset,
+      'address': instance.address,
+      'asset_id': instance.assetId,
+      'amount': instance.amount,
       'runtimeType': instance.$type,
     };

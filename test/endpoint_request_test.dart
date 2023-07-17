@@ -80,10 +80,10 @@ void main() {
     });
   });
 
-  group("request swaption fund", () {
+  group("request create transaction", () {
     test('swaption fund request model', () {
       final json = jsonDecode(
-              '{"request":{"type":"swaption_fund","data":{"delivery_address":"delivery_address","from_asset":"from_asset","from_amount":"from_amount","to_asset":"to_asset"}}}')
+              '{"request":{"type":"create_transaction","data":{"address":"address","asset_id":"asset_id","amount":"amount"}}}')
           as Map<String, dynamic>;
       final result = EndpointRequestModel.fromJson(json);
       expect(
@@ -91,12 +91,11 @@ void main() {
         equals(
           const EndpointRequestModel(
             request: EndpointRequest(
-              type: EndpointRequestType.swaptionFund,
-              data: EndpointRequestDataSwaptionFund(
-                deliveryAddress: "delivery_address",
-                fromAsset: "from_asset",
-                fromAmount: "from_amount",
-                toAsset: "to_asset",
+              type: EndpointRequestType.createTransaction,
+              data: EndpointRequestDataCreateTransaction(
+                address: "address",
+                assetId: "asset_id",
+                amount: "amount",
               ),
             ),
           ),
@@ -107,12 +106,12 @@ void main() {
     test('swaption fund request json', () {
       const endpointRequest = EndpointRequestModel(
         request: EndpointRequest(
-          type: EndpointRequestType.swaptionFund,
-          data: EndpointRequestDataSwaptionFund(
-              deliveryAddress: "delivery_address",
-              fromAsset: "from_asset",
-              fromAmount: "from_amount",
-              toAsset: "to_asset"),
+          type: EndpointRequestType.createTransaction,
+          data: EndpointRequestDataCreateTransaction(
+            address: "address",
+            assetId: "asset_id",
+            amount: "amount",
+          ),
         ),
       );
       final result = jsonEncode(endpointRequest.toJson());
@@ -120,7 +119,7 @@ void main() {
       expect(
           result,
           equals(
-              '{"request":{"type":"swaption_fund","data":{"delivery_address":"delivery_address","from_asset":"from_asset","from_amount":"from_amount","to_asset":"to_asset","runtimeType":"swaptionFund"}}}'));
+              '{"request":{"type":"create_transaction","data":{"address":"address","asset_id":"asset_id","amount":"amount","runtimeType":"createTransaction"}}}'));
     });
   });
 }

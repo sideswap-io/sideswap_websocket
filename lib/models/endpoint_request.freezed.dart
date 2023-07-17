@@ -351,8 +351,8 @@ EndpointRequestData _$EndpointRequestDataFromJson(Map<String, dynamic> json) {
       return EndpointRequestDataPing.fromJson(json);
     case 'newAddress':
       return EndpointRequestDataNewAddress.fromJson(json);
-    case 'swaptionFund':
-      return EndpointRequestDataSwaptionFund.fromJson(json);
+    case 'createTransaction':
+      return EndpointRequestDataCreateTransaction.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'EndpointRequestData',
@@ -367,11 +367,10 @@ mixin _$EndpointRequestData {
     required TResult Function() ping,
     required TResult Function() newAddress,
     required TResult Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)
+        createTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -379,11 +378,10 @@ mixin _$EndpointRequestData {
     TResult? Function()? ping,
     TResult? Function()? newAddress,
     TResult? Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)?
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)?
+        createTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -391,11 +389,10 @@ mixin _$EndpointRequestData {
     TResult Function()? ping,
     TResult Function()? newAddress,
     TResult Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)?
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)?
+        createTransaction,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -403,22 +400,24 @@ mixin _$EndpointRequestData {
   TResult map<TResult extends Object?>({
     required TResult Function(EndpointRequestDataPing value) ping,
     required TResult Function(EndpointRequestDataNewAddress value) newAddress,
-    required TResult Function(EndpointRequestDataSwaptionFund value)
-        swaptionFund,
+    required TResult Function(EndpointRequestDataCreateTransaction value)
+        createTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EndpointRequestDataPing value)? ping,
     TResult? Function(EndpointRequestDataNewAddress value)? newAddress,
-    TResult? Function(EndpointRequestDataSwaptionFund value)? swaptionFund,
+    TResult? Function(EndpointRequestDataCreateTransaction value)?
+        createTransaction,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EndpointRequestDataPing value)? ping,
     TResult Function(EndpointRequestDataNewAddress value)? newAddress,
-    TResult Function(EndpointRequestDataSwaptionFund value)? swaptionFund,
+    TResult Function(EndpointRequestDataCreateTransaction value)?
+        createTransaction,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -493,11 +492,10 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
     required TResult Function() ping,
     required TResult Function() newAddress,
     required TResult Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)
+        createTransaction,
   }) {
     return ping();
   }
@@ -508,11 +506,10 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
     TResult? Function()? ping,
     TResult? Function()? newAddress,
     TResult? Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)?
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)?
+        createTransaction,
   }) {
     return ping?.call();
   }
@@ -523,11 +520,10 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
     TResult Function()? ping,
     TResult Function()? newAddress,
     TResult Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)?
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)?
+        createTransaction,
     required TResult orElse(),
   }) {
     if (ping != null) {
@@ -541,8 +537,8 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
   TResult map<TResult extends Object?>({
     required TResult Function(EndpointRequestDataPing value) ping,
     required TResult Function(EndpointRequestDataNewAddress value) newAddress,
-    required TResult Function(EndpointRequestDataSwaptionFund value)
-        swaptionFund,
+    required TResult Function(EndpointRequestDataCreateTransaction value)
+        createTransaction,
   }) {
     return ping(this);
   }
@@ -552,7 +548,8 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EndpointRequestDataPing value)? ping,
     TResult? Function(EndpointRequestDataNewAddress value)? newAddress,
-    TResult? Function(EndpointRequestDataSwaptionFund value)? swaptionFund,
+    TResult? Function(EndpointRequestDataCreateTransaction value)?
+        createTransaction,
   }) {
     return ping?.call(this);
   }
@@ -562,7 +559,8 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EndpointRequestDataPing value)? ping,
     TResult Function(EndpointRequestDataNewAddress value)? newAddress,
-    TResult Function(EndpointRequestDataSwaptionFund value)? swaptionFund,
+    TResult Function(EndpointRequestDataCreateTransaction value)?
+        createTransaction,
     required TResult orElse(),
   }) {
     if (ping != null) {
@@ -639,11 +637,10 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
     required TResult Function() ping,
     required TResult Function() newAddress,
     required TResult Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)
+        createTransaction,
   }) {
     return newAddress();
   }
@@ -654,11 +651,10 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
     TResult? Function()? ping,
     TResult? Function()? newAddress,
     TResult? Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)?
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)?
+        createTransaction,
   }) {
     return newAddress?.call();
   }
@@ -669,11 +665,10 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
     TResult Function()? ping,
     TResult Function()? newAddress,
     TResult Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)?
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)?
+        createTransaction,
     required TResult orElse(),
   }) {
     if (newAddress != null) {
@@ -687,8 +682,8 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
   TResult map<TResult extends Object?>({
     required TResult Function(EndpointRequestDataPing value) ping,
     required TResult Function(EndpointRequestDataNewAddress value) newAddress,
-    required TResult Function(EndpointRequestDataSwaptionFund value)
-        swaptionFund,
+    required TResult Function(EndpointRequestDataCreateTransaction value)
+        createTransaction,
   }) {
     return newAddress(this);
   }
@@ -698,7 +693,8 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EndpointRequestDataPing value)? ping,
     TResult? Function(EndpointRequestDataNewAddress value)? newAddress,
-    TResult? Function(EndpointRequestDataSwaptionFund value)? swaptionFund,
+    TResult? Function(EndpointRequestDataCreateTransaction value)?
+        createTransaction,
   }) {
     return newAddress?.call(this);
   }
@@ -708,7 +704,8 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EndpointRequestDataPing value)? ping,
     TResult Function(EndpointRequestDataNewAddress value)? newAddress,
-    TResult Function(EndpointRequestDataSwaptionFund value)? swaptionFund,
+    TResult Function(EndpointRequestDataCreateTransaction value)?
+        createTransaction,
     required TResult orElse(),
   }) {
     if (newAddress != null) {
@@ -734,53 +731,47 @@ abstract class EndpointRequestDataNewAddress implements EndpointRequestData {
 }
 
 /// @nodoc
-abstract class _$$EndpointRequestDataSwaptionFundCopyWith<$Res> {
-  factory _$$EndpointRequestDataSwaptionFundCopyWith(
-          _$EndpointRequestDataSwaptionFund value,
-          $Res Function(_$EndpointRequestDataSwaptionFund) then) =
-      __$$EndpointRequestDataSwaptionFundCopyWithImpl<$Res>;
+abstract class _$$EndpointRequestDataCreateTransactionCopyWith<$Res> {
+  factory _$$EndpointRequestDataCreateTransactionCopyWith(
+          _$EndpointRequestDataCreateTransaction value,
+          $Res Function(_$EndpointRequestDataCreateTransaction) then) =
+      __$$EndpointRequestDataCreateTransactionCopyWithImpl<$Res>;
   @useResult
   $Res call(
-      {@JsonKey(name: "delivery_address") String? deliveryAddress,
-      @JsonKey(name: "from_asset") String? fromAsset,
-      @JsonKey(name: "from_amount") String? fromAmount,
-      @JsonKey(name: "to_asset") String? toAsset});
+      {String? address,
+      @JsonKey(name: "asset_id") String? assetId,
+      @JsonKey(name: "amount") String? amount});
 }
 
 /// @nodoc
-class __$$EndpointRequestDataSwaptionFundCopyWithImpl<$Res>
+class __$$EndpointRequestDataCreateTransactionCopyWithImpl<$Res>
     extends _$EndpointRequestDataCopyWithImpl<$Res,
-        _$EndpointRequestDataSwaptionFund>
-    implements _$$EndpointRequestDataSwaptionFundCopyWith<$Res> {
-  __$$EndpointRequestDataSwaptionFundCopyWithImpl(
-      _$EndpointRequestDataSwaptionFund _value,
-      $Res Function(_$EndpointRequestDataSwaptionFund) _then)
+        _$EndpointRequestDataCreateTransaction>
+    implements _$$EndpointRequestDataCreateTransactionCopyWith<$Res> {
+  __$$EndpointRequestDataCreateTransactionCopyWithImpl(
+      _$EndpointRequestDataCreateTransaction _value,
+      $Res Function(_$EndpointRequestDataCreateTransaction) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? deliveryAddress = freezed,
-    Object? fromAsset = freezed,
-    Object? fromAmount = freezed,
-    Object? toAsset = freezed,
+    Object? address = freezed,
+    Object? assetId = freezed,
+    Object? amount = freezed,
   }) {
-    return _then(_$EndpointRequestDataSwaptionFund(
-      deliveryAddress: freezed == deliveryAddress
-          ? _value.deliveryAddress
-          : deliveryAddress // ignore: cast_nullable_to_non_nullable
+    return _then(_$EndpointRequestDataCreateTransaction(
+      address: freezed == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as String?,
-      fromAsset: freezed == fromAsset
-          ? _value.fromAsset
-          : fromAsset // ignore: cast_nullable_to_non_nullable
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
-      fromAmount: freezed == fromAmount
-          ? _value.fromAmount
-          : fromAmount // ignore: cast_nullable_to_non_nullable
-              as String?,
-      toAsset: freezed == toAsset
-          ? _value.toAsset
-          : toAsset // ignore: cast_nullable_to_non_nullable
+      amount: freezed == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
   }
@@ -788,66 +779,57 @@ class __$$EndpointRequestDataSwaptionFundCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointRequestDataSwaptionFund
-    implements EndpointRequestDataSwaptionFund {
-  const _$EndpointRequestDataSwaptionFund(
-      {@JsonKey(name: "delivery_address") this.deliveryAddress,
-      @JsonKey(name: "from_asset") this.fromAsset,
-      @JsonKey(name: "from_amount") this.fromAmount,
-      @JsonKey(name: "to_asset") this.toAsset,
+class _$EndpointRequestDataCreateTransaction
+    implements EndpointRequestDataCreateTransaction {
+  const _$EndpointRequestDataCreateTransaction(
+      {this.address,
+      @JsonKey(name: "asset_id") this.assetId,
+      @JsonKey(name: "amount") this.amount,
       final String? $type})
-      : $type = $type ?? 'swaptionFund';
+      : $type = $type ?? 'createTransaction';
 
-  factory _$EndpointRequestDataSwaptionFund.fromJson(
+  factory _$EndpointRequestDataCreateTransaction.fromJson(
           Map<String, dynamic> json) =>
-      _$$EndpointRequestDataSwaptionFundFromJson(json);
+      _$$EndpointRequestDataCreateTransactionFromJson(json);
 
   @override
-  @JsonKey(name: "delivery_address")
-  final String? deliveryAddress;
+  final String? address;
   @override
-  @JsonKey(name: "from_asset")
-  final String? fromAsset;
+  @JsonKey(name: "asset_id")
+  final String? assetId;
   @override
-  @JsonKey(name: "from_amount")
-  final String? fromAmount;
-  @override
-  @JsonKey(name: "to_asset")
-  final String? toAsset;
+  @JsonKey(name: "amount")
+  final String? amount;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
   @override
   String toString() {
-    return 'EndpointRequestData.swaptionFund(deliveryAddress: $deliveryAddress, fromAsset: $fromAsset, fromAmount: $fromAmount, toAsset: $toAsset)';
+    return 'EndpointRequestData.createTransaction(address: $address, assetId: $assetId, amount: $amount)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointRequestDataSwaptionFund &&
-            (identical(other.deliveryAddress, deliveryAddress) ||
-                other.deliveryAddress == deliveryAddress) &&
-            (identical(other.fromAsset, fromAsset) ||
-                other.fromAsset == fromAsset) &&
-            (identical(other.fromAmount, fromAmount) ||
-                other.fromAmount == fromAmount) &&
-            (identical(other.toAsset, toAsset) || other.toAsset == toAsset));
+            other is _$EndpointRequestDataCreateTransaction &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.amount, amount) || other.amount == amount));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, deliveryAddress, fromAsset, fromAmount, toAsset);
+  int get hashCode => Object.hash(runtimeType, address, assetId, amount);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EndpointRequestDataSwaptionFundCopyWith<_$EndpointRequestDataSwaptionFund>
-      get copyWith => __$$EndpointRequestDataSwaptionFundCopyWithImpl<
-          _$EndpointRequestDataSwaptionFund>(this, _$identity);
+  _$$EndpointRequestDataCreateTransactionCopyWith<
+          _$EndpointRequestDataCreateTransaction>
+      get copyWith => __$$EndpointRequestDataCreateTransactionCopyWithImpl<
+          _$EndpointRequestDataCreateTransaction>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -855,13 +837,12 @@ class _$EndpointRequestDataSwaptionFund
     required TResult Function() ping,
     required TResult Function() newAddress,
     required TResult Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)
+        createTransaction,
   }) {
-    return swaptionFund(deliveryAddress, fromAsset, fromAmount, toAsset);
+    return createTransaction(address, assetId, amount);
   }
 
   @override
@@ -870,13 +851,12 @@ class _$EndpointRequestDataSwaptionFund
     TResult? Function()? ping,
     TResult? Function()? newAddress,
     TResult? Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)?
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)?
+        createTransaction,
   }) {
-    return swaptionFund?.call(deliveryAddress, fromAsset, fromAmount, toAsset);
+    return createTransaction?.call(address, assetId, amount);
   }
 
   @override
@@ -885,15 +865,14 @@ class _$EndpointRequestDataSwaptionFund
     TResult Function()? ping,
     TResult Function()? newAddress,
     TResult Function(
-            @JsonKey(name: "delivery_address") String? deliveryAddress,
-            @JsonKey(name: "from_asset") String? fromAsset,
-            @JsonKey(name: "from_amount") String? fromAmount,
-            @JsonKey(name: "to_asset") String? toAsset)?
-        swaptionFund,
+            String? address,
+            @JsonKey(name: "asset_id") String? assetId,
+            @JsonKey(name: "amount") String? amount)?
+        createTransaction,
     required TResult orElse(),
   }) {
-    if (swaptionFund != null) {
-      return swaptionFund(deliveryAddress, fromAsset, fromAmount, toAsset);
+    if (createTransaction != null) {
+      return createTransaction(address, assetId, amount);
     }
     return orElse();
   }
@@ -903,10 +882,10 @@ class _$EndpointRequestDataSwaptionFund
   TResult map<TResult extends Object?>({
     required TResult Function(EndpointRequestDataPing value) ping,
     required TResult Function(EndpointRequestDataNewAddress value) newAddress,
-    required TResult Function(EndpointRequestDataSwaptionFund value)
-        swaptionFund,
+    required TResult Function(EndpointRequestDataCreateTransaction value)
+        createTransaction,
   }) {
-    return swaptionFund(this);
+    return createTransaction(this);
   }
 
   @override
@@ -914,9 +893,10 @@ class _$EndpointRequestDataSwaptionFund
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(EndpointRequestDataPing value)? ping,
     TResult? Function(EndpointRequestDataNewAddress value)? newAddress,
-    TResult? Function(EndpointRequestDataSwaptionFund value)? swaptionFund,
+    TResult? Function(EndpointRequestDataCreateTransaction value)?
+        createTransaction,
   }) {
-    return swaptionFund?.call(this);
+    return createTransaction?.call(this);
   }
 
   @override
@@ -924,43 +904,43 @@ class _$EndpointRequestDataSwaptionFund
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EndpointRequestDataPing value)? ping,
     TResult Function(EndpointRequestDataNewAddress value)? newAddress,
-    TResult Function(EndpointRequestDataSwaptionFund value)? swaptionFund,
+    TResult Function(EndpointRequestDataCreateTransaction value)?
+        createTransaction,
     required TResult orElse(),
   }) {
-    if (swaptionFund != null) {
-      return swaptionFund(this);
+    if (createTransaction != null) {
+      return createTransaction(this);
     }
     return orElse();
   }
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EndpointRequestDataSwaptionFundToJson(
+    return _$$EndpointRequestDataCreateTransactionToJson(
       this,
     );
   }
 }
 
-abstract class EndpointRequestDataSwaptionFund implements EndpointRequestData {
-  const factory EndpointRequestDataSwaptionFund(
-          {@JsonKey(name: "delivery_address") final String? deliveryAddress,
-          @JsonKey(name: "from_asset") final String? fromAsset,
-          @JsonKey(name: "from_amount") final String? fromAmount,
-          @JsonKey(name: "to_asset") final String? toAsset}) =
-      _$EndpointRequestDataSwaptionFund;
+abstract class EndpointRequestDataCreateTransaction
+    implements EndpointRequestData {
+  const factory EndpointRequestDataCreateTransaction(
+          {final String? address,
+          @JsonKey(name: "asset_id") final String? assetId,
+          @JsonKey(name: "amount") final String? amount}) =
+      _$EndpointRequestDataCreateTransaction;
 
-  factory EndpointRequestDataSwaptionFund.fromJson(Map<String, dynamic> json) =
-      _$EndpointRequestDataSwaptionFund.fromJson;
+  factory EndpointRequestDataCreateTransaction.fromJson(
+          Map<String, dynamic> json) =
+      _$EndpointRequestDataCreateTransaction.fromJson;
 
-  @JsonKey(name: "delivery_address")
-  String? get deliveryAddress;
-  @JsonKey(name: "from_asset")
-  String? get fromAsset;
-  @JsonKey(name: "from_amount")
-  String? get fromAmount;
-  @JsonKey(name: "to_asset")
-  String? get toAsset;
+  String? get address;
+  @JsonKey(name: "asset_id")
+  String? get assetId;
+  @JsonKey(name: "amount")
+  String? get amount;
   @JsonKey(ignore: true)
-  _$$EndpointRequestDataSwaptionFundCopyWith<_$EndpointRequestDataSwaptionFund>
+  _$$EndpointRequestDataCreateTransactionCopyWith<
+          _$EndpointRequestDataCreateTransaction>
       get copyWith => throw _privateConstructorUsedError;
 }

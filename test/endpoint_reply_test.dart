@@ -38,13 +38,14 @@ void main() {
     });
 
     test('pong reply json', () {
-      const endpointRequest = EndpointReplyModel(
+      // ignore: prefer_const_declarations
+      final endpointReply = const EndpointReplyModel(
         reply: EndpointReply(
           type: EndpointReplyType.pong,
           data: EndpointReplyDataPong(),
         ),
       );
-      final result = jsonEncode(endpointRequest.toJson());
+      final result = jsonEncode(endpointReply.toJson());
 
       expect(result, equals('{"reply":{"type":"pong","data":null}}'));
     });
@@ -70,18 +71,73 @@ void main() {
     });
 
     test('new address reply json', () {
-      const endpointRequest = EndpointReplyModel(
+      // ignore: prefer_const_declarations
+      final endpointReply = const EndpointReplyModel(
         reply: EndpointReply(
           type: EndpointReplyType.newAddress,
           data: EndpointReplyDataNewAddress(address: "address"),
         ),
       );
-      final result = jsonEncode(endpointRequest.toJson());
+      final result = jsonEncode(endpointReply.toJson());
 
       expect(
           result,
           equals(
               '{"reply":{"type":"new_address","data":{"address":"address","runtimeType":"newAddress"}}}'));
+    });
+  });
+
+  group("reply success", () {
+    test('success reply model', () {
+      final json = jsonDecode('{"reply":{"type":"success","data":null}}')
+          as Map<String, dynamic>;
+      final result = EndpointReplyModel.fromJson(json);
+
+      expect(
+          result,
+          const EndpointReplyModel(
+              reply: EndpointReply(type: EndpointReplyType.success)));
+    });
+
+    test('success reply json', () {
+      // ignore: prefer_const_declarations
+      final endpointReply = const EndpointReplyModel(
+        reply: EndpointReply(
+          type: EndpointReplyType.success,
+        ),
+      );
+      final result = jsonEncode(endpointReply.toJson());
+      expect(result, equals('{"reply":{"type":"success","data":null}}'));
+    });
+  });
+
+  group("reply error", () {
+    test('error reply model', () {
+      final json =
+          jsonDecode('{"reply":{"type":"error","data":{"message":"message"}}}')
+              as Map<String, dynamic>;
+      final result = EndpointReplyModel.fromJson(json);
+
+      expect(
+          result,
+          const EndpointReplyModel(
+              reply: EndpointReply(
+                  type: EndpointReplyType.error,
+                  data: EndpointReplyDataError(message: 'message'))));
+    });
+
+    test('error reply json', () {
+      // ignore: prefer_const_declarations
+      final endpointReply = const EndpointReplyModel(
+        reply: EndpointReply(
+            type: EndpointReplyType.error,
+            data: EndpointReplyDataError(message: 'message')),
+      );
+      final result = jsonEncode(endpointReply.toJson());
+      expect(
+          result,
+          equals(
+              '{"reply":{"type":"error","data":{"message":"message","runtimeType":"error"}}}'));
     });
   });
 }

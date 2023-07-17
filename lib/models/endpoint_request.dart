@@ -11,7 +11,7 @@ part 'endpoint_request.g.dart';
 enum EndpointRequestType {
   ping,
   newAddress,
-  swaptionFund;
+  createTransaction;
 }
 
 class EndpointRequestConverter
@@ -27,11 +27,11 @@ class EndpointRequestConverter
         .key;
 
     return switch (type) {
-      EndpointRequestType.swaptionFund => () {
+      EndpointRequestType.createTransaction => () {
           isDataTypeExist(json);
           return EndpointRequest(
               type: type,
-              data: EndpointRequestDataSwaptionFund.fromJson(
+              data: EndpointRequestDataCreateTransaction.fromJson(
                   json['data'] as Map<String, dynamic>));
         }(),
       _ => EndpointRequest(type: type),
@@ -45,9 +45,9 @@ class EndpointRequestConverter
         const EndpointRequest(type: EndpointRequestType.ping).toJson(),
       EndpointRequestType.newAddress =>
         const EndpointRequest(type: EndpointRequestType.newAddress).toJson(),
-      EndpointRequestType.swaptionFund => () {
+      EndpointRequestType.createTransaction => () {
           return switch (value.data) {
-            EndpointRequestDataSwaptionFund() =>
+            EndpointRequestDataCreateTransaction() =>
               EndpointRequest(type: value.type, data: value.data).toJson(),
             _ => throw EndpointMissingOrInvalidDataParameter(),
           };
@@ -84,12 +84,11 @@ class EndpointRequestData with _$EndpointRequestData {
   const factory EndpointRequestData.ping() = EndpointRequestDataPing;
   const factory EndpointRequestData.newAddress() =
       EndpointRequestDataNewAddress;
-  const factory EndpointRequestData.swaptionFund({
-    @JsonKey(name: "delivery_address") String? deliveryAddress,
-    @JsonKey(name: "from_asset") String? fromAsset,
-    @JsonKey(name: "from_amount") String? fromAmount,
-    @JsonKey(name: "to_asset") String? toAsset,
-  }) = EndpointRequestDataSwaptionFund;
+  const factory EndpointRequestData.createTransaction({
+    String? address,
+    @JsonKey(name: "asset_id") String? assetId,
+    @JsonKey(name: "amount") String? amount,
+  }) = EndpointRequestDataCreateTransaction;
 
   factory EndpointRequestData.fromJson(Map<String, dynamic> json) =>
       _$EndpointRequestDataFromJson(json);

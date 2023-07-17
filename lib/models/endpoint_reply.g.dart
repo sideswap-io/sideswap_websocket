@@ -49,6 +49,8 @@ Map<String, dynamic> _$$_EndpointReplyToJson(_$_EndpointReply instance) =>
 const _$EndpointReplyTypeEnumMap = {
   EndpointReplyType.pong: 'pong',
   EndpointReplyType.newAddress: 'new_address',
+  EndpointReplyType.success: 'success',
+  EndpointReplyType.error: 'error',
 };
 
 _$EndpointReplyDataPong _$$EndpointReplyDataPongFromJson(
@@ -74,5 +76,31 @@ Map<String, dynamic> _$$EndpointReplyDataNewAddressToJson(
         _$EndpointReplyDataNewAddress instance) =>
     <String, dynamic>{
       'address': instance.address,
+      'runtimeType': instance.$type,
+    };
+
+_$EndpointReplyDataSuccess _$$EndpointReplyDataSuccessFromJson(
+        Map<String, dynamic> json) =>
+    _$EndpointReplyDataSuccess(
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$EndpointReplyDataSuccessToJson(
+        _$EndpointReplyDataSuccess instance) =>
+    <String, dynamic>{
+      'runtimeType': instance.$type,
+    };
+
+_$EndpointReplyDataError _$$EndpointReplyDataErrorFromJson(
+        Map<String, dynamic> json) =>
+    _$EndpointReplyDataError(
+      message: json['message'] as String,
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$EndpointReplyDataErrorToJson(
+        _$EndpointReplyDataError instance) =>
+    <String, dynamic>{
+      'message': instance.message,
       'runtimeType': instance.$type,
     };
