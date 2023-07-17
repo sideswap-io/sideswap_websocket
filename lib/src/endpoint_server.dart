@@ -46,7 +46,7 @@ class EndpointServer {
 
   Future<void> stop({bool force = false}) async {
     for (var channelId in _sockets.keys) {
-      _closeChannel(channelId: channelId);
+      await _closeChannel(channelId: channelId);
     }
     server?.close(force: force);
     server = null;
@@ -70,9 +70,9 @@ class EndpointServer {
     );
   }
 
-  void _closeChannel({required String channelId}) {
+  Future<void> _closeChannel({required String channelId}) async {
     final channel = _sockets[channelId];
-    channel?.sink.close();
+    await channel?.sink.close();
     _sockets.remove(channel);
   }
 
@@ -84,10 +84,14 @@ class EndpointServer {
             WebSocketChannel(closeCode: final closeCode)
                 when closeCode == null =>
               channel.sink.add("ping"),
-            _ => () {}(),
+            _ => () {
+                // will this ever happen?
+                logger.w(
+                    'Endpoint received ping request but the client disconnected');
+              }(),
           });
         }(),
-      String nonNullableString? => () {
+      String nonNullableString? => () async {
           try {
             final json = jsonDecode(nonNullableString) as Map<String, dynamic>;
             final value = EndpointRequestModel.fromJson(json);
@@ -95,17 +99,47 @@ class EndpointServer {
             final type = value.request?.type;
 
             (switch (type) {
-              var _? => onRequest?.call(value.request!, channelId),
-              _ => throw EndpointMissingTypeParameter(),
+              var _? => () {
+                  _sendSuccess(channelId: channelId);
+                  onRequest?.call(value.request!, channelId);
+                }(),
+              _ => () {
+                  _sendError(
+                      message: 'Invalid or missing type parameter',
+                      channelId: channelId);
+                  throw EndpointMissingTypeParameter();
+                }(),
             });
           } catch (e) {
             // close channel if decoding failed
+            _sendError(
+                message: 'Unable to decode request json', channelId: channelId);
             logger.e(e);
-            _closeChannel(channelId: channelId);
+            await _closeChannel(channelId: channelId);
           }
         }(),
-      _ => _closeChannel(channelId: channelId),
+      _ => () async {
+          _sendError(message: 'Invalid request', channelId: channelId);
+          await _closeChannel(channelId: channelId);
+        }(),
     });
+  }
+
+  void _sendError({required String message, required String channelId}) {
+    final reply = EndpointReplyModel(
+        reply: EndpointReply(
+            type: EndpointReplyType.error,
+            data: EndpointReplyDataError(message: message)));
+    sendReply(reply, channelId);
+  }
+
+  void _sendSuccess({required String channelId}) {
+    // ignore: prefer_const_declarations
+    final reply = const EndpointReplyModel(
+        reply: EndpointReply(
+      type: EndpointReplyType.success,
+    ));
+    sendReply(reply, channelId);
   }
 
   Either<Exception, bool> sendReply(
