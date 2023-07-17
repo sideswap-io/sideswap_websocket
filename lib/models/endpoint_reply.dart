@@ -89,22 +89,32 @@ class EndpointReplyConverter
           };
         }(),
       EndpointReplyType.success => switch (value.data) {
-          EndpointReplyDataSuccess(type: final successType) => EndpointReply(
-                  type: EndpointReplyType.success,
-                  data: EndpointReplyDataSuccess(type: successType))
-              .toJson(),
+          EndpointReplyDataSuccess(
+            type: final successType,
+            id: final successId
+          ) =>
+            EndpointReply(
+                type: EndpointReplyType.success,
+                data: EndpointReplyDataSuccess(
+                  type: successType,
+                  id: successId,
+                )).toJson(),
           _ => throw EndpointMissingOrInvalidDataParameter(),
         },
       EndpointReplyType.error => () {
           return switch (value.data) {
             EndpointReplyDataError(
               message: final message,
-              type: final errorType
+              type: final errorType,
+              id: final errorId,
             ) =>
               EndpointReply(
-                type: EndpointReplyType.error,
-                data: EndpointReplyDataError(message: message, type: errorType),
-              ).toJson(),
+                  type: EndpointReplyType.error,
+                  data: EndpointReplyDataError(
+                    message: message,
+                    type: errorType,
+                    id: errorId,
+                  )).toJson(),
             _ => throw EndpointMissingOrInvalidDataParameter(),
           };
         }(),
@@ -140,10 +150,12 @@ class EndpointReplyData with _$EndpointReplyData {
   const factory EndpointReplyData.newAddress({required String address}) =
       EndpointReplyDataNewAddress;
   const factory EndpointReplyData.success(
-      {required EndpointReplySuccessType type}) = EndpointReplyDataSuccess;
+      {required EndpointReplySuccessType type,
+      required String id}) = EndpointReplyDataSuccess;
   const factory EndpointReplyData.error(
       {required String message,
-      required EndpointReplyErrorType type}) = EndpointReplyDataError;
+      required EndpointReplyErrorType type,
+      required String id}) = EndpointReplyDataError;
 
   factory EndpointReplyData.fromJson(Map<String, dynamic> json) =>
       _$EndpointReplyDataFromJson(json);

@@ -137,23 +137,33 @@ class EndpointServer {
     required String message,
     EndpointReplyErrorType type = EndpointReplyErrorType.handler,
     required String channelId,
+    String id = '',
   }) {
     final reply = EndpointReplyModel(
-        reply: EndpointReply(
-            type: EndpointReplyType.error,
-            data: EndpointReplyDataError(message: message, type: type)));
+      reply: EndpointReply(
+        type: EndpointReplyType.error,
+        data: EndpointReplyDataError(
+          message: message,
+          type: type,
+          id: id,
+        ),
+      ),
+    );
     sendReply(reply, channelId);
   }
 
   void sendSuccess({
     EndpointReplySuccessType type = EndpointReplySuccessType.handler,
     required String channelId,
+    String id = '',
   }) {
     // ignore: prefer_const_declarations
     final reply = EndpointReplyModel(
-        reply: EndpointReply(
-            type: EndpointReplyType.success,
-            data: EndpointReplyDataSuccess(type: type)));
+      reply: EndpointReply(
+        type: EndpointReplyType.success,
+        data: EndpointReplyDataSuccess(type: type, id: id),
+      ),
+    );
     sendReply(reply, channelId);
   }
 
