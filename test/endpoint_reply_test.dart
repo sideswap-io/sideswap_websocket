@@ -89,14 +89,21 @@ void main() {
 
   group("reply success", () {
     test('success reply model', () {
-      final json = jsonDecode('{"reply":{"type":"success","data":null}}')
-          as Map<String, dynamic>;
+      final json =
+          jsonDecode('{"reply":{"type":"success","data":{"type":"handler"}}}')
+              as Map<String, dynamic>;
       final result = EndpointReplyModel.fromJson(json);
 
       expect(
-          result,
-          const EndpointReplyModel(
-              reply: EndpointReply(type: EndpointReplyType.success)));
+        result,
+        const EndpointReplyModel(
+          reply: EndpointReply(
+            type: EndpointReplyType.success,
+            data: EndpointReplyDataSuccess(
+                type: EndpointReplySuccessType.handler),
+          ),
+        ),
+      );
     });
 
     test('success reply json', () {
@@ -104,40 +111,56 @@ void main() {
       final endpointReply = const EndpointReplyModel(
         reply: EndpointReply(
           type: EndpointReplyType.success,
+          data: EndpointReplyDataSuccess(
+            type: EndpointReplySuccessType.handler,
+          ),
         ),
       );
       final result = jsonEncode(endpointReply.toJson());
-      expect(result, equals('{"reply":{"type":"success","data":null}}'));
+      expect(
+          result,
+          equals(
+              '{"reply":{"type":"success","data":{"type":"handler","runtimeType":"success"}}}'));
     });
   });
 
   group("reply error", () {
     test('error reply model', () {
-      final json =
-          jsonDecode('{"reply":{"type":"error","data":{"message":"message"}}}')
-              as Map<String, dynamic>;
+      final json = jsonDecode(
+              '{"reply":{"type":"error","data":{"message":"message","type":"handler"}}}')
+          as Map<String, dynamic>;
       final result = EndpointReplyModel.fromJson(json);
 
       expect(
-          result,
-          const EndpointReplyModel(
-              reply: EndpointReply(
-                  type: EndpointReplyType.error,
-                  data: EndpointReplyDataError(message: 'message'))));
+        result,
+        const EndpointReplyModel(
+          reply: EndpointReply(
+            type: EndpointReplyType.error,
+            data: EndpointReplyDataError(
+              message: 'message',
+              type: EndpointReplyErrorType.handler,
+            ),
+          ),
+        ),
+      );
     });
 
     test('error reply json', () {
       // ignore: prefer_const_declarations
       final endpointReply = const EndpointReplyModel(
         reply: EndpointReply(
-            type: EndpointReplyType.error,
-            data: EndpointReplyDataError(message: 'message')),
+          type: EndpointReplyType.error,
+          data: EndpointReplyDataError(
+            message: 'message',
+            type: EndpointReplyErrorType.handler,
+          ),
+        ),
       );
       final result = jsonEncode(endpointReply.toJson());
       expect(
           result,
           equals(
-              '{"reply":{"type":"error","data":{"message":"message","runtimeType":"error"}}}'));
+              '{"reply":{"type":"error","data":{"message":"message","type":"handler","runtimeType":"error"}}}'));
     });
   });
 }

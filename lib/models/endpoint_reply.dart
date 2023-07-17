@@ -15,6 +15,24 @@ enum EndpointReplyType {
   error;
 }
 
+@JsonEnum(
+  alwaysCreate: true,
+  fieldRename: FieldRename.snake,
+)
+enum EndpointReplySuccessType {
+  server,
+  handler,
+}
+
+@JsonEnum(
+  alwaysCreate: true,
+  fieldRename: FieldRename.snake,
+)
+enum EndpointReplyErrorType {
+  server,
+  handler,
+}
+
 class EndpointReplyConverter
     implements JsonConverter<EndpointReply, Map<String, dynamic>> {
   const EndpointReplyConverter();
@@ -31,23 +49,26 @@ class EndpointReplyConverter
         .key;
 
     return switch (type) {
-      EndpointReplyType.pong =>
-        const EndpointReply(type: EndpointReplyType.pong),
-      EndpointReplyType.newAddress => () {
+      EndpointReplyType.pong => EndpointReply(type: type),
+      EndpointReplyType.newAddress ||
+      EndpointReplyType.success ||
+      EndpointReplyType.error =>
+        () {
           isDataTypeExist(json);
+          final jsonData = json['data'] as Map<String, dynamic>;
+          final data = switch (type) {
+            EndpointReplyType.newAddress =>
+              EndpointReplyDataNewAddress.fromJson(jsonData),
+            EndpointReplyType.success =>
+              EndpointReplyDataSuccess.fromJson(jsonData),
+            EndpointReplyType.error =>
+              EndpointReplyDataError.fromJson(jsonData),
+            _ => null,
+          };
           return EndpointReply(
-              type: EndpointReplyType.newAddress,
-              data: EndpointReplyDataNewAddress.fromJson(
-                  json['data'] as Map<String, dynamic>));
-        }(),
-      EndpointReplyType.success =>
-        const EndpointReply(type: EndpointReplyType.success),
-      EndpointReplyType.error => () {
-          isDataTypeExist(json);
-          return EndpointReply(
-              type: EndpointReplyType.error,
-              data: EndpointReplyDataError.fromJson(
-                  json['data'] as Map<String, dynamic>));
+            type: type,
+            data: data,
+          );
         }(),
     };
   }
@@ -67,13 +88,22 @@ class EndpointReplyConverter
             _ => throw EndpointMissingOrInvalidDataParameter(),
           };
         }(),
-      EndpointReplyType.success =>
-        const EndpointReply(type: EndpointReplyType.success).toJson(),
+      EndpointReplyType.success => switch (value.data) {
+          EndpointReplyDataSuccess(type: final successType) => EndpointReply(
+                  type: EndpointReplyType.success,
+                  data: EndpointReplyDataSuccess(type: successType))
+              .toJson(),
+          _ => throw EndpointMissingOrInvalidDataParameter(),
+        },
       EndpointReplyType.error => () {
           return switch (value.data) {
-            EndpointReplyDataError(message: final message) => EndpointReply(
+            EndpointReplyDataError(
+              message: final message,
+              type: final errorType
+            ) =>
+              EndpointReply(
                 type: EndpointReplyType.error,
-                data: EndpointReplyDataError(message: message),
+                data: EndpointReplyDataError(message: message, type: errorType),
               ).toJson(),
             _ => throw EndpointMissingOrInvalidDataParameter(),
           };
@@ -109,9 +139,11 @@ class EndpointReplyData with _$EndpointReplyData {
   const factory EndpointReplyData.pong() = EndpointReplyDataPong;
   const factory EndpointReplyData.newAddress({required String address}) =
       EndpointReplyDataNewAddress;
-  const factory EndpointReplyData.success() = EndpointReplyDataSuccess;
-  const factory EndpointReplyData.error({required String message}) =
-      EndpointReplyDataError;
+  const factory EndpointReplyData.success(
+      {required EndpointReplySuccessType type}) = EndpointReplyDataSuccess;
+  const factory EndpointReplyData.error(
+      {required String message,
+      required EndpointReplyErrorType type}) = EndpointReplyDataError;
 
   factory EndpointReplyData.fromJson(Map<String, dynamic> json) =>
       _$EndpointReplyDataFromJson(json);

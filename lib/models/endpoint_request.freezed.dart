@@ -180,6 +180,7 @@ EndpointRequest _$EndpointRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$EndpointRequest {
+  String? get id => throw _privateConstructorUsedError;
   EndpointRequestType? get type => throw _privateConstructorUsedError;
   EndpointRequestData? get data => throw _privateConstructorUsedError;
 
@@ -195,7 +196,7 @@ abstract class $EndpointRequestCopyWith<$Res> {
           EndpointRequest value, $Res Function(EndpointRequest) then) =
       _$EndpointRequestCopyWithImpl<$Res, EndpointRequest>;
   @useResult
-  $Res call({EndpointRequestType? type, EndpointRequestData? data});
+  $Res call({String? id, EndpointRequestType? type, EndpointRequestData? data});
 
   $EndpointRequestDataCopyWith<$Res>? get data;
 }
@@ -213,10 +214,15 @@ class _$EndpointRequestCopyWithImpl<$Res, $Val extends EndpointRequest>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? type = freezed,
     Object? data = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -249,7 +255,7 @@ abstract class _$$_EndpointRequestCopyWith<$Res>
       __$$_EndpointRequestCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({EndpointRequestType? type, EndpointRequestData? data});
+  $Res call({String? id, EndpointRequestType? type, EndpointRequestData? data});
 
   @override
   $EndpointRequestDataCopyWith<$Res>? get data;
@@ -266,10 +272,15 @@ class __$$_EndpointRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? type = freezed,
     Object? data = freezed,
   }) {
     return _then(_$_EndpointRequest(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -285,11 +296,13 @@ class __$$_EndpointRequestCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_EndpointRequest implements _EndpointRequest {
-  const _$_EndpointRequest({this.type, this.data});
+  const _$_EndpointRequest({this.id, this.type, this.data});
 
   factory _$_EndpointRequest.fromJson(Map<String, dynamic> json) =>
       _$$_EndpointRequestFromJson(json);
 
+  @override
+  final String? id;
   @override
   final EndpointRequestType? type;
   @override
@@ -297,7 +310,7 @@ class _$_EndpointRequest implements _EndpointRequest {
 
   @override
   String toString() {
-    return 'EndpointRequest(type: $type, data: $data)';
+    return 'EndpointRequest(id: $id, type: $type, data: $data)';
   }
 
   @override
@@ -305,13 +318,14 @@ class _$_EndpointRequest implements _EndpointRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EndpointRequest &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.data, data) || other.data == data));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data);
+  int get hashCode => Object.hash(runtimeType, id, type, data);
 
   @JsonKey(ignore: true)
   @override
@@ -329,12 +343,15 @@ class _$_EndpointRequest implements _EndpointRequest {
 
 abstract class _EndpointRequest implements EndpointRequest {
   const factory _EndpointRequest(
-      {final EndpointRequestType? type,
+      {final String? id,
+      final EndpointRequestType? type,
       final EndpointRequestData? data}) = _$_EndpointRequest;
 
   factory _EndpointRequest.fromJson(Map<String, dynamic> json) =
       _$_EndpointRequest.fromJson;
 
+  @override
+  String? get id;
   @override
   EndpointRequestType? get type;
   @override

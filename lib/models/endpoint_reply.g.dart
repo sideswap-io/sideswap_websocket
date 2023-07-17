@@ -82,19 +82,27 @@ Map<String, dynamic> _$$EndpointReplyDataNewAddressToJson(
 _$EndpointReplyDataSuccess _$$EndpointReplyDataSuccessFromJson(
         Map<String, dynamic> json) =>
     _$EndpointReplyDataSuccess(
+      type: $enumDecode(_$EndpointReplySuccessTypeEnumMap, json['type']),
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$EndpointReplyDataSuccessToJson(
         _$EndpointReplyDataSuccess instance) =>
     <String, dynamic>{
+      'type': _$EndpointReplySuccessTypeEnumMap[instance.type]!,
       'runtimeType': instance.$type,
     };
+
+const _$EndpointReplySuccessTypeEnumMap = {
+  EndpointReplySuccessType.server: 'server',
+  EndpointReplySuccessType.handler: 'handler',
+};
 
 _$EndpointReplyDataError _$$EndpointReplyDataErrorFromJson(
         Map<String, dynamic> json) =>
     _$EndpointReplyDataError(
       message: json['message'] as String,
+      type: $enumDecode(_$EndpointReplyErrorTypeEnumMap, json['type']),
       $type: json['runtimeType'] as String?,
     );
 
@@ -102,5 +110,11 @@ Map<String, dynamic> _$$EndpointReplyDataErrorToJson(
         _$EndpointReplyDataError instance) =>
     <String, dynamic>{
       'message': instance.message,
+      'type': _$EndpointReplyErrorTypeEnumMap[instance.type]!,
       'runtimeType': instance.$type,
     };
+
+const _$EndpointReplyErrorTypeEnumMap = {
+  EndpointReplyErrorType.server: 'server',
+  EndpointReplyErrorType.handler: 'handler',
+};
