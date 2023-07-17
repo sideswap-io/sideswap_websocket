@@ -89,9 +89,9 @@ void main() {
 
   group("reply success", () {
     test('success reply model', () {
-      final json =
-          jsonDecode('{"reply":{"type":"success","data":{"type":"handler"}}}')
-              as Map<String, dynamic>;
+      final json = jsonDecode(
+              '{"reply":{"type":"success","data":{"type":"handler","id":"request_id"}}}')
+          as Map<String, dynamic>;
       final result = EndpointReplyModel.fromJson(json);
 
       expect(
@@ -100,7 +100,9 @@ void main() {
           reply: EndpointReply(
             type: EndpointReplyType.success,
             data: EndpointReplyDataSuccess(
-                type: EndpointReplySuccessType.handler),
+              type: EndpointReplySuccessType.handler,
+              id: "request_id",
+            ),
           ),
         ),
       );
@@ -112,22 +114,21 @@ void main() {
         reply: EndpointReply(
           type: EndpointReplyType.success,
           data: EndpointReplyDataSuccess(
-            type: EndpointReplySuccessType.handler,
-          ),
+              type: EndpointReplySuccessType.handler, id: "request_id"),
         ),
       );
       final result = jsonEncode(endpointReply.toJson());
       expect(
           result,
           equals(
-              '{"reply":{"type":"success","data":{"type":"handler","runtimeType":"success"}}}'));
+              '{"reply":{"type":"success","data":{"type":"handler","id":"request_id","runtimeType":"success"}}}'));
     });
   });
 
   group("reply error", () {
     test('error reply model', () {
       final json = jsonDecode(
-              '{"reply":{"type":"error","data":{"message":"message","type":"handler"}}}')
+              '{"reply":{"type":"error","data":{"message":"message","type":"handler","id":"request_id"}}}')
           as Map<String, dynamic>;
       final result = EndpointReplyModel.fromJson(json);
 
@@ -139,6 +140,7 @@ void main() {
             data: EndpointReplyDataError(
               message: 'message',
               type: EndpointReplyErrorType.handler,
+              id: "request_id",
             ),
           ),
         ),
@@ -153,6 +155,7 @@ void main() {
           data: EndpointReplyDataError(
             message: 'message',
             type: EndpointReplyErrorType.handler,
+            id: "request_id",
           ),
         ),
       );
@@ -160,7 +163,7 @@ void main() {
       expect(
           result,
           equals(
-              '{"reply":{"type":"error","data":{"message":"message","type":"handler","runtimeType":"error"}}}'));
+              '{"reply":{"type":"error","data":{"message":"message","type":"handler","id":"request_id","runtimeType":"error"}}}'));
     });
   });
 }

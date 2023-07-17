@@ -102,14 +102,16 @@ class EndpointServer {
               var _? => () {
                   sendSuccess(
                       type: EndpointReplySuccessType.server,
-                      channelId: channelId);
+                      channelId: channelId,
+                      id: value.request?.id ?? '');
                   onRequest?.call(value.request!, channelId);
                 }(),
               _ => () {
                   sendError(
                       message: 'Invalid or missing type parameter',
                       type: EndpointReplyErrorType.server,
-                      channelId: channelId);
+                      channelId: channelId,
+                      id: value.request?.id ?? '');
                   throw EndpointMissingTypeParameter();
                 }(),
             });

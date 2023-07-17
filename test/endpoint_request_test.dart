@@ -46,7 +46,8 @@ void main() {
       );
       final result = jsonEncode(endpointRequest.toJson());
 
-      expect(result, equals('{"request":{"type":"ping","data":null}}'));
+      expect(
+          result, equals('{"request":{"id":null,"type":"ping","data":null}}'));
     });
   });
 
@@ -76,12 +77,13 @@ void main() {
       );
       final result = jsonEncode(endpointRequest.toJson());
 
-      expect(result, equals('{"request":{"type":"new_address","data":null}}'));
+      expect(result,
+          equals('{"request":{"id":null,"type":"new_address","data":null}}'));
     });
   });
 
   group("request create transaction", () {
-    test('swaption fund request model', () {
+    test('create transaction request model', () {
       final json = jsonDecode(
               '{"request":{"type":"create_transaction","data":{"address":"address","asset_id":"asset_id","amount":"amount"}}}')
           as Map<String, dynamic>;
@@ -103,7 +105,7 @@ void main() {
       );
     });
 
-    test('swaption fund request json', () {
+    test('create transaction request json', () {
       const endpointRequest = EndpointRequestModel(
         request: EndpointRequest(
           type: EndpointRequestType.createTransaction,
@@ -119,7 +121,7 @@ void main() {
       expect(
           result,
           equals(
-              '{"request":{"type":"create_transaction","data":{"address":"address","asset_id":"asset_id","amount":"amount","runtimeType":"createTransaction"}}}'));
+              '{"request":{"id":null,"type":"create_transaction","data":{"address":"address","asset_id":"asset_id","amount":"amount","runtimeType":"createTransaction"}}}'));
     });
   });
 }
