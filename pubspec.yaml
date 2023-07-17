@@ -19,6 +19,7 @@ dependencies:
   sideswap_logger:
     git:
       url: https://github.com/sideswap-io/sideswap_logger.git
+      ref: master
   json_annotation: ^4.8.1
   fpdart: ^0.6.0
   websocket_universal: ^1.1.1

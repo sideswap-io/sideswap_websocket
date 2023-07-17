@@ -231,7 +231,7 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: HEAD
+      ref: master
       resolved-ref: f8cc803dfd096c46aba64acdd6b4bc61ac41a174
       url: "https://github.com/sideswap-io/sideswap_logger.git"
     source: git
