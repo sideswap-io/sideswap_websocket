@@ -100,11 +100,11 @@ class EndpointServer {
 
             (switch (type) {
               var _? => () {
-                  _sendSuccess(channelId: channelId);
+                  sendSuccess(channelId: channelId);
                   onRequest?.call(value.request!, channelId);
                 }(),
               _ => () {
-                  _sendError(
+                  sendError(
                       message: 'Invalid or missing type parameter',
                       channelId: channelId);
                   throw EndpointMissingTypeParameter();
@@ -112,20 +112,20 @@ class EndpointServer {
             });
           } catch (e) {
             // close channel if decoding failed
-            _sendError(
+            sendError(
                 message: 'Unable to decode request json', channelId: channelId);
             logger.e(e);
             await _closeChannel(channelId: channelId);
           }
         }(),
       _ => () async {
-          _sendError(message: 'Invalid request', channelId: channelId);
+          sendError(message: 'Invalid request', channelId: channelId);
           await _closeChannel(channelId: channelId);
         }(),
     });
   }
 
-  void _sendError({required String message, required String channelId}) {
+  void sendError({required String message, required String channelId}) {
     final reply = EndpointReplyModel(
         reply: EndpointReply(
             type: EndpointReplyType.error,
@@ -133,7 +133,7 @@ class EndpointServer {
     sendReply(reply, channelId);
   }
 
-  void _sendSuccess({required String channelId}) {
+  void sendSuccess({required String channelId}) {
     // ignore: prefer_const_declarations
     final reply = const EndpointReplyModel(
         reply: EndpointReply(
