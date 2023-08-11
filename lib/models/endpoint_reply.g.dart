@@ -51,6 +51,7 @@ const _$EndpointReplyTypeEnumMap = {
   EndpointReplyType.newAddress: 'new_address',
   EndpointReplyType.success: 'success',
   EndpointReplyType.error: 'error',
+  EndpointReplyType.pk: 'pk',
 };
 
 _$EndpointReplyDataPong _$$EndpointReplyDataPongFromJson(
@@ -122,3 +123,17 @@ const _$EndpointReplyErrorTypeEnumMap = {
   EndpointReplyErrorType.server: 'server',
   EndpointReplyErrorType.handler: 'handler',
 };
+
+_$EndpointReplyDataPk _$$EndpointReplyDataPkFromJson(
+        Map<String, dynamic> json) =>
+    _$EndpointReplyDataPk(
+      pk: json['pk'] as String,
+      $type: json['runtimeType'] as String?,
+    );
+
+Map<String, dynamic> _$$EndpointReplyDataPkToJson(
+        _$EndpointReplyDataPk instance) =>
+    <String, dynamic>{
+      'pk': instance.pk,
+      'runtimeType': instance.$type,
+    };

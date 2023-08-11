@@ -12,7 +12,8 @@ enum EndpointReplyType {
   pong,
   newAddress,
   success,
-  error;
+  error,
+  pk;
 }
 
 @JsonEnum(
@@ -50,10 +51,7 @@ class EndpointReplyConverter
 
     return switch (type) {
       EndpointReplyType.pong => EndpointReply(type: type),
-      EndpointReplyType.newAddress ||
-      EndpointReplyType.success ||
-      EndpointReplyType.error =>
-        () {
+      _ => () {
           isDataTypeExist(json);
           final jsonData = json['data'] as Map<String, dynamic>;
           final data = switch (type) {
@@ -63,6 +61,7 @@ class EndpointReplyConverter
               EndpointReplyDataSuccess.fromJson(jsonData),
             EndpointReplyType.error =>
               EndpointReplyDataError.fromJson(jsonData),
+            EndpointReplyType.pk => EndpointReplyDataPk.fromJson(json),
             _ => null,
           };
           return EndpointReply(
@@ -118,6 +117,16 @@ class EndpointReplyConverter
             _ => throw EndpointMissingOrInvalidDataParameter(),
           };
         }(),
+      EndpointReplyType.pk => () {
+          return switch (value.data) {
+            EndpointReplyDataPk(pk: final pk) => EndpointReply(
+                type: EndpointReplyType.pk,
+                data: EndpointReplyDataPk(
+                  pk: pk,
+                )).toJson(),
+            _ => throw EndpointMissingOrInvalidDataParameter(),
+          };
+        }(),
       _ => throw EndpointMissingOrInvalidDataParameter()
     };
   }
@@ -156,6 +165,8 @@ class EndpointReplyData with _$EndpointReplyData {
       {required String message,
       required EndpointReplyErrorType type,
       required String id}) = EndpointReplyDataError;
+  const factory EndpointReplyData.pk({required String pk}) =
+      EndpointReplyDataPk;
 
   factory EndpointReplyData.fromJson(Map<String, dynamic> json) =>
       _$EndpointReplyDataFromJson(json);

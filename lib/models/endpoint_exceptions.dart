@@ -12,6 +12,8 @@ class EndpointInvalidTypeValue implements Exception {}
 
 class EndpointServerAlreadyRunning implements Exception {}
 
+class EndpointInvalidPublicKey implements Exception {}
+
 class EndpointDisconnected implements Exception {
   final int? closeCode;
   final String? closeReason;

@@ -31,3 +31,4 @@ targets:
           - "lib/models/endpoint_request_state.dart"
           - "lib/models/endpoint_request.dart"
           - "lib/models/endpoint_reply.dart"
+          - "lib/models/endpoint_session_request.dart"

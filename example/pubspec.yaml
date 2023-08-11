@@ -40,6 +40,11 @@ dependencies:
     path: ../
   uuid: ^3.0.7
   base_codecs: ^1.0.1
+  sideswap_logger:
+    git:
+      url: https://github.com/sideswap-io/sideswap_logger.git
+      ref: master
+  encrypt: ^5.0.1
 
 dev_dependencies:
   flutter_test:

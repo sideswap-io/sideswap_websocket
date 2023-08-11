@@ -354,6 +354,8 @@ EndpointReplyData _$EndpointReplyDataFromJson(Map<String, dynamic> json) {
       return EndpointReplyDataSuccess.fromJson(json);
     case 'error':
       return EndpointReplyDataError.fromJson(json);
+    case 'pk':
+      return EndpointReplyDataPk.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'EndpointReplyData',
@@ -371,6 +373,7 @@ mixin _$EndpointReplyData {
     required TResult Function(
             String message, EndpointReplyErrorType type, String id)
         error,
+    required TResult Function(String pk) pk,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -380,6 +383,7 @@ mixin _$EndpointReplyData {
     TResult? Function(EndpointReplySuccessType type, String id)? success,
     TResult? Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult? Function(String pk)? pk,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -389,6 +393,7 @@ mixin _$EndpointReplyData {
     TResult Function(EndpointReplySuccessType type, String id)? success,
     TResult Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult Function(String pk)? pk,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -398,6 +403,7 @@ mixin _$EndpointReplyData {
     required TResult Function(EndpointReplyDataNewAddress value) newAddress,
     required TResult Function(EndpointReplyDataSuccess value) success,
     required TResult Function(EndpointReplyDataError value) error,
+    required TResult Function(EndpointReplyDataPk value) pk,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -406,6 +412,7 @@ mixin _$EndpointReplyData {
     TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult? Function(EndpointReplyDataSuccess value)? success,
     TResult? Function(EndpointReplyDataError value)? error,
+    TResult? Function(EndpointReplyDataPk value)? pk,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -414,6 +421,7 @@ mixin _$EndpointReplyData {
     TResult Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult Function(EndpointReplyDataSuccess value)? success,
     TResult Function(EndpointReplyDataError value)? error,
+    TResult Function(EndpointReplyDataPk value)? pk,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -490,6 +498,7 @@ class _$EndpointReplyDataPong implements EndpointReplyDataPong {
     required TResult Function(
             String message, EndpointReplyErrorType type, String id)
         error,
+    required TResult Function(String pk) pk,
   }) {
     return pong();
   }
@@ -502,6 +511,7 @@ class _$EndpointReplyDataPong implements EndpointReplyDataPong {
     TResult? Function(EndpointReplySuccessType type, String id)? success,
     TResult? Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult? Function(String pk)? pk,
   }) {
     return pong?.call();
   }
@@ -514,6 +524,7 @@ class _$EndpointReplyDataPong implements EndpointReplyDataPong {
     TResult Function(EndpointReplySuccessType type, String id)? success,
     TResult Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult Function(String pk)? pk,
     required TResult orElse(),
   }) {
     if (pong != null) {
@@ -529,6 +540,7 @@ class _$EndpointReplyDataPong implements EndpointReplyDataPong {
     required TResult Function(EndpointReplyDataNewAddress value) newAddress,
     required TResult Function(EndpointReplyDataSuccess value) success,
     required TResult Function(EndpointReplyDataError value) error,
+    required TResult Function(EndpointReplyDataPk value) pk,
   }) {
     return pong(this);
   }
@@ -540,6 +552,7 @@ class _$EndpointReplyDataPong implements EndpointReplyDataPong {
     TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult? Function(EndpointReplyDataSuccess value)? success,
     TResult? Function(EndpointReplyDataError value)? error,
+    TResult? Function(EndpointReplyDataPk value)? pk,
   }) {
     return pong?.call(this);
   }
@@ -551,6 +564,7 @@ class _$EndpointReplyDataPong implements EndpointReplyDataPong {
     TResult Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult Function(EndpointReplyDataSuccess value)? success,
     TResult Function(EndpointReplyDataError value)? error,
+    TResult Function(EndpointReplyDataPk value)? pk,
     required TResult orElse(),
   }) {
     if (pong != null) {
@@ -656,6 +670,7 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
     required TResult Function(
             String message, EndpointReplyErrorType type, String id)
         error,
+    required TResult Function(String pk) pk,
   }) {
     return newAddress(address);
   }
@@ -668,6 +683,7 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
     TResult? Function(EndpointReplySuccessType type, String id)? success,
     TResult? Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult? Function(String pk)? pk,
   }) {
     return newAddress?.call(address);
   }
@@ -680,6 +696,7 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
     TResult Function(EndpointReplySuccessType type, String id)? success,
     TResult Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult Function(String pk)? pk,
     required TResult orElse(),
   }) {
     if (newAddress != null) {
@@ -695,6 +712,7 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
     required TResult Function(EndpointReplyDataNewAddress value) newAddress,
     required TResult Function(EndpointReplyDataSuccess value) success,
     required TResult Function(EndpointReplyDataError value) error,
+    required TResult Function(EndpointReplyDataPk value) pk,
   }) {
     return newAddress(this);
   }
@@ -706,6 +724,7 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
     TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult? Function(EndpointReplyDataSuccess value)? success,
     TResult? Function(EndpointReplyDataError value)? error,
+    TResult? Function(EndpointReplyDataPk value)? pk,
   }) {
     return newAddress?.call(this);
   }
@@ -717,6 +736,7 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
     TResult Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult Function(EndpointReplyDataSuccess value)? success,
     TResult Function(EndpointReplyDataError value)? error,
+    TResult Function(EndpointReplyDataPk value)? pk,
     required TResult orElse(),
   }) {
     if (newAddress != null) {
@@ -835,6 +855,7 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
     required TResult Function(
             String message, EndpointReplyErrorType type, String id)
         error,
+    required TResult Function(String pk) pk,
   }) {
     return success(type, id);
   }
@@ -847,6 +868,7 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
     TResult? Function(EndpointReplySuccessType type, String id)? success,
     TResult? Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult? Function(String pk)? pk,
   }) {
     return success?.call(type, id);
   }
@@ -859,6 +881,7 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
     TResult Function(EndpointReplySuccessType type, String id)? success,
     TResult Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult Function(String pk)? pk,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -874,6 +897,7 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
     required TResult Function(EndpointReplyDataNewAddress value) newAddress,
     required TResult Function(EndpointReplyDataSuccess value) success,
     required TResult Function(EndpointReplyDataError value) error,
+    required TResult Function(EndpointReplyDataPk value) pk,
   }) {
     return success(this);
   }
@@ -885,6 +909,7 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
     TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult? Function(EndpointReplyDataSuccess value)? success,
     TResult? Function(EndpointReplyDataError value)? error,
+    TResult? Function(EndpointReplyDataPk value)? pk,
   }) {
     return success?.call(this);
   }
@@ -896,6 +921,7 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
     TResult Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult Function(EndpointReplyDataSuccess value)? success,
     TResult Function(EndpointReplyDataError value)? error,
+    TResult Function(EndpointReplyDataPk value)? pk,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -1026,6 +1052,7 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
     required TResult Function(
             String message, EndpointReplyErrorType type, String id)
         error,
+    required TResult Function(String pk) pk,
   }) {
     return error(message, type, id);
   }
@@ -1038,6 +1065,7 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
     TResult? Function(EndpointReplySuccessType type, String id)? success,
     TResult? Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult? Function(String pk)? pk,
   }) {
     return error?.call(message, type, id);
   }
@@ -1050,6 +1078,7 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
     TResult Function(EndpointReplySuccessType type, String id)? success,
     TResult Function(String message, EndpointReplyErrorType type, String id)?
         error,
+    TResult Function(String pk)? pk,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1065,6 +1094,7 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
     required TResult Function(EndpointReplyDataNewAddress value) newAddress,
     required TResult Function(EndpointReplyDataSuccess value) success,
     required TResult Function(EndpointReplyDataError value) error,
+    required TResult Function(EndpointReplyDataPk value) pk,
   }) {
     return error(this);
   }
@@ -1076,6 +1106,7 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
     TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult? Function(EndpointReplyDataSuccess value)? success,
     TResult? Function(EndpointReplyDataError value)? error,
+    TResult? Function(EndpointReplyDataPk value)? pk,
   }) {
     return error?.call(this);
   }
@@ -1087,6 +1118,7 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
     TResult Function(EndpointReplyDataNewAddress value)? newAddress,
     TResult Function(EndpointReplyDataSuccess value)? success,
     TResult Function(EndpointReplyDataError value)? error,
+    TResult Function(EndpointReplyDataPk value)? pk,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1117,5 +1149,180 @@ abstract class EndpointReplyDataError implements EndpointReplyData {
   String get id;
   @JsonKey(ignore: true)
   _$$EndpointReplyDataErrorCopyWith<_$EndpointReplyDataError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EndpointReplyDataPkCopyWith<$Res> {
+  factory _$$EndpointReplyDataPkCopyWith(_$EndpointReplyDataPk value,
+          $Res Function(_$EndpointReplyDataPk) then) =
+      __$$EndpointReplyDataPkCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String pk});
+}
+
+/// @nodoc
+class __$$EndpointReplyDataPkCopyWithImpl<$Res>
+    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataPk>
+    implements _$$EndpointReplyDataPkCopyWith<$Res> {
+  __$$EndpointReplyDataPkCopyWithImpl(
+      _$EndpointReplyDataPk _value, $Res Function(_$EndpointReplyDataPk) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pk = null,
+  }) {
+    return _then(_$EndpointReplyDataPk(
+      pk: null == pk
+          ? _value.pk
+          : pk // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$EndpointReplyDataPk implements EndpointReplyDataPk {
+  const _$EndpointReplyDataPk({required this.pk, final String? $type})
+      : $type = $type ?? 'pk';
+
+  factory _$EndpointReplyDataPk.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointReplyDataPkFromJson(json);
+
+  @override
+  final String pk;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  String toString() {
+    return 'EndpointReplyData.pk(pk: $pk)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EndpointReplyDataPk &&
+            (identical(other.pk, pk) || other.pk == pk));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, pk);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EndpointReplyDataPkCopyWith<_$EndpointReplyDataPk> get copyWith =>
+      __$$EndpointReplyDataPkCopyWithImpl<_$EndpointReplyDataPk>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() pong,
+    required TResult Function(String address) newAddress,
+    required TResult Function(EndpointReplySuccessType type, String id) success,
+    required TResult Function(
+            String message, EndpointReplyErrorType type, String id)
+        error,
+    required TResult Function(String pk) pk,
+  }) {
+    return pk(this.pk);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? pong,
+    TResult? Function(String address)? newAddress,
+    TResult? Function(EndpointReplySuccessType type, String id)? success,
+    TResult? Function(String message, EndpointReplyErrorType type, String id)?
+        error,
+    TResult? Function(String pk)? pk,
+  }) {
+    return pk?.call(this.pk);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? pong,
+    TResult Function(String address)? newAddress,
+    TResult Function(EndpointReplySuccessType type, String id)? success,
+    TResult Function(String message, EndpointReplyErrorType type, String id)?
+        error,
+    TResult Function(String pk)? pk,
+    required TResult orElse(),
+  }) {
+    if (pk != null) {
+      return pk(this.pk);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EndpointReplyDataPong value) pong,
+    required TResult Function(EndpointReplyDataNewAddress value) newAddress,
+    required TResult Function(EndpointReplyDataSuccess value) success,
+    required TResult Function(EndpointReplyDataError value) error,
+    required TResult Function(EndpointReplyDataPk value) pk,
+  }) {
+    return pk(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(EndpointReplyDataPong value)? pong,
+    TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
+    TResult? Function(EndpointReplyDataSuccess value)? success,
+    TResult? Function(EndpointReplyDataError value)? error,
+    TResult? Function(EndpointReplyDataPk value)? pk,
+  }) {
+    return pk?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EndpointReplyDataPong value)? pong,
+    TResult Function(EndpointReplyDataNewAddress value)? newAddress,
+    TResult Function(EndpointReplyDataSuccess value)? success,
+    TResult Function(EndpointReplyDataError value)? error,
+    TResult Function(EndpointReplyDataPk value)? pk,
+    required TResult orElse(),
+  }) {
+    if (pk != null) {
+      return pk(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$EndpointReplyDataPkToJson(
+      this,
+    );
+  }
+}
+
+abstract class EndpointReplyDataPk implements EndpointReplyData {
+  const factory EndpointReplyDataPk({required final String pk}) =
+      _$EndpointReplyDataPk;
+
+  factory EndpointReplyDataPk.fromJson(Map<String, dynamic> json) =
+      _$EndpointReplyDataPk.fromJson;
+
+  String get pk;
+  @JsonKey(ignore: true)
+  _$$EndpointReplyDataPkCopyWith<_$EndpointReplyDataPk> get copyWith =>
       throw _privateConstructorUsedError;
 }

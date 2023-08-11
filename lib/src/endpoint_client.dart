@@ -16,8 +16,8 @@ typedef OnConnected = Future<void> Function();
 class EndpointClient {
   IWebSocketHandler<String, String>? _channel;
   OnDataCallback? onData;
-  OnConnected? _onConnected;
-  OnDisconnected? _onDisconnected;
+  final OnConnected? _onConnected;
+  final OnDisconnected? _onDisconnected;
 
   bool _isConnected = false;
 

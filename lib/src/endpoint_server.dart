@@ -2,18 +2,29 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:basic_utils/basic_utils.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
 import 'package:sideswap_websocket/models/endpoint_exceptions.dart';
 import 'package:sideswap_websocket/models/endpoint_reply.dart';
 import 'package:sideswap_websocket/models/endpoint_request.dart';
+import 'package:sideswap_websocket/models/endpoint_session_request.dart';
+import 'package:sideswap_websocket/src/crypto_helper.dart';
 import 'package:sideswap_websocket/src/default_settings.dart';
 import 'package:sideswap_websocket/src/endpoint_logger.dart';
 import 'package:uuid/uuid.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 typedef OnRequest = void Function(EndpointRequest request, String channelId);
+
+final class EndpointServerSocket {
+  final WebSocketChannel channel;
+  String? clientId;
+  RSAPublicKey? publicKey;
+
+  EndpointServerSocket(this.channel);
+}
 
 class EndpointServer {
   HttpServer? server;
@@ -24,7 +35,8 @@ class EndpointServer {
     this.onRequest,
   });
 
-  final _sockets = <String, WebSocketChannel>{};
+  final _sockets = <String, EndpointServerSocket>{};
+  final _crypto = CryptoHelper();
 
   Future<void> serve() async {
     if (server != null) {
@@ -57,13 +69,15 @@ class EndpointServer {
   void _onConnection(WebSocketChannel channel) {
     const uuid = Uuid();
     final channelId = uuid.v1();
-    _sockets[channelId] = channel;
+    _sockets[channelId] = EndpointServerSocket(channel);
 
     channel.stream.listen(
       (event) {
         _onEvent(event, channelId);
       },
-      onError: (e) {},
+      onError: (e) {
+        logger.d('Error: $e');
+      },
       onDone: () {
         _sockets.remove(channel);
       },
@@ -71,15 +85,18 @@ class EndpointServer {
   }
 
   Future<void> _closeChannel({required String channelId}) async {
-    final channel = _sockets[channelId];
+    final socket = _sockets[channelId];
+    final channel = socket?.channel;
     await channel?.sink.close();
     _sockets.remove(channel);
   }
 
   void _onEvent(dynamic event, String channelId) {
+    logger.d('Incoming event: $event');
     (switch (event) {
       String nonNullableString? when nonNullableString == "ping" => () {
-          final channel = _sockets[channelId];
+          final socket = _sockets[channelId];
+          final channel = socket?.channel;
           (switch (channel) {
             WebSocketChannel(closeCode: final closeCode)
                 when closeCode == null =>
@@ -92,38 +109,7 @@ class EndpointServer {
           });
         }(),
       String nonNullableString? => () async {
-          try {
-            final json = jsonDecode(nonNullableString) as Map<String, dynamic>;
-            final value = EndpointRequestModel.fromJson(json);
-
-            final type = value.request?.type;
-
-            (switch (type) {
-              var _? => () {
-                  sendSuccess(
-                      type: EndpointReplySuccessType.server,
-                      channelId: channelId,
-                      id: value.request?.id ?? '');
-                  onRequest?.call(value.request!, channelId);
-                }(),
-              _ => () {
-                  sendError(
-                      message: 'Invalid or missing type parameter',
-                      type: EndpointReplyErrorType.server,
-                      channelId: channelId,
-                      id: value.request?.id ?? '');
-                  throw EndpointMissingTypeParameter();
-                }(),
-            });
-          } catch (e) {
-            // close channel if decoding failed
-            sendError(
-                message: 'Unable to decode request json',
-                type: EndpointReplyErrorType.server,
-                channelId: channelId);
-            logger.e(e);
-            await _closeChannel(channelId: channelId);
-          }
+          await _handleSession(nonNullableString, channelId);
         }(),
       _ => () async {
           sendError(
@@ -133,6 +119,87 @@ class EndpointServer {
           await _closeChannel(channelId: channelId);
         }(),
     });
+  }
+
+  Future<void> _handleSession(String msg, String channelId) async {
+    final json = jsonDecode(msg) as Map<String, dynamic>;
+    final value = EndpointSessionRequest.fromJson(json);
+
+    (switch (value.type) {
+      EndpointSessionRequestType.init => () async {
+          final clientPublicKeyBase64 = value.pk;
+          if (clientPublicKeyBase64 == null) {
+            await _closeChannel(channelId: channelId);
+            return;
+          }
+
+          final bytes = base64Decode(clientPublicKeyBase64);
+          final clientPublicKey = CryptoUtils.rsaPublicKeyFromDERBytes(bytes);
+
+          _sockets[channelId]?.publicKey = clientPublicKey;
+          _sockets[channelId]?.clientId = value.clientId;
+
+          final publicKeyBase64 = _crypto.publicKeyToBase64();
+          final reply = EndpointReplyModel(
+              reply: EndpointReply(
+                  type: EndpointReplyType.pk,
+                  data: EndpointReplyDataPk(pk: publicKeyBase64)));
+          sendEncrypted(reply, channelId);
+        }(),
+      EndpointSessionRequestType.data => () async {
+          final encryptedData = value.data;
+          if (encryptedData == null) {
+            logger.w('Empty encrypted data');
+            await _closeChannel(channelId: channelId);
+            return;
+          }
+
+          final bytes = base64Decode(encryptedData);
+          final decryptedRequest =
+              _crypto.rsaDecrypt(String.fromCharCodes(bytes));
+          await _handleDataEvent(decryptedRequest, channelId);
+        }(),
+      _ => () async {
+          // error
+          logger.d('Unknown session data type');
+          await _closeChannel(channelId: channelId);
+        }()
+    });
+  }
+
+  Future<void> _handleDataEvent(String event, String channelId) async {
+    try {
+      final json = jsonDecode(event) as Map<String, dynamic>;
+      final value = EndpointRequestModel.fromJson(json);
+
+      final type = value.request?.type;
+
+      (switch (type) {
+        var _? => () {
+            sendSuccess(
+                type: EndpointReplySuccessType.server,
+                channelId: channelId,
+                id: value.request?.id ?? '');
+            onRequest?.call(value.request!, channelId);
+          }(),
+        _ => () {
+            sendError(
+                message: 'Invalid or missing type parameter',
+                type: EndpointReplyErrorType.server,
+                channelId: channelId,
+                id: value.request?.id ?? '');
+            throw EndpointMissingTypeParameter();
+          }(),
+      });
+    } catch (e) {
+      // close channel if decoding failed
+      sendError(
+          message: 'Unable to decode json request',
+          type: EndpointReplyErrorType.server,
+          channelId: channelId);
+      logger.e(e);
+      await _closeChannel(channelId: channelId);
+    }
   }
 
   void sendError({
@@ -151,7 +218,7 @@ class EndpointServer {
         ),
       ),
     );
-    sendReply(reply, channelId);
+    sendEncrypted(reply, channelId);
   }
 
   void sendSuccess({
@@ -166,19 +233,41 @@ class EndpointServer {
         data: EndpointReplyDataSuccess(type: type, id: id),
       ),
     );
-    sendReply(reply, channelId);
+    sendEncrypted(reply, channelId);
   }
 
-  Either<Exception, bool> sendReply(
+  Either<Exception, bool> sendEncrypted(
     EndpointReplyModel reply,
     String channelId,
   ) {
-    final channel = _sockets[channelId];
+    final clientPublicKey = _sockets[channelId]?.publicKey;
+    if (clientPublicKey == null) {
+      logger.w('Public key is null. Unable to send $reply');
+      return Left<Exception, bool>(EndpointInvalidPublicKey());
+    }
+
+    final replyMap = reply.toJson();
+    final data = replyMap['reply']['data'] as Map<String, dynamic>;
+    data.remove('runtimeType');
+    replyMap['reply']['data'] = data;
+    final encryptedReply =
+        _crypto.rsaEncrypt(jsonEncode(replyMap), clientPublicKey);
+
+    return _sendReplyRaw(base64Encode(encryptedReply.codeUnits), channelId);
+  }
+
+  Either<Exception, bool> _sendReplyRaw(
+    dynamic reply,
+    String channelId,
+  ) {
+    final socket = _sockets[channelId];
+    final channel = socket?.channel;
 
     return switch (channel) {
       WebSocketChannel(closeCode: final closeCode) when closeCode == null =>
         () {
-          channel.sink.add(jsonEncode(reply.toJson()));
+          logger.d('Sending raw: $reply');
+          channel.sink.add(reply);
           return const Right<Exception, bool>(true);
         }(),
       WebSocketChannel(closeCode: final _?) => () {

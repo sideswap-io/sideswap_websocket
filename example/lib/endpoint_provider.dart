@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:base_codecs/base_codecs.dart';
+import 'package:example/custom_logger.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sideswap_websocket/sideswap_endpoint.dart';
@@ -39,7 +40,7 @@ class EndpointServerProvider {
   }
 
   void onRequest(EndpointRequest request, String channelId) {
-    print('$channelId $request');
+    logger.d('$channelId $request');
 
     switch (request.type) {
       case EndpointRequestType.newAddress:
@@ -53,7 +54,7 @@ class EndpointServerProvider {
               data: EndpointReplyDataNewAddress(address: address),
             ),
           );
-          endpointServer?.sendReply(reply, channelId);
+          endpointServer?.sendEncrypted(reply, channelId);
         });
       default:
         return;
@@ -74,7 +75,8 @@ class EndpointClientProvider extends ChangeNotifier {
   bool get isConnected => _isConnected;
 
   EndpointClientProvider(this.ref) {
-    _init();
+    // TODO: fix that
+    // _init();
   }
 
   Future<void> _init() async {
@@ -95,7 +97,7 @@ class EndpointClientProvider extends ChangeNotifier {
   }
 
   Future<void> onData(EndpointReplyModel replyModel) async {
-    print(replyModel.toJson());
+    logger.d(replyModel.toJson());
 
     final type = replyModel.reply?.type;
     final data = replyModel.reply?.data;
@@ -113,7 +115,7 @@ class EndpointClientProvider extends ChangeNotifier {
     _isConnected = false;
     notifyListeners();
 
-    print('Endpoint client disconnected');
+    logger.d('Endpoint client disconnected');
     Future.delayed(const Duration(seconds: 1), () {
       endpointClient!.connect();
     });
@@ -123,6 +125,6 @@ class EndpointClientProvider extends ChangeNotifier {
     _isConnected = true;
     notifyListeners();
 
-    print('Endpoint client connected');
+    logger.d('Endpoint client connected');
   }
 }
