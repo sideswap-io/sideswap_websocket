@@ -16,7 +16,11 @@ import 'package:sideswap_websocket/src/endpoint_logger.dart';
 import 'package:uuid/uuid.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
-typedef OnRequest = void Function(EndpointRequest request, String channelId);
+typedef OnRequest = void Function(
+  EndpointRequest request,
+  String channelId,
+  String id,
+);
 
 final class EndpointServerSocket {
   final WebSocketChannel channel;
@@ -113,6 +117,7 @@ class EndpointServer {
         }(),
       _ => () async {
           sendError(
+              id: '',
               message: 'Invalid request',
               type: EndpointReplyErrorType.server,
               channelId: channelId);
@@ -124,6 +129,13 @@ class EndpointServer {
   Future<void> _handleSession(String msg, String channelId) async {
     final json = jsonDecode(msg) as Map<String, dynamic>;
     final value = EndpointSessionRequest.fromJson(json);
+
+    if (value.id == null || value.id!.isEmpty) {
+      logger
+        ..w('Request packet does not include id, rejecting.')
+        ..w(value);
+      return;
+    }
 
     (switch (value.type) {
       EndpointSessionRequestType.init => () async {
@@ -142,6 +154,7 @@ class EndpointServer {
           final publicKeyBase64 = _crypto.publicKeyToBase64();
           final reply = EndpointReplyModel(
               reply: EndpointReply(
+                  id: value.id,
                   type: EndpointReplyType.pk,
                   data: EndpointReplyDataPk(pk: publicKeyBase64)));
           sendEncrypted(reply, channelId);
@@ -157,7 +170,7 @@ class EndpointServer {
           final bytes = base64Decode(encryptedData);
           final decryptedRequest =
               _crypto.rsaDecrypt(String.fromCharCodes(bytes));
-          await _handleDataEvent(decryptedRequest, channelId);
+          await _handleDataEvent(decryptedRequest, channelId, value.id!);
         }(),
       _ => () async {
           // error
@@ -167,7 +180,11 @@ class EndpointServer {
     });
   }
 
-  Future<void> _handleDataEvent(String event, String channelId) async {
+  Future<void> _handleDataEvent(
+    String event,
+    String channelId,
+    String id,
+  ) async {
     try {
       final json = jsonDecode(event) as Map<String, dynamic>;
       final value = EndpointRequestModel.fromJson(json);
@@ -177,26 +194,30 @@ class EndpointServer {
       (switch (type) {
         var _? => () {
             sendSuccess(
-                type: EndpointReplySuccessType.server,
-                channelId: channelId,
-                id: value.request?.id ?? '');
-            onRequest?.call(value.request!, channelId);
+              type: EndpointReplySuccessType.server,
+              channelId: channelId,
+              id: id,
+            );
+            onRequest?.call(value.request!, channelId, id);
           }(),
         _ => () {
             sendError(
-                message: 'Invalid or missing type parameter',
-                type: EndpointReplyErrorType.server,
-                channelId: channelId,
-                id: value.request?.id ?? '');
+              message: 'Invalid or missing type parameter',
+              type: EndpointReplyErrorType.server,
+              channelId: channelId,
+              id: id,
+            );
             throw EndpointMissingTypeParameter();
           }(),
       });
     } catch (e) {
       // close channel if decoding failed
       sendError(
-          message: 'Unable to decode json request',
-          type: EndpointReplyErrorType.server,
-          channelId: channelId);
+        message: 'Unable to decode json request',
+        type: EndpointReplyErrorType.server,
+        channelId: channelId,
+        id: id,
+      );
       logger.e(e);
       await _closeChannel(channelId: channelId);
     }
@@ -206,15 +227,15 @@ class EndpointServer {
     required String message,
     EndpointReplyErrorType type = EndpointReplyErrorType.handler,
     required String channelId,
-    String id = '',
+    required String id,
   }) {
     final reply = EndpointReplyModel(
       reply: EndpointReply(
+        id: id,
         type: EndpointReplyType.error,
         data: EndpointReplyDataError(
           message: message,
           type: type,
-          id: id,
         ),
       ),
     );
@@ -224,13 +245,13 @@ class EndpointServer {
   void sendSuccess({
     EndpointReplySuccessType type = EndpointReplySuccessType.handler,
     required String channelId,
-    String id = '',
+    required String id,
   }) {
-    // ignore: prefer_const_declarations
     final reply = EndpointReplyModel(
       reply: EndpointReply(
+        id: id,
         type: EndpointReplyType.success,
-        data: EndpointReplyDataSuccess(type: type, id: id),
+        data: EndpointReplyDataSuccess(type: type),
       ),
     );
     sendEncrypted(reply, channelId);

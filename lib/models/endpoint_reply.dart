@@ -49,8 +49,10 @@ class EndpointReplyConverter
         )
         .key;
 
+    final id = json['id'] as String;
+
     return switch (type) {
-      EndpointReplyType.pong => EndpointReply(type: type),
+      EndpointReplyType.pong => EndpointReply(id: id, type: type),
       _ => () {
           isDataTypeExist(json);
           final jsonData = json['data'] as Map<String, dynamic>;
@@ -65,6 +67,7 @@ class EndpointReplyConverter
             _ => null,
           };
           return EndpointReply(
+            id: id,
             type: type,
             data: data,
           );
@@ -74,13 +77,15 @@ class EndpointReplyConverter
 
   @override
   Map<String, dynamic> toJson(EndpointReply value) {
+    final id = value.id;
     return switch (value.type) {
       EndpointReplyType.pong =>
-        const EndpointReply(type: EndpointReplyType.pong).toJson(),
+        EndpointReply(id: id, type: EndpointReplyType.pong).toJson(),
       EndpointReplyType.newAddress => () {
           return switch (value.data) {
             EndpointReplyDataNewAddress(address: final address) =>
               EndpointReply(
+                id: id,
                 type: EndpointReplyType.newAddress,
                 data: EndpointReplyDataNewAddress(address: address),
               ).toJson(),
@@ -90,13 +95,12 @@ class EndpointReplyConverter
       EndpointReplyType.success => switch (value.data) {
           EndpointReplyDataSuccess(
             type: final successType,
-            id: final successId
           ) =>
             EndpointReply(
+                id: id,
                 type: EndpointReplyType.success,
                 data: EndpointReplyDataSuccess(
                   type: successType,
-                  id: successId,
                 )).toJson(),
           _ => throw EndpointMissingOrInvalidDataParameter(),
         },
@@ -105,14 +109,13 @@ class EndpointReplyConverter
             EndpointReplyDataError(
               message: final message,
               type: final errorType,
-              id: final errorId,
             ) =>
               EndpointReply(
+                  id: id,
                   type: EndpointReplyType.error,
                   data: EndpointReplyDataError(
                     message: message,
                     type: errorType,
-                    id: errorId,
                   )).toJson(),
             _ => throw EndpointMissingOrInvalidDataParameter(),
           };
@@ -120,6 +123,7 @@ class EndpointReplyConverter
       EndpointReplyType.pk => () {
           return switch (value.data) {
             EndpointReplyDataPk(pk: final pk) => EndpointReply(
+                id: id,
                 type: EndpointReplyType.pk,
                 data: EndpointReplyDataPk(
                   pk: pk,
@@ -145,6 +149,7 @@ class EndpointReplyModel with _$EndpointReplyModel {
 @freezed
 class EndpointReply with _$EndpointReply {
   const factory EndpointReply({
+    required String? id,
     EndpointReplyType? type,
     EndpointReplyData? data,
   }) = _EndpointReply;
@@ -158,13 +163,13 @@ class EndpointReplyData with _$EndpointReplyData {
   const factory EndpointReplyData.pong() = EndpointReplyDataPong;
   const factory EndpointReplyData.newAddress({required String address}) =
       EndpointReplyDataNewAddress;
-  const factory EndpointReplyData.success(
-      {required EndpointReplySuccessType type,
-      required String id}) = EndpointReplyDataSuccess;
-  const factory EndpointReplyData.error(
-      {required String message,
-      required EndpointReplyErrorType type,
-      required String id}) = EndpointReplyDataError;
+  const factory EndpointReplyData.success({
+    required EndpointReplySuccessType type,
+  }) = EndpointReplyDataSuccess;
+  const factory EndpointReplyData.error({
+    required String message,
+    required EndpointReplyErrorType type,
+  }) = EndpointReplyDataError;
   const factory EndpointReplyData.pk({required String pk}) =
       EndpointReplyDataPk;
 

@@ -34,6 +34,7 @@ Json? _$JsonConverterToJson<Json, Value>(
 
 _$_EndpointReply _$$_EndpointReplyFromJson(Map<String, dynamic> json) =>
     _$_EndpointReply(
+      id: json['id'] as String?,
       type: $enumDecodeNullable(_$EndpointReplyTypeEnumMap, json['type']),
       data: json['data'] == null
           ? null
@@ -42,6 +43,7 @@ _$_EndpointReply _$$_EndpointReplyFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_EndpointReplyToJson(_$_EndpointReply instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'type': _$EndpointReplyTypeEnumMap[instance.type],
       'data': instance.data?.toJson(),
     };
@@ -84,7 +86,6 @@ _$EndpointReplyDataSuccess _$$EndpointReplyDataSuccessFromJson(
         Map<String, dynamic> json) =>
     _$EndpointReplyDataSuccess(
       type: $enumDecode(_$EndpointReplySuccessTypeEnumMap, json['type']),
-      id: json['id'] as String,
       $type: json['runtimeType'] as String?,
     );
 
@@ -92,7 +93,6 @@ Map<String, dynamic> _$$EndpointReplyDataSuccessToJson(
         _$EndpointReplyDataSuccess instance) =>
     <String, dynamic>{
       'type': _$EndpointReplySuccessTypeEnumMap[instance.type]!,
-      'id': instance.id,
       'runtimeType': instance.$type,
     };
 
@@ -106,7 +106,6 @@ _$EndpointReplyDataError _$$EndpointReplyDataErrorFromJson(
     _$EndpointReplyDataError(
       message: json['message'] as String,
       type: $enumDecode(_$EndpointReplyErrorTypeEnumMap, json['type']),
-      id: json['id'] as String,
       $type: json['runtimeType'] as String?,
     );
 
@@ -115,7 +114,6 @@ Map<String, dynamic> _$$EndpointReplyDataErrorToJson(
     <String, dynamic>{
       'message': instance.message,
       'type': _$EndpointReplyErrorTypeEnumMap[instance.type]!,
-      'id': instance.id,
       'runtimeType': instance.$type,
     };
 

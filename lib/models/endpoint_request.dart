@@ -71,7 +71,6 @@ class EndpointRequestModel with _$EndpointRequestModel {
 @freezed
 class EndpointRequest with _$EndpointRequest {
   const factory EndpointRequest({
-    String? id,
     EndpointRequestType? type,
     EndpointRequestData? data,
   }) = _EndpointRequest;

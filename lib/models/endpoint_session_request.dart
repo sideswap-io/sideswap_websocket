@@ -15,6 +15,7 @@ enum EndpointSessionRequestType {
 @freezed
 class EndpointSessionRequest with _$EndpointSessionRequest {
   const factory EndpointSessionRequest({
+    String? id,
     EndpointSessionRequestType? type,
     String? data,
     String? pk,

@@ -1,13 +1,17 @@
 import 'dart:convert';
 
-import 'package:base_codecs/base_codecs.dart';
-import 'package:example/custom_logger.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mockito/mockito.dart';
+import 'package:base_codecs/base_codecs.dart';
 import 'package:sideswap_websocket/sideswap_endpoint.dart';
+import 'package:sideswap_websocket/src/endpoint_logger.dart';
 import 'package:uuid/uuid.dart';
 
-final endpointServerProvider = AutoDisposeProvider((ref) {
+final endpointServerProvider = Provider((ref) {
   final endpointServer = EndpointServerProvider(ref);
 
   ref.onDispose(() {
@@ -55,7 +59,8 @@ class EndpointServerProvider {
               data: EndpointReplyDataNewAddress(address: address),
             ),
           );
-          endpointServer?.sendEncrypted(reply, channelId);
+          // TODO: fix that
+          // endpointServer?._sendReplyRaw(reply.toJson(), channelId);
         });
       default:
         return;
@@ -63,11 +68,10 @@ class EndpointServerProvider {
   }
 }
 
-final newAddressStateProvider = AutoDisposeStateProvider((ref) => '');
+final newAddressStateProvider = StateProvider((ref) => '');
 
-final endpointClientProvider =
-    ChangeNotifierProvider.autoDispose<EndpointClientProvider>(
-        (ref) => EndpointClientProvider(ref));
+final endpointClientProvider = ChangeNotifierProvider<EndpointClientProvider>(
+    (ref) => EndpointClientProvider(ref));
 
 class EndpointClientProvider extends ChangeNotifier {
   final Ref ref;
@@ -76,8 +80,7 @@ class EndpointClientProvider extends ChangeNotifier {
   bool get isConnected => _isConnected;
 
   EndpointClientProvider(this.ref) {
-    // TODO: fix that
-    // _init();
+    _init();
   }
 
   Future<void> _init() async {
@@ -128,4 +131,84 @@ class EndpointClientProvider extends ChangeNotifier {
 
     logger.d('Endpoint client connected');
   }
+}
+
+class ServerListener extends Mock {
+  void call(EndpointServerProvider? previous, EndpointServerProvider value);
+}
+
+class ClientListener extends Mock {
+  void call(EndpointClientProvider? previous, EndpointClientProvider value);
+}
+
+class EndpointListener extends HookConsumerWidget {
+  const EndpointListener({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final endpointServer = ref.watch(endpointServerProvider);
+
+    useEffect(() {
+      endpointServer.serve();
+
+      return;
+    }, [endpointServer]);
+
+    final endpointClient = ref.watch(endpointClientProvider);
+
+    useEffect(() {
+      if (endpointClient.isConnected) {
+        // make something when client is connected
+      }
+
+      return;
+    }, [endpointClient.isConnected]);
+
+    return Container();
+  }
+}
+
+void main() {
+  // {"request":{"type":"new_address","data":{}}}
+  testWidgets('override repositoryProvider', (tester) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        child: MaterialApp(
+          home: Scaffold(
+            body: Stack(
+              children: [
+                const EndpointListener(),
+                Consumer(
+                  builder: (context, ref, child) {
+                    final endpointClient = ref.watch(endpointClientProvider);
+
+                    if (!endpointClient.isConnected) {
+                      return const CircularProgressIndicator();
+                    }
+
+                    return Container();
+                  },
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+
+    // The first frame is a loading state.
+    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+
+    // Re-render. TodoListProvider should have finished fetching the todos by now
+    await tester.pump();
+    await Future.delayed(const Duration(seconds: 2));
+
+    // Rendered one TodoItem with the data returned by FakeRepository
+    // expect(tester.widgetList(find.byType(TodoItem)), [
+    //   isA<TodoItem>()
+    //       .having((s) => s.todo.id, 'todo.id', '42')
+    //       .having((s) => s.todo.label, 'todo.label', 'Hello world')
+    //       .having((s) => s.todo.completed, 'todo.completed', false),
+    // ]);
+  });
 }

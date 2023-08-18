@@ -34,7 +34,6 @@ Json? _$JsonConverterToJson<Json, Value>(
 
 _$_EndpointRequest _$$_EndpointRequestFromJson(Map<String, dynamic> json) =>
     _$_EndpointRequest(
-      id: json['id'] as String?,
       type: $enumDecodeNullable(_$EndpointRequestTypeEnumMap, json['type']),
       data: json['data'] == null
           ? null
@@ -43,7 +42,6 @@ _$_EndpointRequest _$$_EndpointRequestFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$_EndpointRequestToJson(_$_EndpointRequest instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'type': _$EndpointRequestTypeEnumMap[instance.type],
       'data': instance.data?.toJson(),
     };

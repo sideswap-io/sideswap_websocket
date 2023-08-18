@@ -21,6 +21,7 @@ EndpointSessionRequest _$EndpointSessionRequestFromJson(
 
 /// @nodoc
 mixin _$EndpointSessionRequest {
+  String? get id => throw _privateConstructorUsedError;
   EndpointSessionRequestType? get type => throw _privateConstructorUsedError;
   String? get data => throw _privateConstructorUsedError;
   String? get pk => throw _privateConstructorUsedError;
@@ -39,7 +40,8 @@ abstract class $EndpointSessionRequestCopyWith<$Res> {
       _$EndpointSessionRequestCopyWithImpl<$Res, EndpointSessionRequest>;
   @useResult
   $Res call(
-      {EndpointSessionRequestType? type,
+      {String? id,
+      EndpointSessionRequestType? type,
       String? data,
       String? pk,
       String? clientId});
@@ -59,12 +61,17 @@ class _$EndpointSessionRequestCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? type = freezed,
     Object? data = freezed,
     Object? pk = freezed,
     Object? clientId = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -94,7 +101,8 @@ abstract class _$$_EndpointSessionRequestCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {EndpointSessionRequestType? type,
+      {String? id,
+      EndpointSessionRequestType? type,
       String? data,
       String? pk,
       String? clientId});
@@ -112,12 +120,17 @@ class __$$_EndpointSessionRequestCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? type = freezed,
     Object? data = freezed,
     Object? pk = freezed,
     Object? clientId = freezed,
   }) {
     return _then(_$_EndpointSessionRequest(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -142,11 +155,13 @@ class __$$_EndpointSessionRequestCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_EndpointSessionRequest implements _EndpointSessionRequest {
   const _$_EndpointSessionRequest(
-      {this.type, this.data, this.pk, this.clientId});
+      {this.id, this.type, this.data, this.pk, this.clientId});
 
   factory _$_EndpointSessionRequest.fromJson(Map<String, dynamic> json) =>
       _$$_EndpointSessionRequestFromJson(json);
 
+  @override
+  final String? id;
   @override
   final EndpointSessionRequestType? type;
   @override
@@ -158,7 +173,7 @@ class _$_EndpointSessionRequest implements _EndpointSessionRequest {
 
   @override
   String toString() {
-    return 'EndpointSessionRequest(type: $type, data: $data, pk: $pk, clientId: $clientId)';
+    return 'EndpointSessionRequest(id: $id, type: $type, data: $data, pk: $pk, clientId: $clientId)';
   }
 
   @override
@@ -166,6 +181,7 @@ class _$_EndpointSessionRequest implements _EndpointSessionRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_EndpointSessionRequest &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.data, data) || other.data == data) &&
             (identical(other.pk, pk) || other.pk == pk) &&
@@ -175,7 +191,7 @@ class _$_EndpointSessionRequest implements _EndpointSessionRequest {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, data, pk, clientId);
+  int get hashCode => Object.hash(runtimeType, id, type, data, pk, clientId);
 
   @JsonKey(ignore: true)
   @override
@@ -194,7 +210,8 @@ class _$_EndpointSessionRequest implements _EndpointSessionRequest {
 
 abstract class _EndpointSessionRequest implements EndpointSessionRequest {
   const factory _EndpointSessionRequest(
-      {final EndpointSessionRequestType? type,
+      {final String? id,
+      final EndpointSessionRequestType? type,
       final String? data,
       final String? pk,
       final String? clientId}) = _$_EndpointSessionRequest;
@@ -202,6 +219,8 @@ abstract class _EndpointSessionRequest implements EndpointSessionRequest {
   factory _EndpointSessionRequest.fromJson(Map<String, dynamic> json) =
       _$_EndpointSessionRequest.fromJson;
 
+  @override
+  String? get id;
   @override
   EndpointSessionRequestType? get type;
   @override
