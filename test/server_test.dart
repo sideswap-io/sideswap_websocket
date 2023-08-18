@@ -201,7 +201,7 @@ void main() {
 
     // Re-render. TodoListProvider should have finished fetching the todos by now
     await tester.pump();
-    await Future.delayed(const Duration(seconds: 2));
+    await Future<void>.delayed(const Duration(seconds: 2));
 
     // Rendered one TodoItem with the data returned by FakeRepository
     // expect(tester.widgetList(find.byType(TodoItem)), [

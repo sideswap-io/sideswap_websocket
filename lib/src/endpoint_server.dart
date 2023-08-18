@@ -80,7 +80,7 @@ class EndpointServer {
       (event) {
         _onEvent(event, channelId);
       },
-      onError: (e) {
+      onError: (dynamic e) {
         logger.d('Error: $e');
       },
       onDone: () {
