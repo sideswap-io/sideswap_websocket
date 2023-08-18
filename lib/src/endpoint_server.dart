@@ -6,6 +6,9 @@ import 'package:basic_utils/basic_utils.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_web_socket/shelf_web_socket.dart';
+import 'package:uuid/uuid.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
+
 import 'package:sideswap_websocket/models/endpoint_exceptions.dart';
 import 'package:sideswap_websocket/models/endpoint_reply.dart';
 import 'package:sideswap_websocket/models/endpoint_request.dart';
@@ -13,8 +16,6 @@ import 'package:sideswap_websocket/models/endpoint_session_request.dart';
 import 'package:sideswap_websocket/src/crypto_helper.dart';
 import 'package:sideswap_websocket/src/default_settings.dart';
 import 'package:sideswap_websocket/src/endpoint_logger.dart';
-import 'package:uuid/uuid.dart';
-import 'package:web_socket_channel/web_socket_channel.dart';
 
 typedef OnRequest = void Function(
   EndpointRequest request,
@@ -23,21 +24,21 @@ typedef OnRequest = void Function(
 );
 
 final class EndpointServerSocket {
+  EndpointServerSocket(this.channel);
+
   final WebSocketChannel channel;
   String? clientId;
   RSAPublicKey? publicKey;
-
-  EndpointServerSocket(this.channel);
 }
 
 class EndpointServer {
-  HttpServer? server;
-  final OnRequest? onRequest;
-
   EndpointServer({
     this.server,
     this.onRequest,
   });
+
+  HttpServer? server;
+  final OnRequest? onRequest;
 
   final _sockets = <String, EndpointServerSocket>{};
   final _crypto = CryptoHelper();
@@ -61,10 +62,10 @@ class EndpointServer {
   }
 
   Future<void> stop({bool force = false}) async {
-    for (var channelId in _sockets.keys) {
+    for (final channelId in _sockets.keys) {
       await _closeChannel(channelId: channelId);
     }
-    server?.close(force: force);
+    await server?.close(force: force);
     server = null;
 
     logger.d('Local api endpoint turned off');
@@ -225,9 +226,9 @@ class EndpointServer {
 
   void sendError({
     required String message,
-    EndpointReplyErrorType type = EndpointReplyErrorType.handler,
     required String channelId,
     required String id,
+    EndpointReplyErrorType type = EndpointReplyErrorType.handler,
   }) {
     final reply = EndpointReplyModel(
       reply: EndpointReply(
@@ -243,9 +244,9 @@ class EndpointServer {
   }
 
   void sendSuccess({
-    EndpointReplySuccessType type = EndpointReplySuccessType.handler,
     required String channelId,
     required String id,
+    EndpointReplySuccessType type = EndpointReplySuccessType.handler,
   }) {
     final reply = EndpointReplyModel(
       reply: EndpointReply(
@@ -305,15 +306,16 @@ class EndpointServer {
 
   EndpointServer copyWith({
     HttpServer? server,
-  }) {
-    return EndpointServer(
-      server: server ?? this.server,
-    );
-  }
+  }) =>
+      EndpointServer(
+        server: server ?? this.server,
+      );
 
   @override
   bool operator ==(Object other) {
-    if (identical(this, other)) return true;
+    if (identical(this, other)) {
+      return true;
+    }
 
     return other is EndpointServer && other.server == server;
   }

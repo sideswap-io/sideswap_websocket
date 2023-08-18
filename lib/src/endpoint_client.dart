@@ -2,18 +2,26 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:fpdart/fpdart.dart';
+import 'package:websocket_universal/websocket_universal.dart';
+
 import 'package:sideswap_websocket/models/endpoint_exceptions.dart';
 import 'package:sideswap_websocket/models/endpoint_reply.dart';
 import 'package:sideswap_websocket/models/endpoint_request.dart';
 import 'package:sideswap_websocket/src/default_settings.dart';
 import 'package:sideswap_websocket/src/endpoint_logger.dart';
-import 'package:websocket_universal/websocket_universal.dart';
 
 typedef OnDataCallback = Future<void> Function(EndpointReplyModel replyModel);
 typedef OnDisconnected = Future<void> Function();
 typedef OnConnected = Future<void> Function();
 
 class EndpointClient {
+  EndpointClient({
+    required OnDataCallback this.onData,
+    Future<void> Function()? onConnected,
+    Future<void> Function()? onDisconnected,
+  })  : _onDisconnected = onDisconnected,
+        _onConnected = onConnected;
+
   IWebSocketHandler<String, String>? _channel;
   OnDataCallback? onData;
   final OnConnected? _onConnected;
@@ -22,13 +30,6 @@ class EndpointClient {
   bool _isConnected = false;
 
   bool get isConnected => _isConnected;
-
-  EndpointClient({
-    required OnDataCallback this.onData,
-    Future<void> Function()? onConnected,
-    Future<void> Function()? onDisconnected,
-  })  : _onDisconnected = onDisconnected,
-        _onConnected = onConnected;
 
   StreamSubscription<String>? _incomingMessageSubscription;
   StreamSubscription<ISocketLogEvent>? _logEventSubscription;
@@ -39,7 +40,7 @@ class EndpointClient {
       return;
     }
 
-    _cleanup();
+    await _cleanup();
 
     const serverUrl =
         'ws://${EndpointDefaultSettings.host}:${EndpointDefaultSettings.port}';
@@ -52,10 +53,6 @@ class EndpointClient {
 
       // see ping/pong messages in [logEventStream] stream
       skipPingMessages: false,
-
-      // Set this attribute to `true` if do not need any ping/pong
-      // messages and ping measurement. Default is `false`
-      pingRestrictionForce: false,
     );
 
     final IMessageProcessor<String, String> textSocketProcessor =
@@ -69,26 +66,25 @@ class EndpointClient {
 
     // Listening to server responses
     _incomingMessageSubscription =
-        _channel?.incomingMessagesStream.listen((String inMsg) async {
+        _channel?.incomingMessagesStream.listen((inMsg) async {
       // logger.d('EndpointClient: "$inMsg" [ping: ${_channel?.pingDelayMs}]');
 
       try {
         await _onData(inMsg);
-      } catch (e) {
+      } on Exception catch (e) {
         logger.e(e);
       }
     });
 
     // Listening to debug events inside webSocket
-    _logEventSubscription =
-        _channel?.logEventStream.listen((ISocketLogEvent debugEvent) {
+    _logEventSubscription = _channel?.logEventStream.listen((debugEvent) {
       // logger.d(
       //     'EndpointClient: ${debugEvent.socketLogEventType} [ping=${debugEvent.pingMs} ms]. Debug message=${debugEvent.message}');
     });
 
     // Listening to webSocket status changes
     _socketStateSubscription =
-        _channel?.socketStateStream.listen((ISocketState stateEvent) async {
+        _channel?.socketStateStream.listen((stateEvent) async {
       logger.d('EndpointClient: status changed to ${stateEvent.status}');
 
       (switch (stateEvent.status) {
@@ -111,11 +107,11 @@ class EndpointClient {
   }
 
   Future<void> _cleanup() async {
-    _incomingMessageSubscription?.cancel();
+    await _incomingMessageSubscription?.cancel();
     _incomingMessageSubscription = null;
-    _logEventSubscription?.cancel();
+    await _logEventSubscription?.cancel();
     _logEventSubscription = null;
-    _socketStateSubscription?.cancel();
+    await _socketStateSubscription?.cancel();
     _socketStateSubscription = null;
     _isConnected = false;
     await _onDisconnected?.call();

@@ -86,8 +86,8 @@ class EndpointRequestData with _$EndpointRequestData {
       EndpointRequestDataNewAddress;
   const factory EndpointRequestData.createTransaction({
     String? address,
-    @JsonKey(name: "asset_id") String? assetId,
-    @JsonKey(name: "amount") String? amount,
+    @JsonKey(name: 'asset_id') String? assetId,
+    @JsonKey(name: 'amount') String? amount,
   }) = EndpointRequestDataCreateTransaction;
 
   factory EndpointRequestData.fromJson(Map<String, dynamic> json) =>

@@ -15,16 +15,16 @@ class EndpointServerAlreadyRunning implements Exception {}
 class EndpointInvalidPublicKey implements Exception {}
 
 class EndpointDisconnected implements Exception {
-  final int? closeCode;
-  final String? closeReason;
-
   EndpointDisconnected({
     this.closeCode,
     this.closeReason,
   });
+
+  final int? closeCode;
+  final String? closeReason;
 }
 
-void isDataTypeExist(dynamic json) {
+void isDataTypeExist(Map<String, dynamic> json) {
   final data = json['data'];
 
   (switch (data) {
@@ -37,7 +37,7 @@ void isDataTypeExist(dynamic json) {
   });
 }
 
-void isTypeExist(dynamic json) {
+void isTypeExist(Map<String, dynamic> json) {
   final type = json['type'];
 
   (switch (type) {

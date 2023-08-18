@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 
@@ -5,6 +6,9 @@ import 'package:basic_utils/basic_utils.dart';
 import 'package:pointycastle/export.dart';
 
 final class CryptoHelper {
+  CryptoHelper() {
+    unawaited(generateNewKeyPair());
+  }
   // static const String _crv = 'P-256';
   // static const String _keyType = 'EC';
   // static const String _algorithm = 'ES256';
@@ -14,36 +18,27 @@ final class CryptoHelper {
   RSAPrivateKey? privateKey;
   RSAPublicKey? publicKey;
 
-  CryptoHelper() {
-    generateNewKeyPair();
-  }
-
-  void generateNewKeyPair({String curve = 'prime256v1'}) async {
+  Future<void> generateNewKeyPair({String curve = 'prime256v1'}) async {
     // generate key pairs
     final rsa = CryptoUtils.generateRSAKeyPair();
     privateKey = rsa.privateKey as RSAPrivateKey;
     publicKey = rsa.publicKey as RSAPublicKey;
   }
 
-  RSAPublicKey rsaPublicKeyFromDERBytes(Uint8List bytes) {
-    return CryptoUtils.rsaPublicKeyFromDERBytes(bytes);
-  }
+  RSAPublicKey rsaPublicKeyFromDERBytes(Uint8List bytes) =>
+      CryptoUtils.rsaPublicKeyFromDERBytes(bytes);
 
-  RSAPublicKey rsaPublicKeyFromPemPkcs1(String publicKeyPem) {
-    return CryptoUtils.rsaPublicKeyFromPemPkcs1(publicKeyPem);
-  }
+  RSAPublicKey rsaPublicKeyFromPemPkcs1(String publicKeyPem) =>
+      CryptoUtils.rsaPublicKeyFromPemPkcs1(publicKeyPem);
 
-  RSAPrivateKey rsaPrivateKeyFromDERBytes(Uint8List bytes) {
-    return CryptoUtils.rsaPrivateKeyFromDERBytes(bytes);
-  }
+  RSAPrivateKey rsaPrivateKeyFromDERBytes(Uint8List bytes) =>
+      CryptoUtils.rsaPrivateKeyFromDERBytes(bytes);
 
-  String encodeRSAPublicKeyToPem() {
-    return CryptoUtils.encodeRSAPublicKeyToPem(publicKey!);
-  }
+  String encodeRSAPublicKeyToPem() =>
+      CryptoUtils.encodeRSAPublicKeyToPem(publicKey!);
 
-  String encodeRSAPublicKeyToPemPkcs1() {
-    return CryptoUtils.encodeRSAPublicKeyToPemPkcs1(publicKey!);
-  }
+  String encodeRSAPublicKeyToPemPkcs1() =>
+      CryptoUtils.encodeRSAPublicKeyToPemPkcs1(publicKey!);
 
   String publicKeyToBase64() {
     final publicKeyPem = encodeRSAPublicKeyToPem();
