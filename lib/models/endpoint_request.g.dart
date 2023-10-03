@@ -6,15 +6,15 @@ part of 'endpoint_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_EndpointRequestModel _$$_EndpointRequestModelFromJson(
+_$EndpointRequestModelImpl _$$EndpointRequestModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_EndpointRequestModel(
+    _$EndpointRequestModelImpl(
       request: _$JsonConverterFromJson<Map<String, dynamic>, EndpointRequest>(
           json['request'], const EndpointRequestConverter().fromJson),
     );
 
-Map<String, dynamic> _$$_EndpointRequestModelToJson(
-        _$_EndpointRequestModel instance) =>
+Map<String, dynamic> _$$EndpointRequestModelImplToJson(
+        _$EndpointRequestModelImpl instance) =>
     <String, dynamic>{
       'request': _$JsonConverterToJson<Map<String, dynamic>, EndpointRequest>(
           instance.request, const EndpointRequestConverter().toJson),
@@ -32,15 +32,17 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$_EndpointRequest _$$_EndpointRequestFromJson(Map<String, dynamic> json) =>
-    _$_EndpointRequest(
+_$EndpointRequestImpl _$$EndpointRequestImplFromJson(
+        Map<String, dynamic> json) =>
+    _$EndpointRequestImpl(
       type: $enumDecodeNullable(_$EndpointRequestTypeEnumMap, json['type']),
       data: json['data'] == null
           ? null
           : EndpointRequestData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_EndpointRequestToJson(_$_EndpointRequest instance) =>
+Map<String, dynamic> _$$EndpointRequestImplToJson(
+        _$EndpointRequestImpl instance) =>
     <String, dynamic>{
       'type': _$EndpointRequestTypeEnumMap[instance.type],
       'data': instance.data?.toJson(),
@@ -52,42 +54,42 @@ const _$EndpointRequestTypeEnumMap = {
   EndpointRequestType.createTransaction: 'create_transaction',
 };
 
-_$EndpointRequestDataPing _$$EndpointRequestDataPingFromJson(
+_$EndpointRequestDataPingImpl _$$EndpointRequestDataPingImplFromJson(
         Map<String, dynamic> json) =>
-    _$EndpointRequestDataPing(
+    _$EndpointRequestDataPingImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$EndpointRequestDataPingToJson(
-        _$EndpointRequestDataPing instance) =>
+Map<String, dynamic> _$$EndpointRequestDataPingImplToJson(
+        _$EndpointRequestDataPingImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$EndpointRequestDataNewAddress _$$EndpointRequestDataNewAddressFromJson(
-        Map<String, dynamic> json) =>
-    _$EndpointRequestDataNewAddress(
-      $type: json['runtimeType'] as String?,
-    );
+_$EndpointRequestDataNewAddressImpl
+    _$$EndpointRequestDataNewAddressImplFromJson(Map<String, dynamic> json) =>
+        _$EndpointRequestDataNewAddressImpl(
+          $type: json['runtimeType'] as String?,
+        );
 
-Map<String, dynamic> _$$EndpointRequestDataNewAddressToJson(
-        _$EndpointRequestDataNewAddress instance) =>
+Map<String, dynamic> _$$EndpointRequestDataNewAddressImplToJson(
+        _$EndpointRequestDataNewAddressImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$EndpointRequestDataCreateTransaction
-    _$$EndpointRequestDataCreateTransactionFromJson(
+_$EndpointRequestDataCreateTransactionImpl
+    _$$EndpointRequestDataCreateTransactionImplFromJson(
             Map<String, dynamic> json) =>
-        _$EndpointRequestDataCreateTransaction(
+        _$EndpointRequestDataCreateTransactionImpl(
           address: json['address'] as String?,
           assetId: json['asset_id'] as String?,
           amount: json['amount'] as String?,
           $type: json['runtimeType'] as String?,
         );
 
-Map<String, dynamic> _$$EndpointRequestDataCreateTransactionToJson(
-        _$EndpointRequestDataCreateTransaction instance) =>
+Map<String, dynamic> _$$EndpointRequestDataCreateTransactionImplToJson(
+        _$EndpointRequestDataCreateTransactionImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
       'asset_id': instance.assetId,

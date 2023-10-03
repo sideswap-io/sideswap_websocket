@@ -88,27 +88,28 @@ class _$EndpointRequestStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$EndpointRequestStateEmptyCopyWith<$Res> {
-  factory _$$EndpointRequestStateEmptyCopyWith(
-          _$EndpointRequestStateEmpty value,
-          $Res Function(_$EndpointRequestStateEmpty) then) =
-      __$$EndpointRequestStateEmptyCopyWithImpl<$Res>;
+abstract class _$$EndpointRequestStateEmptyImplCopyWith<$Res> {
+  factory _$$EndpointRequestStateEmptyImplCopyWith(
+          _$EndpointRequestStateEmptyImpl value,
+          $Res Function(_$EndpointRequestStateEmptyImpl) then) =
+      __$$EndpointRequestStateEmptyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EndpointRequestStateEmptyCopyWithImpl<$Res>
+class __$$EndpointRequestStateEmptyImplCopyWithImpl<$Res>
     extends _$EndpointRequestStateCopyWithImpl<$Res,
-        _$EndpointRequestStateEmpty>
-    implements _$$EndpointRequestStateEmptyCopyWith<$Res> {
-  __$$EndpointRequestStateEmptyCopyWithImpl(_$EndpointRequestStateEmpty _value,
-      $Res Function(_$EndpointRequestStateEmpty) _then)
+        _$EndpointRequestStateEmptyImpl>
+    implements _$$EndpointRequestStateEmptyImplCopyWith<$Res> {
+  __$$EndpointRequestStateEmptyImplCopyWithImpl(
+      _$EndpointRequestStateEmptyImpl _value,
+      $Res Function(_$EndpointRequestStateEmptyImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EndpointRequestStateEmpty implements EndpointRequestStateEmpty {
-  const _$EndpointRequestStateEmpty();
+class _$EndpointRequestStateEmptyImpl implements EndpointRequestStateEmpty {
+  const _$EndpointRequestStateEmptyImpl();
 
   @override
   String toString() {
@@ -119,7 +120,7 @@ class _$EndpointRequestStateEmpty implements EndpointRequestStateEmpty {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointRequestStateEmpty);
+            other is _$EndpointRequestStateEmptyImpl);
   }
 
   @override
@@ -201,32 +202,33 @@ class _$EndpointRequestStateEmpty implements EndpointRequestStateEmpty {
 }
 
 abstract class EndpointRequestStateEmpty implements EndpointRequestState {
-  const factory EndpointRequestStateEmpty() = _$EndpointRequestStateEmpty;
+  const factory EndpointRequestStateEmpty() = _$EndpointRequestStateEmptyImpl;
 }
 
 /// @nodoc
-abstract class _$$EndpointRequestStateRequestedCopyWith<$Res> {
-  factory _$$EndpointRequestStateRequestedCopyWith(
-          _$EndpointRequestStateRequested value,
-          $Res Function(_$EndpointRequestStateRequested) then) =
-      __$$EndpointRequestStateRequestedCopyWithImpl<$Res>;
+abstract class _$$EndpointRequestStateRequestedImplCopyWith<$Res> {
+  factory _$$EndpointRequestStateRequestedImplCopyWith(
+          _$EndpointRequestStateRequestedImpl value,
+          $Res Function(_$EndpointRequestStateRequestedImpl) then) =
+      __$$EndpointRequestStateRequestedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EndpointRequestStateRequestedCopyWithImpl<$Res>
+class __$$EndpointRequestStateRequestedImplCopyWithImpl<$Res>
     extends _$EndpointRequestStateCopyWithImpl<$Res,
-        _$EndpointRequestStateRequested>
-    implements _$$EndpointRequestStateRequestedCopyWith<$Res> {
-  __$$EndpointRequestStateRequestedCopyWithImpl(
-      _$EndpointRequestStateRequested _value,
-      $Res Function(_$EndpointRequestStateRequested) _then)
+        _$EndpointRequestStateRequestedImpl>
+    implements _$$EndpointRequestStateRequestedImplCopyWith<$Res> {
+  __$$EndpointRequestStateRequestedImplCopyWithImpl(
+      _$EndpointRequestStateRequestedImpl _value,
+      $Res Function(_$EndpointRequestStateRequestedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EndpointRequestStateRequested implements EndpointRequestStateRequested {
-  const _$EndpointRequestStateRequested();
+class _$EndpointRequestStateRequestedImpl
+    implements EndpointRequestStateRequested {
+  const _$EndpointRequestStateRequestedImpl();
 
   @override
   String toString() {
@@ -237,7 +239,7 @@ class _$EndpointRequestStateRequested implements EndpointRequestStateRequested {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointRequestStateRequested);
+            other is _$EndpointRequestStateRequestedImpl);
   }
 
   @override
@@ -320,32 +322,33 @@ class _$EndpointRequestStateRequested implements EndpointRequestStateRequested {
 
 abstract class EndpointRequestStateRequested implements EndpointRequestState {
   const factory EndpointRequestStateRequested() =
-      _$EndpointRequestStateRequested;
+      _$EndpointRequestStateRequestedImpl;
 }
 
 /// @nodoc
-abstract class _$$EndpointRequestStateAcceptedCopyWith<$Res> {
-  factory _$$EndpointRequestStateAcceptedCopyWith(
-          _$EndpointRequestStateAccepted value,
-          $Res Function(_$EndpointRequestStateAccepted) then) =
-      __$$EndpointRequestStateAcceptedCopyWithImpl<$Res>;
+abstract class _$$EndpointRequestStateAcceptedImplCopyWith<$Res> {
+  factory _$$EndpointRequestStateAcceptedImplCopyWith(
+          _$EndpointRequestStateAcceptedImpl value,
+          $Res Function(_$EndpointRequestStateAcceptedImpl) then) =
+      __$$EndpointRequestStateAcceptedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EndpointRequestStateAcceptedCopyWithImpl<$Res>
+class __$$EndpointRequestStateAcceptedImplCopyWithImpl<$Res>
     extends _$EndpointRequestStateCopyWithImpl<$Res,
-        _$EndpointRequestStateAccepted>
-    implements _$$EndpointRequestStateAcceptedCopyWith<$Res> {
-  __$$EndpointRequestStateAcceptedCopyWithImpl(
-      _$EndpointRequestStateAccepted _value,
-      $Res Function(_$EndpointRequestStateAccepted) _then)
+        _$EndpointRequestStateAcceptedImpl>
+    implements _$$EndpointRequestStateAcceptedImplCopyWith<$Res> {
+  __$$EndpointRequestStateAcceptedImplCopyWithImpl(
+      _$EndpointRequestStateAcceptedImpl _value,
+      $Res Function(_$EndpointRequestStateAcceptedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EndpointRequestStateAccepted implements EndpointRequestStateAccepted {
-  const _$EndpointRequestStateAccepted();
+class _$EndpointRequestStateAcceptedImpl
+    implements EndpointRequestStateAccepted {
+  const _$EndpointRequestStateAcceptedImpl();
 
   @override
   String toString() {
@@ -356,7 +359,7 @@ class _$EndpointRequestStateAccepted implements EndpointRequestStateAccepted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointRequestStateAccepted);
+            other is _$EndpointRequestStateAcceptedImpl);
   }
 
   @override
@@ -438,32 +441,33 @@ class _$EndpointRequestStateAccepted implements EndpointRequestStateAccepted {
 }
 
 abstract class EndpointRequestStateAccepted implements EndpointRequestState {
-  const factory EndpointRequestStateAccepted() = _$EndpointRequestStateAccepted;
+  const factory EndpointRequestStateAccepted() =
+      _$EndpointRequestStateAcceptedImpl;
 }
 
 /// @nodoc
-abstract class _$$EndpointRequestStateDeniedCopyWith<$Res> {
-  factory _$$EndpointRequestStateDeniedCopyWith(
-          _$EndpointRequestStateDenied value,
-          $Res Function(_$EndpointRequestStateDenied) then) =
-      __$$EndpointRequestStateDeniedCopyWithImpl<$Res>;
+abstract class _$$EndpointRequestStateDeniedImplCopyWith<$Res> {
+  factory _$$EndpointRequestStateDeniedImplCopyWith(
+          _$EndpointRequestStateDeniedImpl value,
+          $Res Function(_$EndpointRequestStateDeniedImpl) then) =
+      __$$EndpointRequestStateDeniedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EndpointRequestStateDeniedCopyWithImpl<$Res>
+class __$$EndpointRequestStateDeniedImplCopyWithImpl<$Res>
     extends _$EndpointRequestStateCopyWithImpl<$Res,
-        _$EndpointRequestStateDenied>
-    implements _$$EndpointRequestStateDeniedCopyWith<$Res> {
-  __$$EndpointRequestStateDeniedCopyWithImpl(
-      _$EndpointRequestStateDenied _value,
-      $Res Function(_$EndpointRequestStateDenied) _then)
+        _$EndpointRequestStateDeniedImpl>
+    implements _$$EndpointRequestStateDeniedImplCopyWith<$Res> {
+  __$$EndpointRequestStateDeniedImplCopyWithImpl(
+      _$EndpointRequestStateDeniedImpl _value,
+      $Res Function(_$EndpointRequestStateDeniedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$EndpointRequestStateDenied implements EndpointRequestStateDenied {
-  const _$EndpointRequestStateDenied();
+class _$EndpointRequestStateDeniedImpl implements EndpointRequestStateDenied {
+  const _$EndpointRequestStateDeniedImpl();
 
   @override
   String toString() {
@@ -474,7 +478,7 @@ class _$EndpointRequestStateDenied implements EndpointRequestStateDenied {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointRequestStateDenied);
+            other is _$EndpointRequestStateDeniedImpl);
   }
 
   @override
@@ -556,5 +560,5 @@ class _$EndpointRequestStateDenied implements EndpointRequestStateDenied {
 }
 
 abstract class EndpointRequestStateDenied implements EndpointRequestState {
-  const factory EndpointRequestStateDenied() = _$EndpointRequestStateDenied;
+  const factory EndpointRequestStateDenied() = _$EndpointRequestStateDeniedImpl;
 }

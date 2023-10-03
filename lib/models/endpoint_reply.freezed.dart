@@ -77,11 +77,11 @@ class _$EndpointReplyModelCopyWithImpl<$Res, $Val extends EndpointReplyModel>
 }
 
 /// @nodoc
-abstract class _$$_EndpointReplyModelCopyWith<$Res>
+abstract class _$$EndpointReplyModelImplCopyWith<$Res>
     implements $EndpointReplyModelCopyWith<$Res> {
-  factory _$$_EndpointReplyModelCopyWith(_$_EndpointReplyModel value,
-          $Res Function(_$_EndpointReplyModel) then) =
-      __$$_EndpointReplyModelCopyWithImpl<$Res>;
+  factory _$$EndpointReplyModelImplCopyWith(_$EndpointReplyModelImpl value,
+          $Res Function(_$EndpointReplyModelImpl) then) =
+      __$$EndpointReplyModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@EndpointReplyConverter() EndpointReply? reply});
@@ -91,11 +91,11 @@ abstract class _$$_EndpointReplyModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EndpointReplyModelCopyWithImpl<$Res>
-    extends _$EndpointReplyModelCopyWithImpl<$Res, _$_EndpointReplyModel>
-    implements _$$_EndpointReplyModelCopyWith<$Res> {
-  __$$_EndpointReplyModelCopyWithImpl(
-      _$_EndpointReplyModel _value, $Res Function(_$_EndpointReplyModel) _then)
+class __$$EndpointReplyModelImplCopyWithImpl<$Res>
+    extends _$EndpointReplyModelCopyWithImpl<$Res, _$EndpointReplyModelImpl>
+    implements _$$EndpointReplyModelImplCopyWith<$Res> {
+  __$$EndpointReplyModelImplCopyWithImpl(_$EndpointReplyModelImpl _value,
+      $Res Function(_$EndpointReplyModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -103,7 +103,7 @@ class __$$_EndpointReplyModelCopyWithImpl<$Res>
   $Res call({
     Object? reply = freezed,
   }) {
-    return _then(_$_EndpointReplyModel(
+    return _then(_$EndpointReplyModelImpl(
       reply: freezed == reply
           ? _value.reply
           : reply // ignore: cast_nullable_to_non_nullable
@@ -114,11 +114,11 @@ class __$$_EndpointReplyModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EndpointReplyModel implements _EndpointReplyModel {
-  const _$_EndpointReplyModel({@EndpointReplyConverter() this.reply});
+class _$EndpointReplyModelImpl implements _EndpointReplyModel {
+  const _$EndpointReplyModelImpl({@EndpointReplyConverter() this.reply});
 
-  factory _$_EndpointReplyModel.fromJson(Map<String, dynamic> json) =>
-      _$$_EndpointReplyModelFromJson(json);
+  factory _$EndpointReplyModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointReplyModelImplFromJson(json);
 
   @override
   @EndpointReplyConverter()
@@ -133,7 +133,7 @@ class _$_EndpointReplyModel implements _EndpointReplyModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EndpointReplyModel &&
+            other is _$EndpointReplyModelImpl &&
             (identical(other.reply, reply) || other.reply == reply));
   }
 
@@ -144,13 +144,13 @@ class _$_EndpointReplyModel implements _EndpointReplyModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EndpointReplyModelCopyWith<_$_EndpointReplyModel> get copyWith =>
-      __$$_EndpointReplyModelCopyWithImpl<_$_EndpointReplyModel>(
+  _$$EndpointReplyModelImplCopyWith<_$EndpointReplyModelImpl> get copyWith =>
+      __$$EndpointReplyModelImplCopyWithImpl<_$EndpointReplyModelImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EndpointReplyModelToJson(
+    return _$$EndpointReplyModelImplToJson(
       this,
     );
   }
@@ -159,17 +159,17 @@ class _$_EndpointReplyModel implements _EndpointReplyModel {
 abstract class _EndpointReplyModel implements EndpointReplyModel {
   const factory _EndpointReplyModel(
           {@EndpointReplyConverter() final EndpointReply? reply}) =
-      _$_EndpointReplyModel;
+      _$EndpointReplyModelImpl;
 
   factory _EndpointReplyModel.fromJson(Map<String, dynamic> json) =
-      _$_EndpointReplyModel.fromJson;
+      _$EndpointReplyModelImpl.fromJson;
 
   @override
   @EndpointReplyConverter()
   EndpointReply? get reply;
   @override
   @JsonKey(ignore: true)
-  _$$_EndpointReplyModelCopyWith<_$_EndpointReplyModel> get copyWith =>
+  _$$EndpointReplyModelImplCopyWith<_$EndpointReplyModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -247,11 +247,11 @@ class _$EndpointReplyCopyWithImpl<$Res, $Val extends EndpointReply>
 }
 
 /// @nodoc
-abstract class _$$_EndpointReplyCopyWith<$Res>
+abstract class _$$EndpointReplyImplCopyWith<$Res>
     implements $EndpointReplyCopyWith<$Res> {
-  factory _$$_EndpointReplyCopyWith(
-          _$_EndpointReply value, $Res Function(_$_EndpointReply) then) =
-      __$$_EndpointReplyCopyWithImpl<$Res>;
+  factory _$$EndpointReplyImplCopyWith(
+          _$EndpointReplyImpl value, $Res Function(_$EndpointReplyImpl) then) =
+      __$$EndpointReplyImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? id, EndpointReplyType? type, EndpointReplyData? data});
@@ -261,11 +261,11 @@ abstract class _$$_EndpointReplyCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EndpointReplyCopyWithImpl<$Res>
-    extends _$EndpointReplyCopyWithImpl<$Res, _$_EndpointReply>
-    implements _$$_EndpointReplyCopyWith<$Res> {
-  __$$_EndpointReplyCopyWithImpl(
-      _$_EndpointReply _value, $Res Function(_$_EndpointReply) _then)
+class __$$EndpointReplyImplCopyWithImpl<$Res>
+    extends _$EndpointReplyCopyWithImpl<$Res, _$EndpointReplyImpl>
+    implements _$$EndpointReplyImplCopyWith<$Res> {
+  __$$EndpointReplyImplCopyWithImpl(
+      _$EndpointReplyImpl _value, $Res Function(_$EndpointReplyImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -275,7 +275,7 @@ class __$$_EndpointReplyCopyWithImpl<$Res>
     Object? type = freezed,
     Object? data = freezed,
   }) {
-    return _then(_$_EndpointReply(
+    return _then(_$EndpointReplyImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -294,11 +294,11 @@ class __$$_EndpointReplyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EndpointReply implements _EndpointReply {
-  const _$_EndpointReply({required this.id, this.type, this.data});
+class _$EndpointReplyImpl implements _EndpointReply {
+  const _$EndpointReplyImpl({required this.id, this.type, this.data});
 
-  factory _$_EndpointReply.fromJson(Map<String, dynamic> json) =>
-      _$$_EndpointReplyFromJson(json);
+  factory _$EndpointReplyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointReplyImplFromJson(json);
 
   @override
   final String? id;
@@ -316,7 +316,7 @@ class _$_EndpointReply implements _EndpointReply {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EndpointReply &&
+            other is _$EndpointReplyImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.data, data) || other.data == data));
@@ -329,12 +329,12 @@ class _$_EndpointReply implements _EndpointReply {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EndpointReplyCopyWith<_$_EndpointReply> get copyWith =>
-      __$$_EndpointReplyCopyWithImpl<_$_EndpointReply>(this, _$identity);
+  _$$EndpointReplyImplCopyWith<_$EndpointReplyImpl> get copyWith =>
+      __$$EndpointReplyImplCopyWithImpl<_$EndpointReplyImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EndpointReplyToJson(
+    return _$$EndpointReplyImplToJson(
       this,
     );
   }
@@ -344,10 +344,10 @@ abstract class _EndpointReply implements EndpointReply {
   const factory _EndpointReply(
       {required final String? id,
       final EndpointReplyType? type,
-      final EndpointReplyData? data}) = _$_EndpointReply;
+      final EndpointReplyData? data}) = _$EndpointReplyImpl;
 
   factory _EndpointReply.fromJson(Map<String, dynamic> json) =
-      _$_EndpointReply.fromJson;
+      _$EndpointReplyImpl.fromJson;
 
   @override
   String? get id;
@@ -357,7 +357,7 @@ abstract class _EndpointReply implements EndpointReply {
   EndpointReplyData? get data;
   @override
   @JsonKey(ignore: true)
-  _$$_EndpointReplyCopyWith<_$_EndpointReply> get copyWith =>
+  _$$EndpointReplyImplCopyWith<_$EndpointReplyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -461,29 +461,30 @@ class _$EndpointReplyDataCopyWithImpl<$Res, $Val extends EndpointReplyData>
 }
 
 /// @nodoc
-abstract class _$$EndpointReplyDataPongCopyWith<$Res> {
-  factory _$$EndpointReplyDataPongCopyWith(_$EndpointReplyDataPong value,
-          $Res Function(_$EndpointReplyDataPong) then) =
-      __$$EndpointReplyDataPongCopyWithImpl<$Res>;
+abstract class _$$EndpointReplyDataPongImplCopyWith<$Res> {
+  factory _$$EndpointReplyDataPongImplCopyWith(
+          _$EndpointReplyDataPongImpl value,
+          $Res Function(_$EndpointReplyDataPongImpl) then) =
+      __$$EndpointReplyDataPongImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EndpointReplyDataPongCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataPong>
-    implements _$$EndpointReplyDataPongCopyWith<$Res> {
-  __$$EndpointReplyDataPongCopyWithImpl(_$EndpointReplyDataPong _value,
-      $Res Function(_$EndpointReplyDataPong) _then)
+class __$$EndpointReplyDataPongImplCopyWithImpl<$Res>
+    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataPongImpl>
+    implements _$$EndpointReplyDataPongImplCopyWith<$Res> {
+  __$$EndpointReplyDataPongImplCopyWithImpl(_$EndpointReplyDataPongImpl _value,
+      $Res Function(_$EndpointReplyDataPongImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointReplyDataPong implements EndpointReplyDataPong {
-  const _$EndpointReplyDataPong({final String? $type})
+class _$EndpointReplyDataPongImpl implements EndpointReplyDataPong {
+  const _$EndpointReplyDataPongImpl({final String? $type})
       : $type = $type ?? 'pong';
 
-  factory _$EndpointReplyDataPong.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyDataPongFromJson(json);
+  factory _$EndpointReplyDataPongImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointReplyDataPongImplFromJson(json);
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -496,7 +497,8 @@ class _$EndpointReplyDataPong implements EndpointReplyDataPong {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$EndpointReplyDataPong);
+        (other.runtimeType == runtimeType &&
+            other is _$EndpointReplyDataPongImpl);
   }
 
   @JsonKey(ignore: true)
@@ -586,36 +588,37 @@ class _$EndpointReplyDataPong implements EndpointReplyDataPong {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataPongToJson(
+    return _$$EndpointReplyDataPongImplToJson(
       this,
     );
   }
 }
 
 abstract class EndpointReplyDataPong implements EndpointReplyData {
-  const factory EndpointReplyDataPong() = _$EndpointReplyDataPong;
+  const factory EndpointReplyDataPong() = _$EndpointReplyDataPongImpl;
 
   factory EndpointReplyDataPong.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataPong.fromJson;
+      _$EndpointReplyDataPongImpl.fromJson;
 }
 
 /// @nodoc
-abstract class _$$EndpointReplyDataNewAddressCopyWith<$Res> {
-  factory _$$EndpointReplyDataNewAddressCopyWith(
-          _$EndpointReplyDataNewAddress value,
-          $Res Function(_$EndpointReplyDataNewAddress) then) =
-      __$$EndpointReplyDataNewAddressCopyWithImpl<$Res>;
+abstract class _$$EndpointReplyDataNewAddressImplCopyWith<$Res> {
+  factory _$$EndpointReplyDataNewAddressImplCopyWith(
+          _$EndpointReplyDataNewAddressImpl value,
+          $Res Function(_$EndpointReplyDataNewAddressImpl) then) =
+      __$$EndpointReplyDataNewAddressImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String address});
 }
 
 /// @nodoc
-class __$$EndpointReplyDataNewAddressCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataNewAddress>
-    implements _$$EndpointReplyDataNewAddressCopyWith<$Res> {
-  __$$EndpointReplyDataNewAddressCopyWithImpl(
-      _$EndpointReplyDataNewAddress _value,
-      $Res Function(_$EndpointReplyDataNewAddress) _then)
+class __$$EndpointReplyDataNewAddressImplCopyWithImpl<$Res>
+    extends _$EndpointReplyDataCopyWithImpl<$Res,
+        _$EndpointReplyDataNewAddressImpl>
+    implements _$$EndpointReplyDataNewAddressImplCopyWith<$Res> {
+  __$$EndpointReplyDataNewAddressImplCopyWithImpl(
+      _$EndpointReplyDataNewAddressImpl _value,
+      $Res Function(_$EndpointReplyDataNewAddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -623,7 +626,7 @@ class __$$EndpointReplyDataNewAddressCopyWithImpl<$Res>
   $Res call({
     Object? address = null,
   }) {
-    return _then(_$EndpointReplyDataNewAddress(
+    return _then(_$EndpointReplyDataNewAddressImpl(
       address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -634,13 +637,14 @@ class __$$EndpointReplyDataNewAddressCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
-  const _$EndpointReplyDataNewAddress(
+class _$EndpointReplyDataNewAddressImpl implements EndpointReplyDataNewAddress {
+  const _$EndpointReplyDataNewAddressImpl(
       {required this.address, final String? $type})
       : $type = $type ?? 'newAddress';
 
-  factory _$EndpointReplyDataNewAddress.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyDataNewAddressFromJson(json);
+  factory _$EndpointReplyDataNewAddressImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$EndpointReplyDataNewAddressImplFromJson(json);
 
   @override
   final String address;
@@ -657,7 +661,7 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyDataNewAddress &&
+            other is _$EndpointReplyDataNewAddressImpl &&
             (identical(other.address, address) || other.address == address));
   }
 
@@ -668,9 +672,9 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EndpointReplyDataNewAddressCopyWith<_$EndpointReplyDataNewAddress>
-      get copyWith => __$$EndpointReplyDataNewAddressCopyWithImpl<
-          _$EndpointReplyDataNewAddress>(this, _$identity);
+  _$$EndpointReplyDataNewAddressImplCopyWith<_$EndpointReplyDataNewAddressImpl>
+      get copyWith => __$$EndpointReplyDataNewAddressImplCopyWithImpl<
+          _$EndpointReplyDataNewAddressImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -755,7 +759,7 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataNewAddressToJson(
+    return _$$EndpointReplyDataNewAddressImplToJson(
       this,
     );
   }
@@ -763,32 +767,35 @@ class _$EndpointReplyDataNewAddress implements EndpointReplyDataNewAddress {
 
 abstract class EndpointReplyDataNewAddress implements EndpointReplyData {
   const factory EndpointReplyDataNewAddress({required final String address}) =
-      _$EndpointReplyDataNewAddress;
+      _$EndpointReplyDataNewAddressImpl;
 
   factory EndpointReplyDataNewAddress.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataNewAddress.fromJson;
+      _$EndpointReplyDataNewAddressImpl.fromJson;
 
   String get address;
   @JsonKey(ignore: true)
-  _$$EndpointReplyDataNewAddressCopyWith<_$EndpointReplyDataNewAddress>
+  _$$EndpointReplyDataNewAddressImplCopyWith<_$EndpointReplyDataNewAddressImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EndpointReplyDataSuccessCopyWith<$Res> {
-  factory _$$EndpointReplyDataSuccessCopyWith(_$EndpointReplyDataSuccess value,
-          $Res Function(_$EndpointReplyDataSuccess) then) =
-      __$$EndpointReplyDataSuccessCopyWithImpl<$Res>;
+abstract class _$$EndpointReplyDataSuccessImplCopyWith<$Res> {
+  factory _$$EndpointReplyDataSuccessImplCopyWith(
+          _$EndpointReplyDataSuccessImpl value,
+          $Res Function(_$EndpointReplyDataSuccessImpl) then) =
+      __$$EndpointReplyDataSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({EndpointReplySuccessType type});
 }
 
 /// @nodoc
-class __$$EndpointReplyDataSuccessCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataSuccess>
-    implements _$$EndpointReplyDataSuccessCopyWith<$Res> {
-  __$$EndpointReplyDataSuccessCopyWithImpl(_$EndpointReplyDataSuccess _value,
-      $Res Function(_$EndpointReplyDataSuccess) _then)
+class __$$EndpointReplyDataSuccessImplCopyWithImpl<$Res>
+    extends _$EndpointReplyDataCopyWithImpl<$Res,
+        _$EndpointReplyDataSuccessImpl>
+    implements _$$EndpointReplyDataSuccessImplCopyWith<$Res> {
+  __$$EndpointReplyDataSuccessImplCopyWithImpl(
+      _$EndpointReplyDataSuccessImpl _value,
+      $Res Function(_$EndpointReplyDataSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -796,7 +803,7 @@ class __$$EndpointReplyDataSuccessCopyWithImpl<$Res>
   $Res call({
     Object? type = null,
   }) {
-    return _then(_$EndpointReplyDataSuccess(
+    return _then(_$EndpointReplyDataSuccessImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -807,12 +814,13 @@ class __$$EndpointReplyDataSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
-  const _$EndpointReplyDataSuccess({required this.type, final String? $type})
+class _$EndpointReplyDataSuccessImpl implements EndpointReplyDataSuccess {
+  const _$EndpointReplyDataSuccessImpl(
+      {required this.type, final String? $type})
       : $type = $type ?? 'success';
 
-  factory _$EndpointReplyDataSuccess.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyDataSuccessFromJson(json);
+  factory _$EndpointReplyDataSuccessImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointReplyDataSuccessImplFromJson(json);
 
   @override
   final EndpointReplySuccessType type;
@@ -829,7 +837,7 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyDataSuccess &&
+            other is _$EndpointReplyDataSuccessImpl &&
             (identical(other.type, type) || other.type == type));
   }
 
@@ -840,10 +848,9 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EndpointReplyDataSuccessCopyWith<_$EndpointReplyDataSuccess>
-      get copyWith =>
-          __$$EndpointReplyDataSuccessCopyWithImpl<_$EndpointReplyDataSuccess>(
-              this, _$identity);
+  _$$EndpointReplyDataSuccessImplCopyWith<_$EndpointReplyDataSuccessImpl>
+      get copyWith => __$$EndpointReplyDataSuccessImplCopyWithImpl<
+          _$EndpointReplyDataSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -928,7 +935,7 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataSuccessToJson(
+    return _$$EndpointReplyDataSuccessImplToJson(
       this,
     );
   }
@@ -937,32 +944,34 @@ class _$EndpointReplyDataSuccess implements EndpointReplyDataSuccess {
 abstract class EndpointReplyDataSuccess implements EndpointReplyData {
   const factory EndpointReplyDataSuccess(
           {required final EndpointReplySuccessType type}) =
-      _$EndpointReplyDataSuccess;
+      _$EndpointReplyDataSuccessImpl;
 
   factory EndpointReplyDataSuccess.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataSuccess.fromJson;
+      _$EndpointReplyDataSuccessImpl.fromJson;
 
   EndpointReplySuccessType get type;
   @JsonKey(ignore: true)
-  _$$EndpointReplyDataSuccessCopyWith<_$EndpointReplyDataSuccess>
+  _$$EndpointReplyDataSuccessImplCopyWith<_$EndpointReplyDataSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EndpointReplyDataErrorCopyWith<$Res> {
-  factory _$$EndpointReplyDataErrorCopyWith(_$EndpointReplyDataError value,
-          $Res Function(_$EndpointReplyDataError) then) =
-      __$$EndpointReplyDataErrorCopyWithImpl<$Res>;
+abstract class _$$EndpointReplyDataErrorImplCopyWith<$Res> {
+  factory _$$EndpointReplyDataErrorImplCopyWith(
+          _$EndpointReplyDataErrorImpl value,
+          $Res Function(_$EndpointReplyDataErrorImpl) then) =
+      __$$EndpointReplyDataErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message, EndpointReplyErrorType type});
 }
 
 /// @nodoc
-class __$$EndpointReplyDataErrorCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataError>
-    implements _$$EndpointReplyDataErrorCopyWith<$Res> {
-  __$$EndpointReplyDataErrorCopyWithImpl(_$EndpointReplyDataError _value,
-      $Res Function(_$EndpointReplyDataError) _then)
+class __$$EndpointReplyDataErrorImplCopyWithImpl<$Res>
+    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataErrorImpl>
+    implements _$$EndpointReplyDataErrorImplCopyWith<$Res> {
+  __$$EndpointReplyDataErrorImplCopyWithImpl(
+      _$EndpointReplyDataErrorImpl _value,
+      $Res Function(_$EndpointReplyDataErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -971,7 +980,7 @@ class __$$EndpointReplyDataErrorCopyWithImpl<$Res>
     Object? message = null,
     Object? type = null,
   }) {
-    return _then(_$EndpointReplyDataError(
+    return _then(_$EndpointReplyDataErrorImpl(
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -986,13 +995,13 @@ class __$$EndpointReplyDataErrorCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointReplyDataError implements EndpointReplyDataError {
-  const _$EndpointReplyDataError(
+class _$EndpointReplyDataErrorImpl implements EndpointReplyDataError {
+  const _$EndpointReplyDataErrorImpl(
       {required this.message, required this.type, final String? $type})
       : $type = $type ?? 'error';
 
-  factory _$EndpointReplyDataError.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyDataErrorFromJson(json);
+  factory _$EndpointReplyDataErrorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointReplyDataErrorImplFromJson(json);
 
   @override
   final String message;
@@ -1011,7 +1020,7 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyDataError &&
+            other is _$EndpointReplyDataErrorImpl &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.type, type) || other.type == type));
   }
@@ -1023,9 +1032,9 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EndpointReplyDataErrorCopyWith<_$EndpointReplyDataError> get copyWith =>
-      __$$EndpointReplyDataErrorCopyWithImpl<_$EndpointReplyDataError>(
-          this, _$identity);
+  _$$EndpointReplyDataErrorImplCopyWith<_$EndpointReplyDataErrorImpl>
+      get copyWith => __$$EndpointReplyDataErrorImplCopyWithImpl<
+          _$EndpointReplyDataErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1110,7 +1119,7 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataErrorToJson(
+    return _$$EndpointReplyDataErrorImplToJson(
       this,
     );
   }
@@ -1118,34 +1127,35 @@ class _$EndpointReplyDataError implements EndpointReplyDataError {
 
 abstract class EndpointReplyDataError implements EndpointReplyData {
   const factory EndpointReplyDataError(
-      {required final String message,
-      required final EndpointReplyErrorType type}) = _$EndpointReplyDataError;
+          {required final String message,
+          required final EndpointReplyErrorType type}) =
+      _$EndpointReplyDataErrorImpl;
 
   factory EndpointReplyDataError.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataError.fromJson;
+      _$EndpointReplyDataErrorImpl.fromJson;
 
   String get message;
   EndpointReplyErrorType get type;
   @JsonKey(ignore: true)
-  _$$EndpointReplyDataErrorCopyWith<_$EndpointReplyDataError> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EndpointReplyDataErrorImplCopyWith<_$EndpointReplyDataErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EndpointReplyDataPkCopyWith<$Res> {
-  factory _$$EndpointReplyDataPkCopyWith(_$EndpointReplyDataPk value,
-          $Res Function(_$EndpointReplyDataPk) then) =
-      __$$EndpointReplyDataPkCopyWithImpl<$Res>;
+abstract class _$$EndpointReplyDataPkImplCopyWith<$Res> {
+  factory _$$EndpointReplyDataPkImplCopyWith(_$EndpointReplyDataPkImpl value,
+          $Res Function(_$EndpointReplyDataPkImpl) then) =
+      __$$EndpointReplyDataPkImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String pk});
 }
 
 /// @nodoc
-class __$$EndpointReplyDataPkCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataPk>
-    implements _$$EndpointReplyDataPkCopyWith<$Res> {
-  __$$EndpointReplyDataPkCopyWithImpl(
-      _$EndpointReplyDataPk _value, $Res Function(_$EndpointReplyDataPk) _then)
+class __$$EndpointReplyDataPkImplCopyWithImpl<$Res>
+    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataPkImpl>
+    implements _$$EndpointReplyDataPkImplCopyWith<$Res> {
+  __$$EndpointReplyDataPkImplCopyWithImpl(_$EndpointReplyDataPkImpl _value,
+      $Res Function(_$EndpointReplyDataPkImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -1153,7 +1163,7 @@ class __$$EndpointReplyDataPkCopyWithImpl<$Res>
   $Res call({
     Object? pk = null,
   }) {
-    return _then(_$EndpointReplyDataPk(
+    return _then(_$EndpointReplyDataPkImpl(
       pk: null == pk
           ? _value.pk
           : pk // ignore: cast_nullable_to_non_nullable
@@ -1164,12 +1174,12 @@ class __$$EndpointReplyDataPkCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointReplyDataPk implements EndpointReplyDataPk {
-  const _$EndpointReplyDataPk({required this.pk, final String? $type})
+class _$EndpointReplyDataPkImpl implements EndpointReplyDataPk {
+  const _$EndpointReplyDataPkImpl({required this.pk, final String? $type})
       : $type = $type ?? 'pk';
 
-  factory _$EndpointReplyDataPk.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyDataPkFromJson(json);
+  factory _$EndpointReplyDataPkImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointReplyDataPkImplFromJson(json);
 
   @override
   final String pk;
@@ -1186,7 +1196,7 @@ class _$EndpointReplyDataPk implements EndpointReplyDataPk {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyDataPk &&
+            other is _$EndpointReplyDataPkImpl &&
             (identical(other.pk, pk) || other.pk == pk));
   }
 
@@ -1197,8 +1207,8 @@ class _$EndpointReplyDataPk implements EndpointReplyDataPk {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EndpointReplyDataPkCopyWith<_$EndpointReplyDataPk> get copyWith =>
-      __$$EndpointReplyDataPkCopyWithImpl<_$EndpointReplyDataPk>(
+  _$$EndpointReplyDataPkImplCopyWith<_$EndpointReplyDataPkImpl> get copyWith =>
+      __$$EndpointReplyDataPkImplCopyWithImpl<_$EndpointReplyDataPkImpl>(
           this, _$identity);
 
   @override
@@ -1284,7 +1294,7 @@ class _$EndpointReplyDataPk implements EndpointReplyDataPk {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataPkToJson(
+    return _$$EndpointReplyDataPkImplToJson(
       this,
     );
   }
@@ -1292,13 +1302,13 @@ class _$EndpointReplyDataPk implements EndpointReplyDataPk {
 
 abstract class EndpointReplyDataPk implements EndpointReplyData {
   const factory EndpointReplyDataPk({required final String pk}) =
-      _$EndpointReplyDataPk;
+      _$EndpointReplyDataPkImpl;
 
   factory EndpointReplyDataPk.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataPk.fromJson;
+      _$EndpointReplyDataPkImpl.fromJson;
 
   String get pk;
   @JsonKey(ignore: true)
-  _$$EndpointReplyDataPkCopyWith<_$EndpointReplyDataPk> get copyWith =>
+  _$$EndpointReplyDataPkImplCopyWith<_$EndpointReplyDataPkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -78,11 +78,11 @@ class _$EndpointRequestModelCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_EndpointRequestModelCopyWith<$Res>
+abstract class _$$EndpointRequestModelImplCopyWith<$Res>
     implements $EndpointRequestModelCopyWith<$Res> {
-  factory _$$_EndpointRequestModelCopyWith(_$_EndpointRequestModel value,
-          $Res Function(_$_EndpointRequestModel) then) =
-      __$$_EndpointRequestModelCopyWithImpl<$Res>;
+  factory _$$EndpointRequestModelImplCopyWith(_$EndpointRequestModelImpl value,
+          $Res Function(_$EndpointRequestModelImpl) then) =
+      __$$EndpointRequestModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({@EndpointRequestConverter() EndpointRequest? request});
@@ -92,11 +92,11 @@ abstract class _$$_EndpointRequestModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EndpointRequestModelCopyWithImpl<$Res>
-    extends _$EndpointRequestModelCopyWithImpl<$Res, _$_EndpointRequestModel>
-    implements _$$_EndpointRequestModelCopyWith<$Res> {
-  __$$_EndpointRequestModelCopyWithImpl(_$_EndpointRequestModel _value,
-      $Res Function(_$_EndpointRequestModel) _then)
+class __$$EndpointRequestModelImplCopyWithImpl<$Res>
+    extends _$EndpointRequestModelCopyWithImpl<$Res, _$EndpointRequestModelImpl>
+    implements _$$EndpointRequestModelImplCopyWith<$Res> {
+  __$$EndpointRequestModelImplCopyWithImpl(_$EndpointRequestModelImpl _value,
+      $Res Function(_$EndpointRequestModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -104,7 +104,7 @@ class __$$_EndpointRequestModelCopyWithImpl<$Res>
   $Res call({
     Object? request = freezed,
   }) {
-    return _then(_$_EndpointRequestModel(
+    return _then(_$EndpointRequestModelImpl(
       request: freezed == request
           ? _value.request
           : request // ignore: cast_nullable_to_non_nullable
@@ -115,11 +115,11 @@ class __$$_EndpointRequestModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EndpointRequestModel implements _EndpointRequestModel {
-  const _$_EndpointRequestModel({@EndpointRequestConverter() this.request});
+class _$EndpointRequestModelImpl implements _EndpointRequestModel {
+  const _$EndpointRequestModelImpl({@EndpointRequestConverter() this.request});
 
-  factory _$_EndpointRequestModel.fromJson(Map<String, dynamic> json) =>
-      _$$_EndpointRequestModelFromJson(json);
+  factory _$EndpointRequestModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointRequestModelImplFromJson(json);
 
   @override
   @EndpointRequestConverter()
@@ -134,7 +134,7 @@ class _$_EndpointRequestModel implements _EndpointRequestModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EndpointRequestModel &&
+            other is _$EndpointRequestModelImpl &&
             (identical(other.request, request) || other.request == request));
   }
 
@@ -145,13 +145,14 @@ class _$_EndpointRequestModel implements _EndpointRequestModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EndpointRequestModelCopyWith<_$_EndpointRequestModel> get copyWith =>
-      __$$_EndpointRequestModelCopyWithImpl<_$_EndpointRequestModel>(
-          this, _$identity);
+  _$$EndpointRequestModelImplCopyWith<_$EndpointRequestModelImpl>
+      get copyWith =>
+          __$$EndpointRequestModelImplCopyWithImpl<_$EndpointRequestModelImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EndpointRequestModelToJson(
+    return _$$EndpointRequestModelImplToJson(
       this,
     );
   }
@@ -160,18 +161,18 @@ class _$_EndpointRequestModel implements _EndpointRequestModel {
 abstract class _EndpointRequestModel implements EndpointRequestModel {
   const factory _EndpointRequestModel(
           {@EndpointRequestConverter() final EndpointRequest? request}) =
-      _$_EndpointRequestModel;
+      _$EndpointRequestModelImpl;
 
   factory _EndpointRequestModel.fromJson(Map<String, dynamic> json) =
-      _$_EndpointRequestModel.fromJson;
+      _$EndpointRequestModelImpl.fromJson;
 
   @override
   @EndpointRequestConverter()
   EndpointRequest? get request;
   @override
   @JsonKey(ignore: true)
-  _$$_EndpointRequestModelCopyWith<_$_EndpointRequestModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EndpointRequestModelImplCopyWith<_$EndpointRequestModelImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 EndpointRequest _$EndpointRequestFromJson(Map<String, dynamic> json) {
@@ -242,11 +243,11 @@ class _$EndpointRequestCopyWithImpl<$Res, $Val extends EndpointRequest>
 }
 
 /// @nodoc
-abstract class _$$_EndpointRequestCopyWith<$Res>
+abstract class _$$EndpointRequestImplCopyWith<$Res>
     implements $EndpointRequestCopyWith<$Res> {
-  factory _$$_EndpointRequestCopyWith(
-          _$_EndpointRequest value, $Res Function(_$_EndpointRequest) then) =
-      __$$_EndpointRequestCopyWithImpl<$Res>;
+  factory _$$EndpointRequestImplCopyWith(_$EndpointRequestImpl value,
+          $Res Function(_$EndpointRequestImpl) then) =
+      __$$EndpointRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({EndpointRequestType? type, EndpointRequestData? data});
@@ -256,11 +257,11 @@ abstract class _$$_EndpointRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EndpointRequestCopyWithImpl<$Res>
-    extends _$EndpointRequestCopyWithImpl<$Res, _$_EndpointRequest>
-    implements _$$_EndpointRequestCopyWith<$Res> {
-  __$$_EndpointRequestCopyWithImpl(
-      _$_EndpointRequest _value, $Res Function(_$_EndpointRequest) _then)
+class __$$EndpointRequestImplCopyWithImpl<$Res>
+    extends _$EndpointRequestCopyWithImpl<$Res, _$EndpointRequestImpl>
+    implements _$$EndpointRequestImplCopyWith<$Res> {
+  __$$EndpointRequestImplCopyWithImpl(
+      _$EndpointRequestImpl _value, $Res Function(_$EndpointRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -269,7 +270,7 @@ class __$$_EndpointRequestCopyWithImpl<$Res>
     Object? type = freezed,
     Object? data = freezed,
   }) {
-    return _then(_$_EndpointRequest(
+    return _then(_$EndpointRequestImpl(
       type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -284,11 +285,11 @@ class __$$_EndpointRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EndpointRequest implements _EndpointRequest {
-  const _$_EndpointRequest({this.type, this.data});
+class _$EndpointRequestImpl implements _EndpointRequest {
+  const _$EndpointRequestImpl({this.type, this.data});
 
-  factory _$_EndpointRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_EndpointRequestFromJson(json);
+  factory _$EndpointRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointRequestImplFromJson(json);
 
   @override
   final EndpointRequestType? type;
@@ -304,7 +305,7 @@ class _$_EndpointRequest implements _EndpointRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EndpointRequest &&
+            other is _$EndpointRequestImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.data, data) || other.data == data));
   }
@@ -316,12 +317,13 @@ class _$_EndpointRequest implements _EndpointRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EndpointRequestCopyWith<_$_EndpointRequest> get copyWith =>
-      __$$_EndpointRequestCopyWithImpl<_$_EndpointRequest>(this, _$identity);
+  _$$EndpointRequestImplCopyWith<_$EndpointRequestImpl> get copyWith =>
+      __$$EndpointRequestImplCopyWithImpl<_$EndpointRequestImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EndpointRequestToJson(
+    return _$$EndpointRequestImplToJson(
       this,
     );
   }
@@ -330,10 +332,10 @@ class _$_EndpointRequest implements _EndpointRequest {
 abstract class _EndpointRequest implements EndpointRequest {
   const factory _EndpointRequest(
       {final EndpointRequestType? type,
-      final EndpointRequestData? data}) = _$_EndpointRequest;
+      final EndpointRequestData? data}) = _$EndpointRequestImpl;
 
   factory _EndpointRequest.fromJson(Map<String, dynamic> json) =
-      _$_EndpointRequest.fromJson;
+      _$EndpointRequestImpl.fromJson;
 
   @override
   EndpointRequestType? get type;
@@ -341,7 +343,7 @@ abstract class _EndpointRequest implements EndpointRequest {
   EndpointRequestData? get data;
   @override
   @JsonKey(ignore: true)
-  _$$_EndpointRequestCopyWith<_$_EndpointRequest> get copyWith =>
+  _$$EndpointRequestImplCopyWith<_$EndpointRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -368,8 +370,8 @@ mixin _$EndpointRequestData {
     required TResult Function() newAddress,
     required TResult Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)
         createTransaction,
   }) =>
       throw _privateConstructorUsedError;
@@ -379,8 +381,8 @@ mixin _$EndpointRequestData {
     TResult? Function()? newAddress,
     TResult? Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)?
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)?
         createTransaction,
   }) =>
       throw _privateConstructorUsedError;
@@ -390,8 +392,8 @@ mixin _$EndpointRequestData {
     TResult Function()? newAddress,
     TResult Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)?
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)?
         createTransaction,
     required TResult orElse(),
   }) =>
@@ -443,29 +445,32 @@ class _$EndpointRequestDataCopyWithImpl<$Res, $Val extends EndpointRequestData>
 }
 
 /// @nodoc
-abstract class _$$EndpointRequestDataPingCopyWith<$Res> {
-  factory _$$EndpointRequestDataPingCopyWith(_$EndpointRequestDataPing value,
-          $Res Function(_$EndpointRequestDataPing) then) =
-      __$$EndpointRequestDataPingCopyWithImpl<$Res>;
+abstract class _$$EndpointRequestDataPingImplCopyWith<$Res> {
+  factory _$$EndpointRequestDataPingImplCopyWith(
+          _$EndpointRequestDataPingImpl value,
+          $Res Function(_$EndpointRequestDataPingImpl) then) =
+      __$$EndpointRequestDataPingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EndpointRequestDataPingCopyWithImpl<$Res>
-    extends _$EndpointRequestDataCopyWithImpl<$Res, _$EndpointRequestDataPing>
-    implements _$$EndpointRequestDataPingCopyWith<$Res> {
-  __$$EndpointRequestDataPingCopyWithImpl(_$EndpointRequestDataPing _value,
-      $Res Function(_$EndpointRequestDataPing) _then)
+class __$$EndpointRequestDataPingImplCopyWithImpl<$Res>
+    extends _$EndpointRequestDataCopyWithImpl<$Res,
+        _$EndpointRequestDataPingImpl>
+    implements _$$EndpointRequestDataPingImplCopyWith<$Res> {
+  __$$EndpointRequestDataPingImplCopyWithImpl(
+      _$EndpointRequestDataPingImpl _value,
+      $Res Function(_$EndpointRequestDataPingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointRequestDataPing implements EndpointRequestDataPing {
-  const _$EndpointRequestDataPing({final String? $type})
+class _$EndpointRequestDataPingImpl implements EndpointRequestDataPing {
+  const _$EndpointRequestDataPingImpl({final String? $type})
       : $type = $type ?? 'ping';
 
-  factory _$EndpointRequestDataPing.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointRequestDataPingFromJson(json);
+  factory _$EndpointRequestDataPingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointRequestDataPingImplFromJson(json);
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -479,7 +484,7 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointRequestDataPing);
+            other is _$EndpointRequestDataPingImpl);
   }
 
   @JsonKey(ignore: true)
@@ -493,8 +498,8 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
     required TResult Function() newAddress,
     required TResult Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)
         createTransaction,
   }) {
     return ping();
@@ -507,8 +512,8 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
     TResult? Function()? newAddress,
     TResult? Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)?
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)?
         createTransaction,
   }) {
     return ping?.call();
@@ -521,8 +526,8 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
     TResult Function()? newAddress,
     TResult Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)?
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)?
         createTransaction,
     required TResult orElse(),
   }) {
@@ -571,46 +576,48 @@ class _$EndpointRequestDataPing implements EndpointRequestDataPing {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EndpointRequestDataPingToJson(
+    return _$$EndpointRequestDataPingImplToJson(
       this,
     );
   }
 }
 
 abstract class EndpointRequestDataPing implements EndpointRequestData {
-  const factory EndpointRequestDataPing() = _$EndpointRequestDataPing;
+  const factory EndpointRequestDataPing() = _$EndpointRequestDataPingImpl;
 
   factory EndpointRequestDataPing.fromJson(Map<String, dynamic> json) =
-      _$EndpointRequestDataPing.fromJson;
+      _$EndpointRequestDataPingImpl.fromJson;
 }
 
 /// @nodoc
-abstract class _$$EndpointRequestDataNewAddressCopyWith<$Res> {
-  factory _$$EndpointRequestDataNewAddressCopyWith(
-          _$EndpointRequestDataNewAddress value,
-          $Res Function(_$EndpointRequestDataNewAddress) then) =
-      __$$EndpointRequestDataNewAddressCopyWithImpl<$Res>;
+abstract class _$$EndpointRequestDataNewAddressImplCopyWith<$Res> {
+  factory _$$EndpointRequestDataNewAddressImplCopyWith(
+          _$EndpointRequestDataNewAddressImpl value,
+          $Res Function(_$EndpointRequestDataNewAddressImpl) then) =
+      __$$EndpointRequestDataNewAddressImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$EndpointRequestDataNewAddressCopyWithImpl<$Res>
+class __$$EndpointRequestDataNewAddressImplCopyWithImpl<$Res>
     extends _$EndpointRequestDataCopyWithImpl<$Res,
-        _$EndpointRequestDataNewAddress>
-    implements _$$EndpointRequestDataNewAddressCopyWith<$Res> {
-  __$$EndpointRequestDataNewAddressCopyWithImpl(
-      _$EndpointRequestDataNewAddress _value,
-      $Res Function(_$EndpointRequestDataNewAddress) _then)
+        _$EndpointRequestDataNewAddressImpl>
+    implements _$$EndpointRequestDataNewAddressImplCopyWith<$Res> {
+  __$$EndpointRequestDataNewAddressImplCopyWithImpl(
+      _$EndpointRequestDataNewAddressImpl _value,
+      $Res Function(_$EndpointRequestDataNewAddressImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
-  const _$EndpointRequestDataNewAddress({final String? $type})
+class _$EndpointRequestDataNewAddressImpl
+    implements EndpointRequestDataNewAddress {
+  const _$EndpointRequestDataNewAddressImpl({final String? $type})
       : $type = $type ?? 'newAddress';
 
-  factory _$EndpointRequestDataNewAddress.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointRequestDataNewAddressFromJson(json);
+  factory _$EndpointRequestDataNewAddressImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$EndpointRequestDataNewAddressImplFromJson(json);
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -624,7 +631,7 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointRequestDataNewAddress);
+            other is _$EndpointRequestDataNewAddressImpl);
   }
 
   @JsonKey(ignore: true)
@@ -638,8 +645,8 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
     required TResult Function() newAddress,
     required TResult Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)
         createTransaction,
   }) {
     return newAddress();
@@ -652,8 +659,8 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
     TResult? Function()? newAddress,
     TResult? Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)?
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)?
         createTransaction,
   }) {
     return newAddress?.call();
@@ -666,8 +673,8 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
     TResult Function()? newAddress,
     TResult Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)?
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)?
         createTransaction,
     required TResult orElse(),
   }) {
@@ -716,7 +723,7 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EndpointRequestDataNewAddressToJson(
+    return _$$EndpointRequestDataNewAddressImplToJson(
       this,
     );
   }
@@ -724,33 +731,33 @@ class _$EndpointRequestDataNewAddress implements EndpointRequestDataNewAddress {
 
 abstract class EndpointRequestDataNewAddress implements EndpointRequestData {
   const factory EndpointRequestDataNewAddress() =
-      _$EndpointRequestDataNewAddress;
+      _$EndpointRequestDataNewAddressImpl;
 
   factory EndpointRequestDataNewAddress.fromJson(Map<String, dynamic> json) =
-      _$EndpointRequestDataNewAddress.fromJson;
+      _$EndpointRequestDataNewAddressImpl.fromJson;
 }
 
 /// @nodoc
-abstract class _$$EndpointRequestDataCreateTransactionCopyWith<$Res> {
-  factory _$$EndpointRequestDataCreateTransactionCopyWith(
-          _$EndpointRequestDataCreateTransaction value,
-          $Res Function(_$EndpointRequestDataCreateTransaction) then) =
-      __$$EndpointRequestDataCreateTransactionCopyWithImpl<$Res>;
+abstract class _$$EndpointRequestDataCreateTransactionImplCopyWith<$Res> {
+  factory _$$EndpointRequestDataCreateTransactionImplCopyWith(
+          _$EndpointRequestDataCreateTransactionImpl value,
+          $Res Function(_$EndpointRequestDataCreateTransactionImpl) then) =
+      __$$EndpointRequestDataCreateTransactionImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {String? address,
-      @JsonKey(name: "asset_id") String? assetId,
-      @JsonKey(name: "amount") String? amount});
+      @JsonKey(name: 'asset_id') String? assetId,
+      @JsonKey(name: 'amount') String? amount});
 }
 
 /// @nodoc
-class __$$EndpointRequestDataCreateTransactionCopyWithImpl<$Res>
+class __$$EndpointRequestDataCreateTransactionImplCopyWithImpl<$Res>
     extends _$EndpointRequestDataCopyWithImpl<$Res,
-        _$EndpointRequestDataCreateTransaction>
-    implements _$$EndpointRequestDataCreateTransactionCopyWith<$Res> {
-  __$$EndpointRequestDataCreateTransactionCopyWithImpl(
-      _$EndpointRequestDataCreateTransaction _value,
-      $Res Function(_$EndpointRequestDataCreateTransaction) _then)
+        _$EndpointRequestDataCreateTransactionImpl>
+    implements _$$EndpointRequestDataCreateTransactionImplCopyWith<$Res> {
+  __$$EndpointRequestDataCreateTransactionImplCopyWithImpl(
+      _$EndpointRequestDataCreateTransactionImpl _value,
+      $Res Function(_$EndpointRequestDataCreateTransactionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -760,7 +767,7 @@ class __$$EndpointRequestDataCreateTransactionCopyWithImpl<$Res>
     Object? assetId = freezed,
     Object? amount = freezed,
   }) {
-    return _then(_$EndpointRequestDataCreateTransaction(
+    return _then(_$EndpointRequestDataCreateTransactionImpl(
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -779,26 +786,26 @@ class __$$EndpointRequestDataCreateTransactionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointRequestDataCreateTransaction
+class _$EndpointRequestDataCreateTransactionImpl
     implements EndpointRequestDataCreateTransaction {
-  const _$EndpointRequestDataCreateTransaction(
+  const _$EndpointRequestDataCreateTransactionImpl(
       {this.address,
-      @JsonKey(name: "asset_id") this.assetId,
-      @JsonKey(name: "amount") this.amount,
+      @JsonKey(name: 'asset_id') this.assetId,
+      @JsonKey(name: 'amount') this.amount,
       final String? $type})
       : $type = $type ?? 'createTransaction';
 
-  factory _$EndpointRequestDataCreateTransaction.fromJson(
+  factory _$EndpointRequestDataCreateTransactionImpl.fromJson(
           Map<String, dynamic> json) =>
-      _$$EndpointRequestDataCreateTransactionFromJson(json);
+      _$$EndpointRequestDataCreateTransactionImplFromJson(json);
 
   @override
   final String? address;
   @override
-  @JsonKey(name: "asset_id")
+  @JsonKey(name: 'asset_id')
   final String? assetId;
   @override
-  @JsonKey(name: "amount")
+  @JsonKey(name: 'amount')
   final String? amount;
 
   @JsonKey(name: 'runtimeType')
@@ -813,7 +820,7 @@ class _$EndpointRequestDataCreateTransaction
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointRequestDataCreateTransaction &&
+            other is _$EndpointRequestDataCreateTransactionImpl &&
             (identical(other.address, address) || other.address == address) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.amount, amount) || other.amount == amount));
@@ -826,10 +833,10 @@ class _$EndpointRequestDataCreateTransaction
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EndpointRequestDataCreateTransactionCopyWith<
-          _$EndpointRequestDataCreateTransaction>
-      get copyWith => __$$EndpointRequestDataCreateTransactionCopyWithImpl<
-          _$EndpointRequestDataCreateTransaction>(this, _$identity);
+  _$$EndpointRequestDataCreateTransactionImplCopyWith<
+          _$EndpointRequestDataCreateTransactionImpl>
+      get copyWith => __$$EndpointRequestDataCreateTransactionImplCopyWithImpl<
+          _$EndpointRequestDataCreateTransactionImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -838,8 +845,8 @@ class _$EndpointRequestDataCreateTransaction
     required TResult Function() newAddress,
     required TResult Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)
         createTransaction,
   }) {
     return createTransaction(address, assetId, amount);
@@ -852,8 +859,8 @@ class _$EndpointRequestDataCreateTransaction
     TResult? Function()? newAddress,
     TResult? Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)?
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)?
         createTransaction,
   }) {
     return createTransaction?.call(address, assetId, amount);
@@ -866,8 +873,8 @@ class _$EndpointRequestDataCreateTransaction
     TResult Function()? newAddress,
     TResult Function(
             String? address,
-            @JsonKey(name: "asset_id") String? assetId,
-            @JsonKey(name: "amount") String? amount)?
+            @JsonKey(name: 'asset_id') String? assetId,
+            @JsonKey(name: 'amount') String? amount)?
         createTransaction,
     required TResult orElse(),
   }) {
@@ -916,7 +923,7 @@ class _$EndpointRequestDataCreateTransaction
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EndpointRequestDataCreateTransactionToJson(
+    return _$$EndpointRequestDataCreateTransactionImplToJson(
       this,
     );
   }
@@ -926,21 +933,21 @@ abstract class EndpointRequestDataCreateTransaction
     implements EndpointRequestData {
   const factory EndpointRequestDataCreateTransaction(
           {final String? address,
-          @JsonKey(name: "asset_id") final String? assetId,
-          @JsonKey(name: "amount") final String? amount}) =
-      _$EndpointRequestDataCreateTransaction;
+          @JsonKey(name: 'asset_id') final String? assetId,
+          @JsonKey(name: 'amount') final String? amount}) =
+      _$EndpointRequestDataCreateTransactionImpl;
 
   factory EndpointRequestDataCreateTransaction.fromJson(
           Map<String, dynamic> json) =
-      _$EndpointRequestDataCreateTransaction.fromJson;
+      _$EndpointRequestDataCreateTransactionImpl.fromJson;
 
   String? get address;
-  @JsonKey(name: "asset_id")
+  @JsonKey(name: 'asset_id')
   String? get assetId;
-  @JsonKey(name: "amount")
+  @JsonKey(name: 'amount')
   String? get amount;
   @JsonKey(ignore: true)
-  _$$EndpointRequestDataCreateTransactionCopyWith<
-          _$EndpointRequestDataCreateTransaction>
+  _$$EndpointRequestDataCreateTransactionImplCopyWith<
+          _$EndpointRequestDataCreateTransactionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

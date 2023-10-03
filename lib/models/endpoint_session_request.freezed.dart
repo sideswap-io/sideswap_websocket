@@ -93,11 +93,12 @@ class _$EndpointSessionRequestCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_EndpointSessionRequestCopyWith<$Res>
+abstract class _$$EndpointSessionRequestImplCopyWith<$Res>
     implements $EndpointSessionRequestCopyWith<$Res> {
-  factory _$$_EndpointSessionRequestCopyWith(_$_EndpointSessionRequest value,
-          $Res Function(_$_EndpointSessionRequest) then) =
-      __$$_EndpointSessionRequestCopyWithImpl<$Res>;
+  factory _$$EndpointSessionRequestImplCopyWith(
+          _$EndpointSessionRequestImpl value,
+          $Res Function(_$EndpointSessionRequestImpl) then) =
+      __$$EndpointSessionRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -109,12 +110,13 @@ abstract class _$$_EndpointSessionRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EndpointSessionRequestCopyWithImpl<$Res>
+class __$$EndpointSessionRequestImplCopyWithImpl<$Res>
     extends _$EndpointSessionRequestCopyWithImpl<$Res,
-        _$_EndpointSessionRequest>
-    implements _$$_EndpointSessionRequestCopyWith<$Res> {
-  __$$_EndpointSessionRequestCopyWithImpl(_$_EndpointSessionRequest _value,
-      $Res Function(_$_EndpointSessionRequest) _then)
+        _$EndpointSessionRequestImpl>
+    implements _$$EndpointSessionRequestImplCopyWith<$Res> {
+  __$$EndpointSessionRequestImplCopyWithImpl(
+      _$EndpointSessionRequestImpl _value,
+      $Res Function(_$EndpointSessionRequestImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -126,7 +128,7 @@ class __$$_EndpointSessionRequestCopyWithImpl<$Res>
     Object? pk = freezed,
     Object? clientId = freezed,
   }) {
-    return _then(_$_EndpointSessionRequest(
+    return _then(_$EndpointSessionRequestImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -153,12 +155,12 @@ class __$$_EndpointSessionRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EndpointSessionRequest implements _EndpointSessionRequest {
-  const _$_EndpointSessionRequest(
+class _$EndpointSessionRequestImpl implements _EndpointSessionRequest {
+  const _$EndpointSessionRequestImpl(
       {this.id, this.type, this.data, this.pk, this.clientId});
 
-  factory _$_EndpointSessionRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_EndpointSessionRequestFromJson(json);
+  factory _$EndpointSessionRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EndpointSessionRequestImplFromJson(json);
 
   @override
   final String? id;
@@ -180,7 +182,7 @@ class _$_EndpointSessionRequest implements _EndpointSessionRequest {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EndpointSessionRequest &&
+            other is _$EndpointSessionRequestImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.data, data) || other.data == data) &&
@@ -196,13 +198,13 @@ class _$_EndpointSessionRequest implements _EndpointSessionRequest {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EndpointSessionRequestCopyWith<_$_EndpointSessionRequest> get copyWith =>
-      __$$_EndpointSessionRequestCopyWithImpl<_$_EndpointSessionRequest>(
-          this, _$identity);
+  _$$EndpointSessionRequestImplCopyWith<_$EndpointSessionRequestImpl>
+      get copyWith => __$$EndpointSessionRequestImplCopyWithImpl<
+          _$EndpointSessionRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EndpointSessionRequestToJson(
+    return _$$EndpointSessionRequestImplToJson(
       this,
     );
   }
@@ -214,10 +216,10 @@ abstract class _EndpointSessionRequest implements EndpointSessionRequest {
       final EndpointSessionRequestType? type,
       final String? data,
       final String? pk,
-      final String? clientId}) = _$_EndpointSessionRequest;
+      final String? clientId}) = _$EndpointSessionRequestImpl;
 
   factory _EndpointSessionRequest.fromJson(Map<String, dynamic> json) =
-      _$_EndpointSessionRequest.fromJson;
+      _$EndpointSessionRequestImpl.fromJson;
 
   @override
   String? get id;
@@ -231,6 +233,6 @@ abstract class _EndpointSessionRequest implements EndpointSessionRequest {
   String? get clientId;
   @override
   @JsonKey(ignore: true)
-  _$$_EndpointSessionRequestCopyWith<_$_EndpointSessionRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EndpointSessionRequestImplCopyWith<_$EndpointSessionRequestImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

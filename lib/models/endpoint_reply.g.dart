@@ -6,15 +6,15 @@ part of 'endpoint_reply.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_EndpointReplyModel _$$_EndpointReplyModelFromJson(
+_$EndpointReplyModelImpl _$$EndpointReplyModelImplFromJson(
         Map<String, dynamic> json) =>
-    _$_EndpointReplyModel(
+    _$EndpointReplyModelImpl(
       reply: _$JsonConverterFromJson<Map<String, dynamic>, EndpointReply>(
           json['reply'], const EndpointReplyConverter().fromJson),
     );
 
-Map<String, dynamic> _$$_EndpointReplyModelToJson(
-        _$_EndpointReplyModel instance) =>
+Map<String, dynamic> _$$EndpointReplyModelImplToJson(
+        _$EndpointReplyModelImpl instance) =>
     <String, dynamic>{
       'reply': _$JsonConverterToJson<Map<String, dynamic>, EndpointReply>(
           instance.reply, const EndpointReplyConverter().toJson),
@@ -32,8 +32,8 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$_EndpointReply _$$_EndpointReplyFromJson(Map<String, dynamic> json) =>
-    _$_EndpointReply(
+_$EndpointReplyImpl _$$EndpointReplyImplFromJson(Map<String, dynamic> json) =>
+    _$EndpointReplyImpl(
       id: json['id'] as String?,
       type: $enumDecodeNullable(_$EndpointReplyTypeEnumMap, json['type']),
       data: json['data'] == null
@@ -41,7 +41,7 @@ _$_EndpointReply _$$_EndpointReplyFromJson(Map<String, dynamic> json) =>
           : EndpointReplyData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_EndpointReplyToJson(_$_EndpointReply instance) =>
+Map<String, dynamic> _$$EndpointReplyImplToJson(_$EndpointReplyImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': _$EndpointReplyTypeEnumMap[instance.type],
@@ -56,41 +56,41 @@ const _$EndpointReplyTypeEnumMap = {
   EndpointReplyType.pk: 'pk',
 };
 
-_$EndpointReplyDataPong _$$EndpointReplyDataPongFromJson(
+_$EndpointReplyDataPongImpl _$$EndpointReplyDataPongImplFromJson(
         Map<String, dynamic> json) =>
-    _$EndpointReplyDataPong(
+    _$EndpointReplyDataPongImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$EndpointReplyDataPongToJson(
-        _$EndpointReplyDataPong instance) =>
+Map<String, dynamic> _$$EndpointReplyDataPongImplToJson(
+        _$EndpointReplyDataPongImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$EndpointReplyDataNewAddress _$$EndpointReplyDataNewAddressFromJson(
+_$EndpointReplyDataNewAddressImpl _$$EndpointReplyDataNewAddressImplFromJson(
         Map<String, dynamic> json) =>
-    _$EndpointReplyDataNewAddress(
+    _$EndpointReplyDataNewAddressImpl(
       address: json['address'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$EndpointReplyDataNewAddressToJson(
-        _$EndpointReplyDataNewAddress instance) =>
+Map<String, dynamic> _$$EndpointReplyDataNewAddressImplToJson(
+        _$EndpointReplyDataNewAddressImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
       'runtimeType': instance.$type,
     };
 
-_$EndpointReplyDataSuccess _$$EndpointReplyDataSuccessFromJson(
+_$EndpointReplyDataSuccessImpl _$$EndpointReplyDataSuccessImplFromJson(
         Map<String, dynamic> json) =>
-    _$EndpointReplyDataSuccess(
+    _$EndpointReplyDataSuccessImpl(
       type: $enumDecode(_$EndpointReplySuccessTypeEnumMap, json['type']),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$EndpointReplyDataSuccessToJson(
-        _$EndpointReplyDataSuccess instance) =>
+Map<String, dynamic> _$$EndpointReplyDataSuccessImplToJson(
+        _$EndpointReplyDataSuccessImpl instance) =>
     <String, dynamic>{
       'type': _$EndpointReplySuccessTypeEnumMap[instance.type]!,
       'runtimeType': instance.$type,
@@ -101,16 +101,16 @@ const _$EndpointReplySuccessTypeEnumMap = {
   EndpointReplySuccessType.handler: 'handler',
 };
 
-_$EndpointReplyDataError _$$EndpointReplyDataErrorFromJson(
+_$EndpointReplyDataErrorImpl _$$EndpointReplyDataErrorImplFromJson(
         Map<String, dynamic> json) =>
-    _$EndpointReplyDataError(
+    _$EndpointReplyDataErrorImpl(
       message: json['message'] as String,
       type: $enumDecode(_$EndpointReplyErrorTypeEnumMap, json['type']),
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$EndpointReplyDataErrorToJson(
-        _$EndpointReplyDataError instance) =>
+Map<String, dynamic> _$$EndpointReplyDataErrorImplToJson(
+        _$EndpointReplyDataErrorImpl instance) =>
     <String, dynamic>{
       'message': instance.message,
       'type': _$EndpointReplyErrorTypeEnumMap[instance.type]!,
@@ -122,15 +122,15 @@ const _$EndpointReplyErrorTypeEnumMap = {
   EndpointReplyErrorType.handler: 'handler',
 };
 
-_$EndpointReplyDataPk _$$EndpointReplyDataPkFromJson(
+_$EndpointReplyDataPkImpl _$$EndpointReplyDataPkImplFromJson(
         Map<String, dynamic> json) =>
-    _$EndpointReplyDataPk(
+    _$EndpointReplyDataPkImpl(
       pk: json['pk'] as String,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$EndpointReplyDataPkToJson(
-        _$EndpointReplyDataPk instance) =>
+Map<String, dynamic> _$$EndpointReplyDataPkImplToJson(
+        _$EndpointReplyDataPkImpl instance) =>
     <String, dynamic>{
       'pk': instance.pk,
       'runtimeType': instance.$type,
