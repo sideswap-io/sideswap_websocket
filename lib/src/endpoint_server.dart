@@ -84,7 +84,7 @@ class EndpointServer {
         logger.d('Error: $e');
       },
       onDone: () {
-        _sockets.remove(channel);
+        _sockets.remove(channelId);
       },
     );
   }
@@ -93,7 +93,7 @@ class EndpointServer {
     final socket = _sockets[channelId];
     final channel = socket?.channel;
     await channel?.sink.close();
-    _sockets.remove(channel);
+    _sockets.remove(channelId);
   }
 
   void _onEvent(dynamic event, String channelId) {

@@ -1,15 +1,10 @@
-import 'dart:convert';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mockito/mockito.dart';
-import 'package:base_codecs/base_codecs.dart';
 import 'package:sideswap_websocket/sideswap_endpoint.dart';
 import 'package:sideswap_websocket/src/endpoint_logger.dart';
-import 'package:uuid/uuid.dart';
 
 final endpointServerProvider = Provider((ref) {
   final endpointServer = EndpointServerProvider(ref);
@@ -49,16 +44,16 @@ class EndpointServerProvider {
     switch (request.type) {
       case EndpointRequestType.newAddress:
         Future.delayed(const Duration(seconds: 1), () {
-          const uuid = Uuid();
-          final address =
-              base58BitcoinEncode(Uint8List.fromList(utf8.encode(uuid.v4())));
-          final reply = EndpointReplyModel(
-            reply: EndpointReply(
-              id: id,
-              type: EndpointReplyType.newAddress,
-              data: EndpointReplyDataNewAddress(address: address),
-            ),
-          );
+          // const uuid = Uuid();
+          // final address =
+          //     base58BitcoinEncode(Uint8List.fromList(utf8.encode(uuid.v4())));
+          // final reply = EndpointReplyModel(
+          //   reply: EndpointReply(
+          //     id: id,
+          //     type: EndpointReplyType.newAddress,
+          //     data: EndpointReplyDataNewAddress(address: address),
+          //   ),
+          // );
           // TODO: fix that
           // endpointServer?._sendReplyRaw(reply.toJson(), channelId);
         });
@@ -142,7 +137,7 @@ class ClientListener extends Mock {
 }
 
 class EndpointListener extends HookConsumerWidget {
-  const EndpointListener({Key? key}) : super(key: key);
+  const EndpointListener({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
