@@ -1,6 +1,6 @@
 name: sideswap_websocket
 description: Sideswap local endpoint websocket
-version: 0.0.3
+version: 0.0.4
 publish_to: none
 
 environment:
@@ -13,31 +13,31 @@ dependencies:
     sdk: flutter
   fpdart: ^1.1.0
   freezed_annotation: ^2.4.1
-  hooks_riverpod: ^2.4.6
+  hooks_riverpod: ^2.4.10
   json_annotation: ^4.8.1
-  pointycastle: ^3.7.3
+  pointycastle: ^3.7.4
   shelf: ^1.4.1
   shelf_web_socket: ^1.0.4
   sideswap_logger:
     git:
       url: https://github.com/sideswap-io/sideswap_logger.git
       ref: master
-  uuid: ^4.2.1
+  uuid: ^4.3.3
   web_socket_channel: ^2.4.0
-  websocket_universal: ^1.1.1
+  websocket_universal: ^1.2.2
 
 dev_dependencies:
   base_codecs: ^1.0.1
-  build_runner: ^2.4.6
-  custom_lint: ^0.5.6
-  flutter_hooks: ^0.20.3
+  build_runner: ^2.4.8
+  custom_lint: ^0.6.0
+  flutter_hooks: ^0.20.5
   flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
-  freezed: ^2.4.5
+  freezed: ^2.4.7
   json_serializable: ^6.7.1
-  mockito: ^5.4.2
-  riverpod_lint: ^2.3.4
+  mockito: ^5.4.4
+  riverpod_lint: ^2.3.9
   test: ^1.24.9
 
 # Remove when mockito will support same analyzer as riverpod_lint
