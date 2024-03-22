@@ -51,14 +51,35 @@ class EndpointServer {
     final websocketHandler = webSocketHandler(_onConnection,
         pingInterval: const Duration(seconds: 1));
 
-    server = await shelf_io.serve(
-      websocketHandler,
-      EndpointDefaultSettings.host,
-      EndpointDefaultSettings.port,
-    );
+    try {
+      // on macos bind not working for ip which isn't linked to interface. (maybe on linux too)
+      server = await shelf_io.serve(
+        websocketHandler,
+        EndpointDefaultSettings.host,
+        EndpointDefaultSettings.port,
+      );
 
-    logger
-        .d('Serving local api endpoint on ${server?.address} ${server?.port}');
+      logger.d(
+          'Serving local api endpoint on ${server?.address} ${server?.port}');
+    } catch (e) {
+      logger.e(e);
+    }
+
+    if (server == null) {
+      // try to bind to localhost
+      try {
+        server = await shelf_io.serve(
+          websocketHandler,
+          EndpointDefaultSettings.host,
+          EndpointDefaultSettings.port,
+        );
+
+        logger.d(
+            'Serving local api endpoint on ${server?.address} ${server?.port}');
+      } catch (e) {
+        logger.e(e);
+      }
+    }
   }
 
   Future<void> stop({bool force = false}) async {
