@@ -70,7 +70,7 @@ class EndpointServer {
       try {
         server = await shelf_io.serve(
           websocketHandler,
-          EndpointDefaultSettings.host,
+          '127.0.0.1',
           EndpointDefaultSettings.port,
         );
 
