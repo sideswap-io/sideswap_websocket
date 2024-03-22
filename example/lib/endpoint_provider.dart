@@ -39,7 +39,7 @@ class EndpointServerProvider {
   }
 
   void onRequest(EndpointRequest request, String channelId) {
-    print('$channelId $request');
+    debugPrint('$channelId $request');
 
     switch (request.type) {
       case EndpointRequestType.newAddress:
@@ -95,7 +95,7 @@ class EndpointClientProvider extends ChangeNotifier {
   }
 
   Future<void> onData(EndpointReplyModel replyModel) async {
-    print(replyModel.toJson());
+    debugPrint(replyModel.toJson().toString());
 
     final type = replyModel.reply?.type;
     final data = replyModel.reply?.data;
@@ -113,7 +113,7 @@ class EndpointClientProvider extends ChangeNotifier {
     _isConnected = false;
     notifyListeners();
 
-    print('Endpoint client disconnected');
+    debugPrint('Endpoint client disconnected');
     Future.delayed(const Duration(seconds: 1), () {
       endpointClient!.connect();
     });
@@ -123,6 +123,6 @@ class EndpointClientProvider extends ChangeNotifier {
     _isConnected = true;
     notifyListeners();
 
-    print('Endpoint client connected');
+    debugPrint('Endpoint client connected');
   }
 }

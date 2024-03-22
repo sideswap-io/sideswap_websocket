@@ -1,37 +1,37 @@
 name: sideswap_websocket
 description: Sideswap local endpoint websocket
-version: 0.0.1
+version: 0.0.2
 publish_to: none
 
 environment:
-  sdk: ">=3.0.5 <4.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.19.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  freezed_annotation: ^2.2.0
-  hooks_riverpod: ^2.3.6
+  freezed_annotation: ^2.4.1
+  hooks_riverpod: ^2.5.1
   shelf: ^1.4.1
   shelf_web_socket: ^1.0.4
-  uuid: ^3.0.7
-  web_socket_channel: ^2.4.0
+  uuid: ^4.3.3
+  web_socket_channel: ^2.4.4
   sideswap_logger:
     git:
       url: https://github.com/sideswap-io/sideswap_logger.git
       ref: master
   json_annotation: ^4.8.1
-  fpdart: ^0.6.0
-  websocket_universal: ^1.1.1
+  fpdart: ^1.1.0
+  websocket_universal: ^1.2.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
-  freezed: ^2.4.0
-  build_runner: ^2.4.6
+  flutter_lints: ^3.0.1
+  freezed: ^2.4.7
+  build_runner: ^2.4.8
   json_serializable: ^6.7.1
-  test: ^1.24.1
+  test: ^1.24.9
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
