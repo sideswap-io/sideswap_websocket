@@ -12,7 +12,7 @@ part of 'endpoint_reply.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 EndpointReplyModel _$EndpointReplyModelFromJson(Map<String, dynamic> json) {
   return _EndpointReplyModel.fromJson(json);
@@ -130,7 +130,7 @@ class _$EndpointReplyModelImpl implements _EndpointReplyModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointReplyModelImpl &&
@@ -313,7 +313,7 @@ class _$EndpointReplyImpl implements _EndpointReply {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointReplyImpl &&
@@ -495,7 +495,7 @@ class _$EndpointReplyDataPongImpl implements EndpointReplyDataPong {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointReplyDataPongImpl);
@@ -658,7 +658,7 @@ class _$EndpointReplyDataNewAddressImpl implements EndpointReplyDataNewAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointReplyDataNewAddressImpl &&
@@ -834,7 +834,7 @@ class _$EndpointReplyDataSuccessImpl implements EndpointReplyDataSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointReplyDataSuccessImpl &&
@@ -1017,7 +1017,7 @@ class _$EndpointReplyDataErrorImpl implements EndpointReplyDataError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointReplyDataErrorImpl &&
@@ -1193,7 +1193,7 @@ class _$EndpointReplyDataPkImpl implements EndpointReplyDataPk {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointReplyDataPkImpl &&

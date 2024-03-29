@@ -12,7 +12,7 @@ part of 'endpoint_request.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 EndpointRequestModel _$EndpointRequestModelFromJson(Map<String, dynamic> json) {
   return _EndpointRequestModel.fromJson(json);
@@ -131,7 +131,7 @@ class _$EndpointRequestModelImpl implements _EndpointRequestModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointRequestModelImpl &&
@@ -302,7 +302,7 @@ class _$EndpointRequestImpl implements _EndpointRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointRequestImpl &&
@@ -481,7 +481,7 @@ class _$EndpointRequestDataPingImpl implements EndpointRequestDataPing {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointRequestDataPingImpl);
@@ -628,7 +628,7 @@ class _$EndpointRequestDataNewAddressImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointRequestDataNewAddressImpl);
@@ -817,7 +817,7 @@ class _$EndpointRequestDataCreateTransactionImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EndpointRequestDataCreateTransactionImpl &&
