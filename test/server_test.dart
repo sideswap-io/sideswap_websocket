@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:mockito/mockito.dart';
 import 'package:sideswap_websocket/sideswap_endpoint.dart';
 import 'package:sideswap_websocket/src/endpoint_logger.dart';
 
@@ -126,14 +125,6 @@ class EndpointClientProvider extends ChangeNotifier {
 
     logger.d('Endpoint client connected');
   }
-}
-
-class ServerListener extends Mock {
-  void call(EndpointServerProvider? previous, EndpointServerProvider value);
-}
-
-class ClientListener extends Mock {
-  void call(EndpointClientProvider? previous, EndpointClientProvider value);
 }
 
 class EndpointListener extends HookConsumerWidget {
