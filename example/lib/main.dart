@@ -65,7 +65,7 @@ class MyHomePage extends HookConsumerWidget {
                   Consumer(
                     builder: (context, ref, child) {
                       final receivedAddress =
-                          ref.watch(newAddressStateProvider);
+                          ref.watch(newAddressNotifierProvider);
                       return Text('Received address is: $receivedAddress');
                     },
                   )

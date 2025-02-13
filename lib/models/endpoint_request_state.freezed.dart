@@ -85,6 +85,9 @@ class _$EndpointRequestStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of EndpointRequestState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -104,6 +107,9 @@ class __$$EndpointRequestStateEmptyImplCopyWithImpl<$Res>
       _$EndpointRequestStateEmptyImpl _value,
       $Res Function(_$EndpointRequestStateEmptyImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of EndpointRequestState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -222,6 +228,9 @@ class __$$EndpointRequestStateRequestedImplCopyWithImpl<$Res>
       _$EndpointRequestStateRequestedImpl _value,
       $Res Function(_$EndpointRequestStateRequestedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of EndpointRequestState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -342,6 +351,9 @@ class __$$EndpointRequestStateAcceptedImplCopyWithImpl<$Res>
       _$EndpointRequestStateAcceptedImpl _value,
       $Res Function(_$EndpointRequestStateAcceptedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of EndpointRequestState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -462,6 +474,9 @@ class __$$EndpointRequestStateDeniedImplCopyWithImpl<$Res>
       _$EndpointRequestStateDeniedImpl _value,
       $Res Function(_$EndpointRequestStateDeniedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of EndpointRequestState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

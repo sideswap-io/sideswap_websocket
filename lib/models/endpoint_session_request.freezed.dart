@@ -27,8 +27,12 @@ mixin _$EndpointSessionRequest {
   String? get pk => throw _privateConstructorUsedError;
   String? get clientId => throw _privateConstructorUsedError;
 
+  /// Serializes this EndpointSessionRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointSessionRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EndpointSessionRequestCopyWith<EndpointSessionRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$EndpointSessionRequestCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EndpointSessionRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -119,6 +125,8 @@ class __$$EndpointSessionRequestImplCopyWithImpl<$Res>
       $Res Function(_$EndpointSessionRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointSessionRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -191,11 +199,13 @@ class _$EndpointSessionRequestImpl implements _EndpointSessionRequest {
                 other.clientId == clientId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, type, data, pk, clientId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointSessionRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointSessionRequestImplCopyWith<_$EndpointSessionRequestImpl>
@@ -231,8 +241,11 @@ abstract class _EndpointSessionRequest implements EndpointSessionRequest {
   String? get pk;
   @override
   String? get clientId;
+
+  /// Create a copy of EndpointSessionRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointSessionRequestImplCopyWith<_$EndpointSessionRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -92,7 +92,7 @@ class EndpointServer {
     logger.d('Local api endpoint turned off');
   }
 
-  void _onConnection(WebSocketChannel channel) {
+  void _onConnection(WebSocketChannel channel, String? subprotocol) {
     const uuid = Uuid();
     final channelId = uuid.v1();
     _sockets[channelId] = EndpointServerSocket(channel);

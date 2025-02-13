@@ -4,24 +4,28 @@ import 'package:base_codecs/base_codecs.dart';
 import 'package:example/custom_logger.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:sideswap_websocket/sideswap_endpoint.dart';
 import 'package:uuid/uuid.dart';
 
-final endpointServerProvider = AutoDisposeProvider((ref) {
-  final endpointServer = EndpointServerProvider(ref);
+part 'endpoint_provider.g.dart';
+
+@riverpod
+EndpointServerHelper endpointServer(Ref ref) {
+  final endpointServer = EndpointServerHelper(ref);
 
   ref.onDispose(() {
     endpointServer.stop(force: true);
   });
 
   return endpointServer;
-});
+}
 
-class EndpointServerProvider {
+class EndpointServerHelper {
   final Ref ref;
   EndpointServer? endpointServer;
 
-  EndpointServerProvider(this.ref);
+  EndpointServerHelper(this.ref);
 
   void _init() {
     endpointServer = EndpointServer(onRequest: onRequest);
@@ -63,19 +67,30 @@ class EndpointServerProvider {
   }
 }
 
-final newAddressStateProvider = AutoDisposeStateProvider((ref) => '');
+@riverpod
+class NewAddressNotifier extends _$NewAddressNotifier {
+  @override
+  String build() {
+    return '';
+  }
 
-final endpointClientProvider =
-    ChangeNotifierProvider.autoDispose<EndpointClientProvider>(
-        (ref) => EndpointClientProvider(ref));
+  void setState(String value) {
+    state = value;
+  }
+}
 
-class EndpointClientProvider extends ChangeNotifier {
+@riverpod
+EndpointClientHelper endpointClient(Ref ref) {
+  return EndpointClientHelper(ref);
+}
+
+class EndpointClientHelper extends ChangeNotifier {
   final Ref ref;
   EndpointClient? endpointClient;
   bool _isConnected = false;
   bool get isConnected => _isConnected;
 
-  EndpointClientProvider(this.ref) {
+  EndpointClientHelper(this.ref) {
     // TODO: fix that
     // _init();
   }
@@ -105,7 +120,7 @@ class EndpointClientProvider extends ChangeNotifier {
     (switch (type) {
       EndpointReplyType.newAddress => switch (data) {
           EndpointReplyDataNewAddress(address: final address) =>
-            ref.read(newAddressStateProvider.notifier).state = address,
+            ref.read(newAddressNotifierProvider.notifier).setState(address),
           _ => () {}(),
         },
       _ => () {}(),

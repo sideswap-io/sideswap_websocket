@@ -8,23 +8,23 @@ class EndpointListener extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final endpointServer = ref.watch(endpointServerProvider);
+    final endpointServerHelper = ref.watch(endpointServerProvider);
 
     useEffect(() {
-      endpointServer.serve();
+      endpointServerHelper.serve();
 
       return;
-    }, [endpointServer]);
+    }, [endpointServerHelper]);
 
-    final endpointClient = ref.watch(endpointClientProvider);
+    final endpointClientHelper = ref.watch(endpointClientProvider);
 
     useEffect(() {
-      if (endpointClient.isConnected) {
+      if (endpointClientHelper.isConnected) {
         // make something when client is connected
       }
 
       return;
-    }, [endpointClient.isConnected]);
+    }, [endpointClientHelper.isConnected]);
 
     return Container();
   }

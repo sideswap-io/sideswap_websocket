@@ -23,8 +23,12 @@ mixin _$EndpointReplyModel {
   @EndpointReplyConverter()
   EndpointReply? get reply => throw _privateConstructorUsedError;
 
+  /// Serializes this EndpointReplyModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointReplyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EndpointReplyModelCopyWith<EndpointReplyModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$EndpointReplyModelCopyWithImpl<$Res, $Val extends EndpointReplyModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EndpointReplyModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -63,6 +69,8 @@ class _$EndpointReplyModelCopyWithImpl<$Res, $Val extends EndpointReplyModel>
     ) as $Val);
   }
 
+  /// Create a copy of EndpointReplyModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EndpointReplyCopyWith<$Res>? get reply {
@@ -98,6 +106,8 @@ class __$$EndpointReplyModelImplCopyWithImpl<$Res>
       $Res Function(_$EndpointReplyModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointReplyModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -137,11 +147,13 @@ class _$EndpointReplyModelImpl implements _EndpointReplyModel {
             (identical(other.reply, reply) || other.reply == reply));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, reply);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointReplyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointReplyModelImplCopyWith<_$EndpointReplyModelImpl> get copyWith =>
@@ -167,8 +179,11 @@ abstract class _EndpointReplyModel implements EndpointReplyModel {
   @override
   @EndpointReplyConverter()
   EndpointReply? get reply;
+
+  /// Create a copy of EndpointReplyModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointReplyModelImplCopyWith<_$EndpointReplyModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -183,8 +198,12 @@ mixin _$EndpointReply {
   EndpointReplyType? get type => throw _privateConstructorUsedError;
   EndpointReplyData? get data => throw _privateConstructorUsedError;
 
+  /// Serializes this EndpointReply to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EndpointReplyCopyWith<EndpointReply> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -210,6 +229,8 @@ class _$EndpointReplyCopyWithImpl<$Res, $Val extends EndpointReply>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -233,6 +254,8 @@ class _$EndpointReplyCopyWithImpl<$Res, $Val extends EndpointReply>
     ) as $Val);
   }
 
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EndpointReplyDataCopyWith<$Res>? get data {
@@ -268,6 +291,8 @@ class __$$EndpointReplyImplCopyWithImpl<$Res>
       _$EndpointReplyImpl _value, $Res Function(_$EndpointReplyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -322,11 +347,13 @@ class _$EndpointReplyImpl implements _EndpointReply {
             (identical(other.data, data) || other.data == data));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, type, data);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointReplyImplCopyWith<_$EndpointReplyImpl> get copyWith =>
@@ -355,8 +382,11 @@ abstract class _EndpointReply implements EndpointReply {
   EndpointReplyType? get type;
   @override
   EndpointReplyData? get data;
+
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointReplyImplCopyWith<_$EndpointReplyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -439,6 +469,8 @@ mixin _$EndpointReplyData {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this EndpointReplyData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -458,6 +490,9 @@ class _$EndpointReplyDataCopyWithImpl<$Res, $Val extends EndpointReplyData>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -475,6 +510,9 @@ class __$$EndpointReplyDataPongImplCopyWithImpl<$Res>
   __$$EndpointReplyDataPongImplCopyWithImpl(_$EndpointReplyDataPongImpl _value,
       $Res Function(_$EndpointReplyDataPongImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -501,7 +539,7 @@ class _$EndpointReplyDataPongImpl implements EndpointReplyDataPong {
             other is _$EndpointReplyDataPongImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -621,6 +659,8 @@ class __$$EndpointReplyDataNewAddressImplCopyWithImpl<$Res>
       $Res Function(_$EndpointReplyDataNewAddressImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -665,11 +705,13 @@ class _$EndpointReplyDataNewAddressImpl implements EndpointReplyDataNewAddress {
             (identical(other.address, address) || other.address == address));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, address);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointReplyDataNewAddressImplCopyWith<_$EndpointReplyDataNewAddressImpl>
@@ -773,7 +815,10 @@ abstract class EndpointReplyDataNewAddress implements EndpointReplyData {
       _$EndpointReplyDataNewAddressImpl.fromJson;
 
   String get address;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointReplyDataNewAddressImplCopyWith<_$EndpointReplyDataNewAddressImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -798,6 +843,8 @@ class __$$EndpointReplyDataSuccessImplCopyWithImpl<$Res>
       $Res Function(_$EndpointReplyDataSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -841,11 +888,13 @@ class _$EndpointReplyDataSuccessImpl implements EndpointReplyDataSuccess {
             (identical(other.type, type) || other.type == type));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointReplyDataSuccessImplCopyWith<_$EndpointReplyDataSuccessImpl>
@@ -950,7 +999,10 @@ abstract class EndpointReplyDataSuccess implements EndpointReplyData {
       _$EndpointReplyDataSuccessImpl.fromJson;
 
   EndpointReplySuccessType get type;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointReplyDataSuccessImplCopyWith<_$EndpointReplyDataSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -974,6 +1026,8 @@ class __$$EndpointReplyDataErrorImplCopyWithImpl<$Res>
       $Res Function(_$EndpointReplyDataErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1025,11 +1079,13 @@ class _$EndpointReplyDataErrorImpl implements EndpointReplyDataError {
             (identical(other.type, type) || other.type == type));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, message, type);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointReplyDataErrorImplCopyWith<_$EndpointReplyDataErrorImpl>
@@ -1136,7 +1192,10 @@ abstract class EndpointReplyDataError implements EndpointReplyData {
 
   String get message;
   EndpointReplyErrorType get type;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointReplyDataErrorImplCopyWith<_$EndpointReplyDataErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1158,6 +1217,8 @@ class __$$EndpointReplyDataPkImplCopyWithImpl<$Res>
       $Res Function(_$EndpointReplyDataPkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1200,11 +1261,13 @@ class _$EndpointReplyDataPkImpl implements EndpointReplyDataPk {
             (identical(other.pk, pk) || other.pk == pk));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, pk);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointReplyDataPkImplCopyWith<_$EndpointReplyDataPkImpl> get copyWith =>
@@ -1308,7 +1371,10 @@ abstract class EndpointReplyDataPk implements EndpointReplyData {
       _$EndpointReplyDataPkImpl.fromJson;
 
   String get pk;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointReplyDataPkImplCopyWith<_$EndpointReplyDataPkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

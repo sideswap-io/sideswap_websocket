@@ -23,8 +23,12 @@ mixin _$EndpointRequestModel {
   @EndpointRequestConverter()
   EndpointRequest? get request => throw _privateConstructorUsedError;
 
+  /// Serializes this EndpointRequestModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointRequestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EndpointRequestModelCopyWith<EndpointRequestModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -51,6 +55,8 @@ class _$EndpointRequestModelCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EndpointRequestModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -64,6 +70,8 @@ class _$EndpointRequestModelCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of EndpointRequestModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EndpointRequestCopyWith<$Res>? get request {
@@ -99,6 +107,8 @@ class __$$EndpointRequestModelImplCopyWithImpl<$Res>
       $Res Function(_$EndpointRequestModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointRequestModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -138,11 +148,13 @@ class _$EndpointRequestModelImpl implements _EndpointRequestModel {
             (identical(other.request, request) || other.request == request));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, request);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointRequestModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointRequestModelImplCopyWith<_$EndpointRequestModelImpl>
@@ -169,8 +181,11 @@ abstract class _EndpointRequestModel implements EndpointRequestModel {
   @override
   @EndpointRequestConverter()
   EndpointRequest? get request;
+
+  /// Create a copy of EndpointRequestModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointRequestModelImplCopyWith<_$EndpointRequestModelImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -184,8 +199,12 @@ mixin _$EndpointRequest {
   EndpointRequestType? get type => throw _privateConstructorUsedError;
   EndpointRequestData? get data => throw _privateConstructorUsedError;
 
+  /// Serializes this EndpointRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EndpointRequestCopyWith<EndpointRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -211,6 +230,8 @@ class _$EndpointRequestCopyWithImpl<$Res, $Val extends EndpointRequest>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EndpointRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -229,6 +250,8 @@ class _$EndpointRequestCopyWithImpl<$Res, $Val extends EndpointRequest>
     ) as $Val);
   }
 
+  /// Create a copy of EndpointRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EndpointRequestDataCopyWith<$Res>? get data {
@@ -264,6 +287,8 @@ class __$$EndpointRequestImplCopyWithImpl<$Res>
       _$EndpointRequestImpl _value, $Res Function(_$EndpointRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -310,11 +335,13 @@ class _$EndpointRequestImpl implements _EndpointRequest {
             (identical(other.data, data) || other.data == data));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type, data);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointRequestImplCopyWith<_$EndpointRequestImpl> get copyWith =>
@@ -341,8 +368,11 @@ abstract class _EndpointRequest implements EndpointRequest {
   EndpointRequestType? get type;
   @override
   EndpointRequestData? get data;
+
+  /// Create a copy of EndpointRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointRequestImplCopyWith<_$EndpointRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -423,6 +453,8 @@ mixin _$EndpointRequestData {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this EndpointRequestData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 }
 
@@ -442,6 +474,9 @@ class _$EndpointRequestDataCopyWithImpl<$Res, $Val extends EndpointRequestData>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of EndpointRequestData
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -461,6 +496,9 @@ class __$$EndpointRequestDataPingImplCopyWithImpl<$Res>
       _$EndpointRequestDataPingImpl _value,
       $Res Function(_$EndpointRequestDataPingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of EndpointRequestData
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -487,7 +525,7 @@ class _$EndpointRequestDataPingImpl implements EndpointRequestDataPing {
             other is _$EndpointRequestDataPingImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -606,6 +644,9 @@ class __$$EndpointRequestDataNewAddressImplCopyWithImpl<$Res>
       _$EndpointRequestDataNewAddressImpl _value,
       $Res Function(_$EndpointRequestDataNewAddressImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of EndpointRequestData
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -634,7 +675,7 @@ class _$EndpointRequestDataNewAddressImpl
             other is _$EndpointRequestDataNewAddressImpl);
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => runtimeType.hashCode;
 
@@ -760,6 +801,8 @@ class __$$EndpointRequestDataCreateTransactionImplCopyWithImpl<$Res>
       $Res Function(_$EndpointRequestDataCreateTransactionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EndpointRequestData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -826,11 +869,13 @@ class _$EndpointRequestDataCreateTransactionImpl
             (identical(other.amount, amount) || other.amount == amount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, address, assetId, amount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EndpointRequestData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$EndpointRequestDataCreateTransactionImplCopyWith<
@@ -946,7 +991,10 @@ abstract class EndpointRequestDataCreateTransaction
   String? get assetId;
   @JsonKey(name: 'amount')
   String? get amount;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EndpointRequestData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$EndpointRequestDataCreateTransactionImplCopyWith<
           _$EndpointRequestDataCreateTransactionImpl>
       get copyWith => throw _privateConstructorUsedError;
