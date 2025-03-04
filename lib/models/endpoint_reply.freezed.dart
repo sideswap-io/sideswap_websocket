@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,141 +10,30 @@ part of 'endpoint_reply.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-EndpointReplyModel _$EndpointReplyModelFromJson(Map<String, dynamic> json) {
-  return _EndpointReplyModel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$EndpointReplyModel {
   @EndpointReplyConverter()
-  EndpointReply? get reply => throw _privateConstructorUsedError;
-
-  /// Serializes this EndpointReplyModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  EndpointReply? get reply;
 
   /// Create a copy of EndpointReplyModel
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $EndpointReplyModelCopyWith<EndpointReplyModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$EndpointReplyModelCopyWithImpl<EndpointReplyModel>(
+          this as EndpointReplyModel, _$identity);
 
-/// @nodoc
-abstract class $EndpointReplyModelCopyWith<$Res> {
-  factory $EndpointReplyModelCopyWith(
-          EndpointReplyModel value, $Res Function(EndpointReplyModel) then) =
-      _$EndpointReplyModelCopyWithImpl<$Res, EndpointReplyModel>;
-  @useResult
-  $Res call({@EndpointReplyConverter() EndpointReply? reply});
-
-  $EndpointReplyCopyWith<$Res>? get reply;
-}
-
-/// @nodoc
-class _$EndpointReplyModelCopyWithImpl<$Res, $Val extends EndpointReplyModel>
-    implements $EndpointReplyModelCopyWith<$Res> {
-  _$EndpointReplyModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of EndpointReplyModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? reply = freezed,
-  }) {
-    return _then(_value.copyWith(
-      reply: freezed == reply
-          ? _value.reply
-          : reply // ignore: cast_nullable_to_non_nullable
-              as EndpointReply?,
-    ) as $Val);
-  }
-
-  /// Create a copy of EndpointReplyModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $EndpointReplyCopyWith<$Res>? get reply {
-    if (_value.reply == null) {
-      return null;
-    }
-
-    return $EndpointReplyCopyWith<$Res>(_value.reply!, (value) {
-      return _then(_value.copyWith(reply: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$EndpointReplyModelImplCopyWith<$Res>
-    implements $EndpointReplyModelCopyWith<$Res> {
-  factory _$$EndpointReplyModelImplCopyWith(_$EndpointReplyModelImpl value,
-          $Res Function(_$EndpointReplyModelImpl) then) =
-      __$$EndpointReplyModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@EndpointReplyConverter() EndpointReply? reply});
-
-  @override
-  $EndpointReplyCopyWith<$Res>? get reply;
-}
-
-/// @nodoc
-class __$$EndpointReplyModelImplCopyWithImpl<$Res>
-    extends _$EndpointReplyModelCopyWithImpl<$Res, _$EndpointReplyModelImpl>
-    implements _$$EndpointReplyModelImplCopyWith<$Res> {
-  __$$EndpointReplyModelImplCopyWithImpl(_$EndpointReplyModelImpl _value,
-      $Res Function(_$EndpointReplyModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of EndpointReplyModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? reply = freezed,
-  }) {
-    return _then(_$EndpointReplyModelImpl(
-      reply: freezed == reply
-          ? _value.reply
-          : reply // ignore: cast_nullable_to_non_nullable
-              as EndpointReply?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$EndpointReplyModelImpl implements _EndpointReplyModel {
-  const _$EndpointReplyModelImpl({@EndpointReplyConverter() this.reply});
-
-  factory _$EndpointReplyModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyModelImplFromJson(json);
-
-  @override
-  @EndpointReplyConverter()
-  final EndpointReply? reply;
-
-  @override
-  String toString() {
-    return 'EndpointReplyModel(reply: $reply)';
-  }
+  /// Serializes this EndpointReplyModel to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyModelImpl &&
+            other is EndpointReplyModel &&
             (identical(other.reply, reply) || other.reply == reply));
   }
 
@@ -151,197 +41,179 @@ class _$EndpointReplyModelImpl implements _EndpointReplyModel {
   @override
   int get hashCode => Object.hash(runtimeType, reply);
 
-  /// Create a copy of EndpointReplyModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EndpointReplyModelImplCopyWith<_$EndpointReplyModelImpl> get copyWith =>
-      __$$EndpointReplyModelImplCopyWithImpl<_$EndpointReplyModelImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointReplyModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'EndpointReplyModel(reply: $reply)';
   }
 }
 
-abstract class _EndpointReplyModel implements EndpointReplyModel {
-  const factory _EndpointReplyModel(
-          {@EndpointReplyConverter() final EndpointReply? reply}) =
-      _$EndpointReplyModelImpl;
+/// @nodoc
+abstract mixin class $EndpointReplyModelCopyWith<$Res> {
+  factory $EndpointReplyModelCopyWith(
+          EndpointReplyModel value, $Res Function(EndpointReplyModel) _then) =
+      _$EndpointReplyModelCopyWithImpl;
+  @useResult
+  $Res call({@EndpointReplyConverter() EndpointReply? reply});
 
-  factory _EndpointReplyModel.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyModelImpl.fromJson;
+  $EndpointReplyCopyWith<$Res>? get reply;
+}
 
-  @override
-  @EndpointReplyConverter()
-  EndpointReply? get reply;
+/// @nodoc
+class _$EndpointReplyModelCopyWithImpl<$Res>
+    implements $EndpointReplyModelCopyWith<$Res> {
+  _$EndpointReplyModelCopyWithImpl(this._self, this._then);
+
+  final EndpointReplyModel _self;
+  final $Res Function(EndpointReplyModel) _then;
 
   /// Create a copy of EndpointReplyModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EndpointReplyModelImplCopyWith<_$EndpointReplyModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-EndpointReply _$EndpointReplyFromJson(Map<String, dynamic> json) {
-  return _EndpointReply.fromJson(json);
-}
-
-/// @nodoc
-mixin _$EndpointReply {
-  String? get id => throw _privateConstructorUsedError;
-  EndpointReplyType? get type => throw _privateConstructorUsedError;
-  EndpointReplyData? get data => throw _privateConstructorUsedError;
-
-  /// Serializes this EndpointReply to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of EndpointReply
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $EndpointReplyCopyWith<EndpointReply> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EndpointReplyCopyWith<$Res> {
-  factory $EndpointReplyCopyWith(
-          EndpointReply value, $Res Function(EndpointReply) then) =
-      _$EndpointReplyCopyWithImpl<$Res, EndpointReply>;
-  @useResult
-  $Res call({String? id, EndpointReplyType? type, EndpointReplyData? data});
-
-  $EndpointReplyDataCopyWith<$Res>? get data;
-}
-
-/// @nodoc
-class _$EndpointReplyCopyWithImpl<$Res, $Val extends EndpointReply>
-    implements $EndpointReplyCopyWith<$Res> {
-  _$EndpointReplyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of EndpointReply
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? data = freezed,
+    Object? reply = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as EndpointReplyType?,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as EndpointReplyData?,
-    ) as $Val);
+    return _then(_self.copyWith(
+      reply: freezed == reply
+          ? _self.reply
+          : reply // ignore: cast_nullable_to_non_nullable
+              as EndpointReply?,
+    ));
   }
 
-  /// Create a copy of EndpointReply
+  /// Create a copy of EndpointReplyModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $EndpointReplyDataCopyWith<$Res>? get data {
-    if (_value.data == null) {
+  $EndpointReplyCopyWith<$Res>? get reply {
+    if (_self.reply == null) {
       return null;
     }
 
-    return $EndpointReplyDataCopyWith<$Res>(_value.data!, (value) {
-      return _then(_value.copyWith(data: value) as $Val);
+    return $EndpointReplyCopyWith<$Res>(_self.reply!, (value) {
+      return _then(_self.copyWith(reply: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$EndpointReplyImplCopyWith<$Res>
-    implements $EndpointReplyCopyWith<$Res> {
-  factory _$$EndpointReplyImplCopyWith(
-          _$EndpointReplyImpl value, $Res Function(_$EndpointReplyImpl) then) =
-      __$$EndpointReplyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? id, EndpointReplyType? type, EndpointReplyData? data});
-
-  @override
-  $EndpointReplyDataCopyWith<$Res>? get data;
-}
-
-/// @nodoc
-class __$$EndpointReplyImplCopyWithImpl<$Res>
-    extends _$EndpointReplyCopyWithImpl<$Res, _$EndpointReplyImpl>
-    implements _$$EndpointReplyImplCopyWith<$Res> {
-  __$$EndpointReplyImplCopyWithImpl(
-      _$EndpointReplyImpl _value, $Res Function(_$EndpointReplyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of EndpointReply
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? data = freezed,
-  }) {
-    return _then(_$EndpointReplyImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as EndpointReplyType?,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as EndpointReplyData?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$EndpointReplyImpl implements _EndpointReply {
-  const _$EndpointReplyImpl({required this.id, this.type, this.data});
-
-  factory _$EndpointReplyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyImplFromJson(json);
-
-  @override
-  final String? id;
-  @override
-  final EndpointReplyType? type;
-  @override
-  final EndpointReplyData? data;
+class _EndpointReplyModel implements EndpointReplyModel {
+  const _EndpointReplyModel({@EndpointReplyConverter() this.reply});
+  factory _EndpointReplyModel.fromJson(Map<String, dynamic> json) =>
+      _$EndpointReplyModelFromJson(json);
 
   @override
-  String toString() {
-    return 'EndpointReply(id: $id, type: $type, data: $data)';
+  @EndpointReplyConverter()
+  final EndpointReply? reply;
+
+  /// Create a copy of EndpointReplyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EndpointReplyModelCopyWith<_EndpointReplyModel> get copyWith =>
+      __$EndpointReplyModelCopyWithImpl<_EndpointReplyModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EndpointReplyModelToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyImpl &&
+            other is _EndpointReplyModel &&
+            (identical(other.reply, reply) || other.reply == reply));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, reply);
+
+  @override
+  String toString() {
+    return 'EndpointReplyModel(reply: $reply)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$EndpointReplyModelCopyWith<$Res>
+    implements $EndpointReplyModelCopyWith<$Res> {
+  factory _$EndpointReplyModelCopyWith(
+          _EndpointReplyModel value, $Res Function(_EndpointReplyModel) _then) =
+      __$EndpointReplyModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call({@EndpointReplyConverter() EndpointReply? reply});
+
+  @override
+  $EndpointReplyCopyWith<$Res>? get reply;
+}
+
+/// @nodoc
+class __$EndpointReplyModelCopyWithImpl<$Res>
+    implements _$EndpointReplyModelCopyWith<$Res> {
+  __$EndpointReplyModelCopyWithImpl(this._self, this._then);
+
+  final _EndpointReplyModel _self;
+  final $Res Function(_EndpointReplyModel) _then;
+
+  /// Create a copy of EndpointReplyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? reply = freezed,
+  }) {
+    return _then(_EndpointReplyModel(
+      reply: freezed == reply
+          ? _self.reply
+          : reply // ignore: cast_nullable_to_non_nullable
+              as EndpointReply?,
+    ));
+  }
+
+  /// Create a copy of EndpointReplyModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EndpointReplyCopyWith<$Res>? get reply {
+    if (_self.reply == null) {
+      return null;
+    }
+
+    return $EndpointReplyCopyWith<$Res>(_self.reply!, (value) {
+      return _then(_self.copyWith(reply: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$EndpointReply {
+  String? get id;
+  EndpointReplyType? get type;
+  EndpointReplyData? get data;
+
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $EndpointReplyCopyWith<EndpointReply> get copyWith =>
+      _$EndpointReplyCopyWithImpl<EndpointReply>(
+          this as EndpointReply, _$identity);
+
+  /// Serializes this EndpointReply to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is EndpointReply &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.data, data) || other.data == data));
@@ -351,44 +223,180 @@ class _$EndpointReplyImpl implements _EndpointReply {
   @override
   int get hashCode => Object.hash(runtimeType, id, type, data);
 
-  /// Create a copy of EndpointReply
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EndpointReplyImplCopyWith<_$EndpointReplyImpl> get copyWith =>
-      __$$EndpointReplyImplCopyWithImpl<_$EndpointReplyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointReplyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'EndpointReply(id: $id, type: $type, data: $data)';
   }
 }
 
-abstract class _EndpointReply implements EndpointReply {
-  const factory _EndpointReply(
-      {required final String? id,
-      final EndpointReplyType? type,
-      final EndpointReplyData? data}) = _$EndpointReplyImpl;
+/// @nodoc
+abstract mixin class $EndpointReplyCopyWith<$Res> {
+  factory $EndpointReplyCopyWith(
+          EndpointReply value, $Res Function(EndpointReply) _then) =
+      _$EndpointReplyCopyWithImpl;
+  @useResult
+  $Res call({String? id, EndpointReplyType? type, EndpointReplyData? data});
 
-  factory _EndpointReply.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyImpl.fromJson;
+  $EndpointReplyDataCopyWith<$Res>? get data;
+}
+
+/// @nodoc
+class _$EndpointReplyCopyWithImpl<$Res>
+    implements $EndpointReplyCopyWith<$Res> {
+  _$EndpointReplyCopyWithImpl(this._self, this._then);
+
+  final EndpointReply _self;
+  final $Res Function(EndpointReply) _then;
+
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? type = freezed,
+    Object? data = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as EndpointReplyType?,
+      data: freezed == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as EndpointReplyData?,
+    ));
+  }
+
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EndpointReplyDataCopyWith<$Res>? get data {
+    if (_self.data == null) {
+      return null;
+    }
+
+    return $EndpointReplyDataCopyWith<$Res>(_self.data!, (value) {
+      return _then(_self.copyWith(data: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _EndpointReply implements EndpointReply {
+  const _EndpointReply({required this.id, this.type, this.data});
+  factory _EndpointReply.fromJson(Map<String, dynamic> json) =>
+      _$EndpointReplyFromJson(json);
 
   @override
-  String? get id;
+  final String? id;
   @override
-  EndpointReplyType? get type;
+  final EndpointReplyType? type;
   @override
-  EndpointReplyData? get data;
+  final EndpointReplyData? data;
 
   /// Create a copy of EndpointReply
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EndpointReplyImplCopyWith<_$EndpointReplyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$EndpointReplyCopyWith<_EndpointReply> get copyWith =>
+      __$EndpointReplyCopyWithImpl<_EndpointReply>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EndpointReplyToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _EndpointReply &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, type, data);
+
+  @override
+  String toString() {
+    return 'EndpointReply(id: $id, type: $type, data: $data)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$EndpointReplyCopyWith<$Res>
+    implements $EndpointReplyCopyWith<$Res> {
+  factory _$EndpointReplyCopyWith(
+          _EndpointReply value, $Res Function(_EndpointReply) _then) =
+      __$EndpointReplyCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? id, EndpointReplyType? type, EndpointReplyData? data});
+
+  @override
+  $EndpointReplyDataCopyWith<$Res>? get data;
+}
+
+/// @nodoc
+class __$EndpointReplyCopyWithImpl<$Res>
+    implements _$EndpointReplyCopyWith<$Res> {
+  __$EndpointReplyCopyWithImpl(this._self, this._then);
+
+  final _EndpointReply _self;
+  final $Res Function(_EndpointReply) _then;
+
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? type = freezed,
+    Object? data = freezed,
+  }) {
+    return _then(_EndpointReply(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as EndpointReplyType?,
+      data: freezed == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as EndpointReplyData?,
+    ));
+  }
+
+  /// Create a copy of EndpointReply
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EndpointReplyDataCopyWith<$Res>? get data {
+    if (_self.data == null) {
+      return null;
+    }
+
+    return $EndpointReplyDataCopyWith<$Res>(_self.data!, (value) {
+      return _then(_self.copyWith(data: value));
+    });
+  }
 }
 
 EndpointReplyData _$EndpointReplyDataFromJson(Map<String, dynamic> json) {
@@ -412,131 +420,13 @@ EndpointReplyData _$EndpointReplyDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$EndpointReplyData {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() pong,
-    required TResult Function(String address) newAddress,
-    required TResult Function(EndpointReplySuccessType type) success,
-    required TResult Function(String message, EndpointReplyErrorType type)
-        error,
-    required TResult Function(String pk) pk,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? pong,
-    TResult? Function(String address)? newAddress,
-    TResult? Function(EndpointReplySuccessType type)? success,
-    TResult? Function(String message, EndpointReplyErrorType type)? error,
-    TResult? Function(String pk)? pk,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? pong,
-    TResult Function(String address)? newAddress,
-    TResult Function(EndpointReplySuccessType type)? success,
-    TResult Function(String message, EndpointReplyErrorType type)? error,
-    TResult Function(String pk)? pk,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EndpointReplyDataPong value) pong,
-    required TResult Function(EndpointReplyDataNewAddress value) newAddress,
-    required TResult Function(EndpointReplyDataSuccess value) success,
-    required TResult Function(EndpointReplyDataError value) error,
-    required TResult Function(EndpointReplyDataPk value) pk,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EndpointReplyDataPong value)? pong,
-    TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult? Function(EndpointReplyDataSuccess value)? success,
-    TResult? Function(EndpointReplyDataError value)? error,
-    TResult? Function(EndpointReplyDataPk value)? pk,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EndpointReplyDataPong value)? pong,
-    TResult Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult Function(EndpointReplyDataSuccess value)? success,
-    TResult Function(EndpointReplyDataError value)? error,
-    TResult Function(EndpointReplyDataPk value)? pk,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-
   /// Serializes this EndpointReplyData to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EndpointReplyDataCopyWith<$Res> {
-  factory $EndpointReplyDataCopyWith(
-          EndpointReplyData value, $Res Function(EndpointReplyData) then) =
-      _$EndpointReplyDataCopyWithImpl<$Res, EndpointReplyData>;
-}
-
-/// @nodoc
-class _$EndpointReplyDataCopyWithImpl<$Res, $Val extends EndpointReplyData>
-    implements $EndpointReplyDataCopyWith<$Res> {
-  _$EndpointReplyDataCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$EndpointReplyDataPongImplCopyWith<$Res> {
-  factory _$$EndpointReplyDataPongImplCopyWith(
-          _$EndpointReplyDataPongImpl value,
-          $Res Function(_$EndpointReplyDataPongImpl) then) =
-      __$$EndpointReplyDataPongImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$EndpointReplyDataPongImplCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataPongImpl>
-    implements _$$EndpointReplyDataPongImplCopyWith<$Res> {
-  __$$EndpointReplyDataPongImplCopyWithImpl(_$EndpointReplyDataPongImpl _value,
-      $Res Function(_$EndpointReplyDataPongImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$EndpointReplyDataPongImpl implements EndpointReplyDataPong {
-  const _$EndpointReplyDataPongImpl({final String? $type})
-      : $type = $type ?? 'pong';
-
-  factory _$EndpointReplyDataPongImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyDataPongImplFromJson(json);
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'EndpointReplyData.pong()';
-  }
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyDataPongImpl);
+        (other.runtimeType == runtimeType && other is EndpointReplyData);
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -544,131 +434,125 @@ class _$EndpointReplyDataPongImpl implements EndpointReplyDataPong {
   int get hashCode => runtimeType.hashCode;
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() pong,
-    required TResult Function(String address) newAddress,
-    required TResult Function(EndpointReplySuccessType type) success,
-    required TResult Function(String message, EndpointReplyErrorType type)
-        error,
-    required TResult Function(String pk) pk,
-  }) {
-    return pong();
+  String toString() {
+    return 'EndpointReplyData()';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? pong,
-    TResult? Function(String address)? newAddress,
-    TResult? Function(EndpointReplySuccessType type)? success,
-    TResult? Function(String message, EndpointReplyErrorType type)? error,
-    TResult? Function(String pk)? pk,
-  }) {
-    return pong?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? pong,
-    TResult Function(String address)? newAddress,
-    TResult Function(EndpointReplySuccessType type)? success,
-    TResult Function(String message, EndpointReplyErrorType type)? error,
-    TResult Function(String pk)? pk,
-    required TResult orElse(),
-  }) {
-    if (pong != null) {
-      return pong();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EndpointReplyDataPong value) pong,
-    required TResult Function(EndpointReplyDataNewAddress value) newAddress,
-    required TResult Function(EndpointReplyDataSuccess value) success,
-    required TResult Function(EndpointReplyDataError value) error,
-    required TResult Function(EndpointReplyDataPk value) pk,
-  }) {
-    return pong(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EndpointReplyDataPong value)? pong,
-    TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult? Function(EndpointReplyDataSuccess value)? success,
-    TResult? Function(EndpointReplyDataError value)? error,
-    TResult? Function(EndpointReplyDataPk value)? pk,
-  }) {
-    return pong?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EndpointReplyDataPong value)? pong,
-    TResult Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult Function(EndpointReplyDataSuccess value)? success,
-    TResult Function(EndpointReplyDataError value)? error,
-    TResult Function(EndpointReplyDataPk value)? pk,
-    required TResult orElse(),
-  }) {
-    if (pong != null) {
-      return pong(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataPongImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class EndpointReplyDataPong implements EndpointReplyData {
-  const factory EndpointReplyDataPong() = _$EndpointReplyDataPongImpl;
-
-  factory EndpointReplyDataPong.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataPongImpl.fromJson;
 }
 
 /// @nodoc
-abstract class _$$EndpointReplyDataNewAddressImplCopyWith<$Res> {
-  factory _$$EndpointReplyDataNewAddressImplCopyWith(
-          _$EndpointReplyDataNewAddressImpl value,
-          $Res Function(_$EndpointReplyDataNewAddressImpl) then) =
-      __$$EndpointReplyDataNewAddressImplCopyWithImpl<$Res>;
+class $EndpointReplyDataCopyWith<$Res> {
+  $EndpointReplyDataCopyWith(
+      EndpointReplyData _, $Res Function(EndpointReplyData) __);
+}
+
+/// @nodoc
+@JsonSerializable()
+class EndpointReplyDataPong implements EndpointReplyData {
+  const EndpointReplyDataPong({final String? $type}) : $type = $type ?? 'pong';
+  factory EndpointReplyDataPong.fromJson(Map<String, dynamic> json) =>
+      _$EndpointReplyDataPongFromJson(json);
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EndpointReplyDataPongToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is EndpointReplyDataPong);
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'EndpointReplyData.pong()';
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class EndpointReplyDataNewAddress implements EndpointReplyData {
+  const EndpointReplyDataNewAddress(
+      {required this.address, final String? $type})
+      : $type = $type ?? 'newAddress';
+  factory EndpointReplyDataNewAddress.fromJson(Map<String, dynamic> json) =>
+      _$EndpointReplyDataNewAddressFromJson(json);
+
+  final String address;
+
+  @JsonKey(name: 'runtimeType')
+  final String $type;
+
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $EndpointReplyDataNewAddressCopyWith<EndpointReplyDataNewAddress>
+      get copyWith => _$EndpointReplyDataNewAddressCopyWithImpl<
+          EndpointReplyDataNewAddress>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EndpointReplyDataNewAddressToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is EndpointReplyDataNewAddress &&
+            (identical(other.address, address) || other.address == address));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, address);
+
+  @override
+  String toString() {
+    return 'EndpointReplyData.newAddress(address: $address)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $EndpointReplyDataNewAddressCopyWith<$Res>
+    implements $EndpointReplyDataCopyWith<$Res> {
+  factory $EndpointReplyDataNewAddressCopyWith(
+          EndpointReplyDataNewAddress value,
+          $Res Function(EndpointReplyDataNewAddress) _then) =
+      _$EndpointReplyDataNewAddressCopyWithImpl;
   @useResult
   $Res call({String address});
 }
 
 /// @nodoc
-class __$$EndpointReplyDataNewAddressImplCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res,
-        _$EndpointReplyDataNewAddressImpl>
-    implements _$$EndpointReplyDataNewAddressImplCopyWith<$Res> {
-  __$$EndpointReplyDataNewAddressImplCopyWithImpl(
-      _$EndpointReplyDataNewAddressImpl _value,
-      $Res Function(_$EndpointReplyDataNewAddressImpl) _then)
-      : super(_value, _then);
+class _$EndpointReplyDataNewAddressCopyWithImpl<$Res>
+    implements $EndpointReplyDataNewAddressCopyWith<$Res> {
+  _$EndpointReplyDataNewAddressCopyWithImpl(this._self, this._then);
+
+  final EndpointReplyDataNewAddress _self;
+  final $Res Function(EndpointReplyDataNewAddress) _then;
 
   /// Create a copy of EndpointReplyData
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? address = null,
   }) {
-    return _then(_$EndpointReplyDataNewAddressImpl(
+    return _then(EndpointReplyDataNewAddress(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -677,182 +561,77 @@ class __$$EndpointReplyDataNewAddressImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointReplyDataNewAddressImpl implements EndpointReplyDataNewAddress {
-  const _$EndpointReplyDataNewAddressImpl(
-      {required this.address, final String? $type})
-      : $type = $type ?? 'newAddress';
+class EndpointReplyDataSuccess implements EndpointReplyData {
+  const EndpointReplyDataSuccess({required this.type, final String? $type})
+      : $type = $type ?? 'success';
+  factory EndpointReplyDataSuccess.fromJson(Map<String, dynamic> json) =>
+      _$EndpointReplyDataSuccessFromJson(json);
 
-  factory _$EndpointReplyDataNewAddressImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$EndpointReplyDataNewAddressImplFromJson(json);
-
-  @override
-  final String address;
+  final EndpointReplySuccessType type;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $EndpointReplyDataSuccessCopyWith<EndpointReplyDataSuccess> get copyWith =>
+      _$EndpointReplyDataSuccessCopyWithImpl<EndpointReplyDataSuccess>(
+          this, _$identity);
+
   @override
-  String toString() {
-    return 'EndpointReplyData.newAddress(address: $address)';
+  Map<String, dynamic> toJson() {
+    return _$EndpointReplyDataSuccessToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyDataNewAddressImpl &&
-            (identical(other.address, address) || other.address == address));
+            other is EndpointReplyDataSuccess &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, address);
-
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EndpointReplyDataNewAddressImplCopyWith<_$EndpointReplyDataNewAddressImpl>
-      get copyWith => __$$EndpointReplyDataNewAddressImplCopyWithImpl<
-          _$EndpointReplyDataNewAddressImpl>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, type);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() pong,
-    required TResult Function(String address) newAddress,
-    required TResult Function(EndpointReplySuccessType type) success,
-    required TResult Function(String message, EndpointReplyErrorType type)
-        error,
-    required TResult Function(String pk) pk,
-  }) {
-    return newAddress(address);
+  String toString() {
+    return 'EndpointReplyData.success(type: $type)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? pong,
-    TResult? Function(String address)? newAddress,
-    TResult? Function(EndpointReplySuccessType type)? success,
-    TResult? Function(String message, EndpointReplyErrorType type)? error,
-    TResult? Function(String pk)? pk,
-  }) {
-    return newAddress?.call(address);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? pong,
-    TResult Function(String address)? newAddress,
-    TResult Function(EndpointReplySuccessType type)? success,
-    TResult Function(String message, EndpointReplyErrorType type)? error,
-    TResult Function(String pk)? pk,
-    required TResult orElse(),
-  }) {
-    if (newAddress != null) {
-      return newAddress(address);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EndpointReplyDataPong value) pong,
-    required TResult Function(EndpointReplyDataNewAddress value) newAddress,
-    required TResult Function(EndpointReplyDataSuccess value) success,
-    required TResult Function(EndpointReplyDataError value) error,
-    required TResult Function(EndpointReplyDataPk value) pk,
-  }) {
-    return newAddress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EndpointReplyDataPong value)? pong,
-    TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult? Function(EndpointReplyDataSuccess value)? success,
-    TResult? Function(EndpointReplyDataError value)? error,
-    TResult? Function(EndpointReplyDataPk value)? pk,
-  }) {
-    return newAddress?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EndpointReplyDataPong value)? pong,
-    TResult Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult Function(EndpointReplyDataSuccess value)? success,
-    TResult Function(EndpointReplyDataError value)? error,
-    TResult Function(EndpointReplyDataPk value)? pk,
-    required TResult orElse(),
-  }) {
-    if (newAddress != null) {
-      return newAddress(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataNewAddressImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class EndpointReplyDataNewAddress implements EndpointReplyData {
-  const factory EndpointReplyDataNewAddress({required final String address}) =
-      _$EndpointReplyDataNewAddressImpl;
-
-  factory EndpointReplyDataNewAddress.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataNewAddressImpl.fromJson;
-
-  String get address;
-
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EndpointReplyDataNewAddressImplCopyWith<_$EndpointReplyDataNewAddressImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EndpointReplyDataSuccessImplCopyWith<$Res> {
-  factory _$$EndpointReplyDataSuccessImplCopyWith(
-          _$EndpointReplyDataSuccessImpl value,
-          $Res Function(_$EndpointReplyDataSuccessImpl) then) =
-      __$$EndpointReplyDataSuccessImplCopyWithImpl<$Res>;
+abstract mixin class $EndpointReplyDataSuccessCopyWith<$Res>
+    implements $EndpointReplyDataCopyWith<$Res> {
+  factory $EndpointReplyDataSuccessCopyWith(EndpointReplyDataSuccess value,
+          $Res Function(EndpointReplyDataSuccess) _then) =
+      _$EndpointReplyDataSuccessCopyWithImpl;
   @useResult
   $Res call({EndpointReplySuccessType type});
 }
 
 /// @nodoc
-class __$$EndpointReplyDataSuccessImplCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res,
-        _$EndpointReplyDataSuccessImpl>
-    implements _$$EndpointReplyDataSuccessImplCopyWith<$Res> {
-  __$$EndpointReplyDataSuccessImplCopyWithImpl(
-      _$EndpointReplyDataSuccessImpl _value,
-      $Res Function(_$EndpointReplyDataSuccessImpl) _then)
-      : super(_value, _then);
+class _$EndpointReplyDataSuccessCopyWithImpl<$Res>
+    implements $EndpointReplyDataSuccessCopyWith<$Res> {
+  _$EndpointReplyDataSuccessCopyWithImpl(this._self, this._then);
+
+  final EndpointReplyDataSuccess _self;
+  final $Res Function(EndpointReplyDataSuccess) _then;
 
   /// Create a copy of EndpointReplyData
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? type = null,
   }) {
-    return _then(_$EndpointReplyDataSuccessImpl(
+    return _then(EndpointReplyDataSuccess(
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as EndpointReplySuccessType,
     ));
@@ -861,220 +640,39 @@ class __$$EndpointReplyDataSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointReplyDataSuccessImpl implements EndpointReplyDataSuccess {
-  const _$EndpointReplyDataSuccessImpl(
-      {required this.type, final String? $type})
-      : $type = $type ?? 'success';
-
-  factory _$EndpointReplyDataSuccessImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyDataSuccessImplFromJson(json);
-
-  @override
-  final EndpointReplySuccessType type;
-
-  @JsonKey(name: 'runtimeType')
-  final String $type;
-
-  @override
-  String toString() {
-    return 'EndpointReplyData.success(type: $type)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyDataSuccessImpl &&
-            (identical(other.type, type) || other.type == type));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, type);
-
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EndpointReplyDataSuccessImplCopyWith<_$EndpointReplyDataSuccessImpl>
-      get copyWith => __$$EndpointReplyDataSuccessImplCopyWithImpl<
-          _$EndpointReplyDataSuccessImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() pong,
-    required TResult Function(String address) newAddress,
-    required TResult Function(EndpointReplySuccessType type) success,
-    required TResult Function(String message, EndpointReplyErrorType type)
-        error,
-    required TResult Function(String pk) pk,
-  }) {
-    return success(type);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? pong,
-    TResult? Function(String address)? newAddress,
-    TResult? Function(EndpointReplySuccessType type)? success,
-    TResult? Function(String message, EndpointReplyErrorType type)? error,
-    TResult? Function(String pk)? pk,
-  }) {
-    return success?.call(type);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? pong,
-    TResult Function(String address)? newAddress,
-    TResult Function(EndpointReplySuccessType type)? success,
-    TResult Function(String message, EndpointReplyErrorType type)? error,
-    TResult Function(String pk)? pk,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(type);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EndpointReplyDataPong value) pong,
-    required TResult Function(EndpointReplyDataNewAddress value) newAddress,
-    required TResult Function(EndpointReplyDataSuccess value) success,
-    required TResult Function(EndpointReplyDataError value) error,
-    required TResult Function(EndpointReplyDataPk value) pk,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EndpointReplyDataPong value)? pong,
-    TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult? Function(EndpointReplyDataSuccess value)? success,
-    TResult? Function(EndpointReplyDataError value)? error,
-    TResult? Function(EndpointReplyDataPk value)? pk,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EndpointReplyDataPong value)? pong,
-    TResult Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult Function(EndpointReplyDataSuccess value)? success,
-    TResult Function(EndpointReplyDataError value)? error,
-    TResult Function(EndpointReplyDataPk value)? pk,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataSuccessImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class EndpointReplyDataSuccess implements EndpointReplyData {
-  const factory EndpointReplyDataSuccess(
-          {required final EndpointReplySuccessType type}) =
-      _$EndpointReplyDataSuccessImpl;
-
-  factory EndpointReplyDataSuccess.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataSuccessImpl.fromJson;
-
-  EndpointReplySuccessType get type;
-
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EndpointReplyDataSuccessImplCopyWith<_$EndpointReplyDataSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$EndpointReplyDataErrorImplCopyWith<$Res> {
-  factory _$$EndpointReplyDataErrorImplCopyWith(
-          _$EndpointReplyDataErrorImpl value,
-          $Res Function(_$EndpointReplyDataErrorImpl) then) =
-      __$$EndpointReplyDataErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message, EndpointReplyErrorType type});
-}
-
-/// @nodoc
-class __$$EndpointReplyDataErrorImplCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataErrorImpl>
-    implements _$$EndpointReplyDataErrorImplCopyWith<$Res> {
-  __$$EndpointReplyDataErrorImplCopyWithImpl(
-      _$EndpointReplyDataErrorImpl _value,
-      $Res Function(_$EndpointReplyDataErrorImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-    Object? type = null,
-  }) {
-    return _then(_$EndpointReplyDataErrorImpl(
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as EndpointReplyErrorType,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$EndpointReplyDataErrorImpl implements EndpointReplyDataError {
-  const _$EndpointReplyDataErrorImpl(
+class EndpointReplyDataError implements EndpointReplyData {
+  const EndpointReplyDataError(
       {required this.message, required this.type, final String? $type})
       : $type = $type ?? 'error';
+  factory EndpointReplyDataError.fromJson(Map<String, dynamic> json) =>
+      _$EndpointReplyDataErrorFromJson(json);
 
-  factory _$EndpointReplyDataErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyDataErrorImplFromJson(json);
-
-  @override
   final String message;
-  @override
   final EndpointReplyErrorType type;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $EndpointReplyDataErrorCopyWith<EndpointReplyDataError> get copyWith =>
+      _$EndpointReplyDataErrorCopyWithImpl<EndpointReplyDataError>(
+          this, _$identity);
+
   @override
-  String toString() {
-    return 'EndpointReplyData.error(message: $message, type: $type)';
+  Map<String, dynamic> toJson() {
+    return _$EndpointReplyDataErrorToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyDataErrorImpl &&
+            other is EndpointReplyDataError &&
             (identical(other.message, message) || other.message == message) &&
             (identical(other.type, type) || other.type == type));
   }
@@ -1083,181 +681,82 @@ class _$EndpointReplyDataErrorImpl implements EndpointReplyDataError {
   @override
   int get hashCode => Object.hash(runtimeType, message, type);
 
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EndpointReplyDataErrorImplCopyWith<_$EndpointReplyDataErrorImpl>
-      get copyWith => __$$EndpointReplyDataErrorImplCopyWithImpl<
-          _$EndpointReplyDataErrorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() pong,
-    required TResult Function(String address) newAddress,
-    required TResult Function(EndpointReplySuccessType type) success,
-    required TResult Function(String message, EndpointReplyErrorType type)
-        error,
-    required TResult Function(String pk) pk,
-  }) {
-    return error(message, type);
+  String toString() {
+    return 'EndpointReplyData.error(message: $message, type: $type)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? pong,
-    TResult? Function(String address)? newAddress,
-    TResult? Function(EndpointReplySuccessType type)? success,
-    TResult? Function(String message, EndpointReplyErrorType type)? error,
-    TResult? Function(String pk)? pk,
-  }) {
-    return error?.call(message, type);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? pong,
-    TResult Function(String address)? newAddress,
-    TResult Function(EndpointReplySuccessType type)? success,
-    TResult Function(String message, EndpointReplyErrorType type)? error,
-    TResult Function(String pk)? pk,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(message, type);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EndpointReplyDataPong value) pong,
-    required TResult Function(EndpointReplyDataNewAddress value) newAddress,
-    required TResult Function(EndpointReplyDataSuccess value) success,
-    required TResult Function(EndpointReplyDataError value) error,
-    required TResult Function(EndpointReplyDataPk value) pk,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EndpointReplyDataPong value)? pong,
-    TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult? Function(EndpointReplyDataSuccess value)? success,
-    TResult? Function(EndpointReplyDataError value)? error,
-    TResult? Function(EndpointReplyDataPk value)? pk,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EndpointReplyDataPong value)? pong,
-    TResult Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult Function(EndpointReplyDataSuccess value)? success,
-    TResult Function(EndpointReplyDataError value)? error,
-    TResult Function(EndpointReplyDataPk value)? pk,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataErrorImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class EndpointReplyDataError implements EndpointReplyData {
-  const factory EndpointReplyDataError(
-          {required final String message,
-          required final EndpointReplyErrorType type}) =
-      _$EndpointReplyDataErrorImpl;
-
-  factory EndpointReplyDataError.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataErrorImpl.fromJson;
-
-  String get message;
-  EndpointReplyErrorType get type;
-
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EndpointReplyDataErrorImplCopyWith<_$EndpointReplyDataErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EndpointReplyDataPkImplCopyWith<$Res> {
-  factory _$$EndpointReplyDataPkImplCopyWith(_$EndpointReplyDataPkImpl value,
-          $Res Function(_$EndpointReplyDataPkImpl) then) =
-      __$$EndpointReplyDataPkImplCopyWithImpl<$Res>;
+abstract mixin class $EndpointReplyDataErrorCopyWith<$Res>
+    implements $EndpointReplyDataCopyWith<$Res> {
+  factory $EndpointReplyDataErrorCopyWith(EndpointReplyDataError value,
+          $Res Function(EndpointReplyDataError) _then) =
+      _$EndpointReplyDataErrorCopyWithImpl;
   @useResult
-  $Res call({String pk});
+  $Res call({String message, EndpointReplyErrorType type});
 }
 
 /// @nodoc
-class __$$EndpointReplyDataPkImplCopyWithImpl<$Res>
-    extends _$EndpointReplyDataCopyWithImpl<$Res, _$EndpointReplyDataPkImpl>
-    implements _$$EndpointReplyDataPkImplCopyWith<$Res> {
-  __$$EndpointReplyDataPkImplCopyWithImpl(_$EndpointReplyDataPkImpl _value,
-      $Res Function(_$EndpointReplyDataPkImpl) _then)
-      : super(_value, _then);
+class _$EndpointReplyDataErrorCopyWithImpl<$Res>
+    implements $EndpointReplyDataErrorCopyWith<$Res> {
+  _$EndpointReplyDataErrorCopyWithImpl(this._self, this._then);
+
+  final EndpointReplyDataError _self;
+  final $Res Function(EndpointReplyDataError) _then;
 
   /// Create a copy of EndpointReplyData
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? pk = null,
+    Object? message = null,
+    Object? type = null,
   }) {
-    return _then(_$EndpointReplyDataPkImpl(
-      pk: null == pk
-          ? _value.pk
-          : pk // ignore: cast_nullable_to_non_nullable
+    return _then(EndpointReplyDataError(
+      message: null == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
               as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as EndpointReplyErrorType,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$EndpointReplyDataPkImpl implements EndpointReplyDataPk {
-  const _$EndpointReplyDataPkImpl({required this.pk, final String? $type})
+class EndpointReplyDataPk implements EndpointReplyData {
+  const EndpointReplyDataPk({required this.pk, final String? $type})
       : $type = $type ?? 'pk';
+  factory EndpointReplyDataPk.fromJson(Map<String, dynamic> json) =>
+      _$EndpointReplyDataPkFromJson(json);
 
-  factory _$EndpointReplyDataPkImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointReplyDataPkImplFromJson(json);
-
-  @override
   final String pk;
 
   @JsonKey(name: 'runtimeType')
   final String $type;
 
+  /// Create a copy of EndpointReplyData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $EndpointReplyDataPkCopyWith<EndpointReplyDataPk> get copyWith =>
+      _$EndpointReplyDataPkCopyWithImpl<EndpointReplyDataPk>(this, _$identity);
+
   @override
-  String toString() {
-    return 'EndpointReplyData.pk(pk: $pk)';
+  Map<String, dynamic> toJson() {
+    return _$EndpointReplyDataPkToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointReplyDataPkImpl &&
+            other is EndpointReplyDataPk &&
             (identical(other.pk, pk) || other.pk == pk));
   }
 
@@ -1265,116 +764,43 @@ class _$EndpointReplyDataPkImpl implements EndpointReplyDataPk {
   @override
   int get hashCode => Object.hash(runtimeType, pk);
 
+  @override
+  String toString() {
+    return 'EndpointReplyData.pk(pk: $pk)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $EndpointReplyDataPkCopyWith<$Res>
+    implements $EndpointReplyDataCopyWith<$Res> {
+  factory $EndpointReplyDataPkCopyWith(
+          EndpointReplyDataPk value, $Res Function(EndpointReplyDataPk) _then) =
+      _$EndpointReplyDataPkCopyWithImpl;
+  @useResult
+  $Res call({String pk});
+}
+
+/// @nodoc
+class _$EndpointReplyDataPkCopyWithImpl<$Res>
+    implements $EndpointReplyDataPkCopyWith<$Res> {
+  _$EndpointReplyDataPkCopyWithImpl(this._self, this._then);
+
+  final EndpointReplyDataPk _self;
+  final $Res Function(EndpointReplyDataPk) _then;
+
   /// Create a copy of EndpointReplyData
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
   @pragma('vm:prefer-inline')
-  _$$EndpointReplyDataPkImplCopyWith<_$EndpointReplyDataPkImpl> get copyWith =>
-      __$$EndpointReplyDataPkImplCopyWithImpl<_$EndpointReplyDataPkImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() pong,
-    required TResult Function(String address) newAddress,
-    required TResult Function(EndpointReplySuccessType type) success,
-    required TResult Function(String message, EndpointReplyErrorType type)
-        error,
-    required TResult Function(String pk) pk,
+  $Res call({
+    Object? pk = null,
   }) {
-    return pk(this.pk);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? pong,
-    TResult? Function(String address)? newAddress,
-    TResult? Function(EndpointReplySuccessType type)? success,
-    TResult? Function(String message, EndpointReplyErrorType type)? error,
-    TResult? Function(String pk)? pk,
-  }) {
-    return pk?.call(this.pk);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? pong,
-    TResult Function(String address)? newAddress,
-    TResult Function(EndpointReplySuccessType type)? success,
-    TResult Function(String message, EndpointReplyErrorType type)? error,
-    TResult Function(String pk)? pk,
-    required TResult orElse(),
-  }) {
-    if (pk != null) {
-      return pk(this.pk);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(EndpointReplyDataPong value) pong,
-    required TResult Function(EndpointReplyDataNewAddress value) newAddress,
-    required TResult Function(EndpointReplyDataSuccess value) success,
-    required TResult Function(EndpointReplyDataError value) error,
-    required TResult Function(EndpointReplyDataPk value) pk,
-  }) {
-    return pk(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EndpointReplyDataPong value)? pong,
-    TResult? Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult? Function(EndpointReplyDataSuccess value)? success,
-    TResult? Function(EndpointReplyDataError value)? error,
-    TResult? Function(EndpointReplyDataPk value)? pk,
-  }) {
-    return pk?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(EndpointReplyDataPong value)? pong,
-    TResult Function(EndpointReplyDataNewAddress value)? newAddress,
-    TResult Function(EndpointReplyDataSuccess value)? success,
-    TResult Function(EndpointReplyDataError value)? error,
-    TResult Function(EndpointReplyDataPk value)? pk,
-    required TResult orElse(),
-  }) {
-    if (pk != null) {
-      return pk(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointReplyDataPkImplToJson(
-      this,
-    );
+    return _then(EndpointReplyDataPk(
+      pk: null == pk
+          ? _self.pk
+          : pk // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
-abstract class EndpointReplyDataPk implements EndpointReplyData {
-  const factory EndpointReplyDataPk({required final String pk}) =
-      _$EndpointReplyDataPkImpl;
-
-  factory EndpointReplyDataPk.fromJson(Map<String, dynamic> json) =
-      _$EndpointReplyDataPkImpl.fromJson;
-
-  String get pk;
-
-  /// Create a copy of EndpointReplyData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EndpointReplyDataPkImplCopyWith<_$EndpointReplyDataPkImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

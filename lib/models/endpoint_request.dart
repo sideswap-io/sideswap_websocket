@@ -59,7 +59,7 @@ class EndpointRequestConverter
 
 // '{"request": {"type": "value", "data": {...}}}'
 @freezed
-class EndpointRequestModel with _$EndpointRequestModel {
+sealed class EndpointRequestModel with _$EndpointRequestModel {
   const factory EndpointRequestModel({
     @EndpointRequestConverter() EndpointRequest? request,
   }) = _EndpointRequestModel;
@@ -69,7 +69,7 @@ class EndpointRequestModel with _$EndpointRequestModel {
 }
 
 @freezed
-class EndpointRequest with _$EndpointRequest {
+sealed class EndpointRequest with _$EndpointRequest {
   const factory EndpointRequest({
     EndpointRequestType? type,
     EndpointRequestData? data,
@@ -80,7 +80,7 @@ class EndpointRequest with _$EndpointRequest {
 }
 
 @freezed
-class EndpointRequestData with _$EndpointRequestData {
+sealed class EndpointRequestData with _$EndpointRequestData {
   const factory EndpointRequestData.ping() = EndpointRequestDataPing;
   const factory EndpointRequestData.newAddress() =
       EndpointRequestDataNewAddress;

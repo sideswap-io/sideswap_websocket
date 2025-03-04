@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,188 +10,33 @@ part of 'endpoint_session_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-EndpointSessionRequest _$EndpointSessionRequestFromJson(
-    Map<String, dynamic> json) {
-  return _EndpointSessionRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$EndpointSessionRequest {
-  String? get id => throw _privateConstructorUsedError;
-  EndpointSessionRequestType? get type => throw _privateConstructorUsedError;
-  String? get data => throw _privateConstructorUsedError;
-  String? get pk => throw _privateConstructorUsedError;
-  String? get clientId => throw _privateConstructorUsedError;
-
-  /// Serializes this EndpointSessionRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get id;
+  EndpointSessionRequestType? get type;
+  String? get data;
+  String? get pk;
+  String? get clientId;
 
   /// Create a copy of EndpointSessionRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $EndpointSessionRequestCopyWith<EndpointSessionRequest> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$EndpointSessionRequestCopyWithImpl<EndpointSessionRequest>(
+          this as EndpointSessionRequest, _$identity);
 
-/// @nodoc
-abstract class $EndpointSessionRequestCopyWith<$Res> {
-  factory $EndpointSessionRequestCopyWith(EndpointSessionRequest value,
-          $Res Function(EndpointSessionRequest) then) =
-      _$EndpointSessionRequestCopyWithImpl<$Res, EndpointSessionRequest>;
-  @useResult
-  $Res call(
-      {String? id,
-      EndpointSessionRequestType? type,
-      String? data,
-      String? pk,
-      String? clientId});
-}
-
-/// @nodoc
-class _$EndpointSessionRequestCopyWithImpl<$Res,
-        $Val extends EndpointSessionRequest>
-    implements $EndpointSessionRequestCopyWith<$Res> {
-  _$EndpointSessionRequestCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of EndpointSessionRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? data = freezed,
-    Object? pk = freezed,
-    Object? clientId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as EndpointSessionRequestType?,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pk: freezed == pk
-          ? _value.pk
-          : pk // ignore: cast_nullable_to_non_nullable
-              as String?,
-      clientId: freezed == clientId
-          ? _value.clientId
-          : clientId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$EndpointSessionRequestImplCopyWith<$Res>
-    implements $EndpointSessionRequestCopyWith<$Res> {
-  factory _$$EndpointSessionRequestImplCopyWith(
-          _$EndpointSessionRequestImpl value,
-          $Res Function(_$EndpointSessionRequestImpl) then) =
-      __$$EndpointSessionRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      EndpointSessionRequestType? type,
-      String? data,
-      String? pk,
-      String? clientId});
-}
-
-/// @nodoc
-class __$$EndpointSessionRequestImplCopyWithImpl<$Res>
-    extends _$EndpointSessionRequestCopyWithImpl<$Res,
-        _$EndpointSessionRequestImpl>
-    implements _$$EndpointSessionRequestImplCopyWith<$Res> {
-  __$$EndpointSessionRequestImplCopyWithImpl(
-      _$EndpointSessionRequestImpl _value,
-      $Res Function(_$EndpointSessionRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of EndpointSessionRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? type = freezed,
-    Object? data = freezed,
-    Object? pk = freezed,
-    Object? clientId = freezed,
-  }) {
-    return _then(_$EndpointSessionRequestImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as EndpointSessionRequestType?,
-      data: freezed == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pk: freezed == pk
-          ? _value.pk
-          : pk // ignore: cast_nullable_to_non_nullable
-              as String?,
-      clientId: freezed == clientId
-          ? _value.clientId
-          : clientId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$EndpointSessionRequestImpl implements _EndpointSessionRequest {
-  const _$EndpointSessionRequestImpl(
-      {this.id, this.type, this.data, this.pk, this.clientId});
-
-  factory _$EndpointSessionRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EndpointSessionRequestImplFromJson(json);
-
-  @override
-  final String? id;
-  @override
-  final EndpointSessionRequestType? type;
-  @override
-  final String? data;
-  @override
-  final String? pk;
-  @override
-  final String? clientId;
-
-  @override
-  String toString() {
-    return 'EndpointSessionRequest(id: $id, type: $type, data: $data, pk: $pk, clientId: $clientId)';
-  }
+  /// Serializes this EndpointSessionRequest to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EndpointSessionRequestImpl &&
+            other is EndpointSessionRequest &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.data, data) || other.data == data) &&
@@ -203,49 +49,186 @@ class _$EndpointSessionRequestImpl implements _EndpointSessionRequest {
   @override
   int get hashCode => Object.hash(runtimeType, id, type, data, pk, clientId);
 
-  /// Create a copy of EndpointSessionRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$EndpointSessionRequestImplCopyWith<_$EndpointSessionRequestImpl>
-      get copyWith => __$$EndpointSessionRequestImplCopyWithImpl<
-          _$EndpointSessionRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EndpointSessionRequestImplToJson(
-      this,
-    );
+  String toString() {
+    return 'EndpointSessionRequest(id: $id, type: $type, data: $data, pk: $pk, clientId: $clientId)';
   }
 }
 
-abstract class _EndpointSessionRequest implements EndpointSessionRequest {
-  const factory _EndpointSessionRequest(
-      {final String? id,
-      final EndpointSessionRequestType? type,
-      final String? data,
-      final String? pk,
-      final String? clientId}) = _$EndpointSessionRequestImpl;
+/// @nodoc
+abstract mixin class $EndpointSessionRequestCopyWith<$Res> {
+  factory $EndpointSessionRequestCopyWith(EndpointSessionRequest value,
+          $Res Function(EndpointSessionRequest) _then) =
+      _$EndpointSessionRequestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      EndpointSessionRequestType? type,
+      String? data,
+      String? pk,
+      String? clientId});
+}
 
-  factory _EndpointSessionRequest.fromJson(Map<String, dynamic> json) =
-      _$EndpointSessionRequestImpl.fromJson;
+/// @nodoc
+class _$EndpointSessionRequestCopyWithImpl<$Res>
+    implements $EndpointSessionRequestCopyWith<$Res> {
+  _$EndpointSessionRequestCopyWithImpl(this._self, this._then);
+
+  final EndpointSessionRequest _self;
+  final $Res Function(EndpointSessionRequest) _then;
+
+  /// Create a copy of EndpointSessionRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? type = freezed,
+    Object? data = freezed,
+    Object? pk = freezed,
+    Object? clientId = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as EndpointSessionRequestType?,
+      data: freezed == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pk: freezed == pk
+          ? _self.pk
+          : pk // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientId: freezed == clientId
+          ? _self.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _EndpointSessionRequest implements EndpointSessionRequest {
+  const _EndpointSessionRequest(
+      {this.id, this.type, this.data, this.pk, this.clientId});
+  factory _EndpointSessionRequest.fromJson(Map<String, dynamic> json) =>
+      _$EndpointSessionRequestFromJson(json);
 
   @override
-  String? get id;
+  final String? id;
   @override
-  EndpointSessionRequestType? get type;
+  final EndpointSessionRequestType? type;
   @override
-  String? get data;
+  final String? data;
   @override
-  String? get pk;
+  final String? pk;
   @override
-  String? get clientId;
+  final String? clientId;
 
   /// Create a copy of EndpointSessionRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EndpointSessionRequestImplCopyWith<_$EndpointSessionRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$EndpointSessionRequestCopyWith<_EndpointSessionRequest> get copyWith =>
+      __$EndpointSessionRequestCopyWithImpl<_EndpointSessionRequest>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$EndpointSessionRequestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _EndpointSessionRequest &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.pk, pk) || other.pk == pk) &&
+            (identical(other.clientId, clientId) ||
+                other.clientId == clientId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, type, data, pk, clientId);
+
+  @override
+  String toString() {
+    return 'EndpointSessionRequest(id: $id, type: $type, data: $data, pk: $pk, clientId: $clientId)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$EndpointSessionRequestCopyWith<$Res>
+    implements $EndpointSessionRequestCopyWith<$Res> {
+  factory _$EndpointSessionRequestCopyWith(_EndpointSessionRequest value,
+          $Res Function(_EndpointSessionRequest) _then) =
+      __$EndpointSessionRequestCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      EndpointSessionRequestType? type,
+      String? data,
+      String? pk,
+      String? clientId});
+}
+
+/// @nodoc
+class __$EndpointSessionRequestCopyWithImpl<$Res>
+    implements _$EndpointSessionRequestCopyWith<$Res> {
+  __$EndpointSessionRequestCopyWithImpl(this._self, this._then);
+
+  final _EndpointSessionRequest _self;
+  final $Res Function(_EndpointSessionRequest) _then;
+
+  /// Create a copy of EndpointSessionRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? type = freezed,
+    Object? data = freezed,
+    Object? pk = freezed,
+    Object? clientId = freezed,
+  }) {
+    return _then(_EndpointSessionRequest(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as EndpointSessionRequestType?,
+      data: freezed == data
+          ? _self.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pk: freezed == pk
+          ? _self.pk
+          : pk // ignore: cast_nullable_to_non_nullable
+              as String?,
+      clientId: freezed == clientId
+          ? _self.clientId
+          : clientId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

@@ -6,9 +6,9 @@ part of 'endpoint_session_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EndpointSessionRequestImpl _$$EndpointSessionRequestImplFromJson(
+_EndpointSessionRequest _$EndpointSessionRequestFromJson(
         Map<String, dynamic> json) =>
-    _$EndpointSessionRequestImpl(
+    _EndpointSessionRequest(
       id: json['id'] as String?,
       type: $enumDecodeNullable(
           _$EndpointSessionRequestTypeEnumMap, json['type']),
@@ -17,8 +17,8 @@ _$EndpointSessionRequestImpl _$$EndpointSessionRequestImplFromJson(
       clientId: json['clientId'] as String?,
     );
 
-Map<String, dynamic> _$$EndpointSessionRequestImplToJson(
-        _$EndpointSessionRequestImpl instance) =>
+Map<String, dynamic> _$EndpointSessionRequestToJson(
+        _EndpointSessionRequest instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': _$EndpointSessionRequestTypeEnumMap[instance.type],

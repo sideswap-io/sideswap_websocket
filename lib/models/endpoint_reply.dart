@@ -138,7 +138,7 @@ class EndpointReplyConverter
 
 // '{"reply": {"type": "value", "data": {...}}}'
 @freezed
-class EndpointReplyModel with _$EndpointReplyModel {
+sealed class EndpointReplyModel with _$EndpointReplyModel {
   const factory EndpointReplyModel(
       {@EndpointReplyConverter() EndpointReply? reply}) = _EndpointReplyModel;
 
@@ -147,7 +147,7 @@ class EndpointReplyModel with _$EndpointReplyModel {
 }
 
 @freezed
-class EndpointReply with _$EndpointReply {
+sealed class EndpointReply with _$EndpointReply {
   const factory EndpointReply({
     required String? id,
     EndpointReplyType? type,
@@ -159,7 +159,7 @@ class EndpointReply with _$EndpointReply {
 }
 
 @freezed
-class EndpointReplyData with _$EndpointReplyData {
+sealed class EndpointReplyData with _$EndpointReplyData {
   const factory EndpointReplyData.pong() = EndpointReplyDataPong;
   const factory EndpointReplyData.newAddress({required String address}) =
       EndpointReplyDataNewAddress;
