@@ -1,16 +1,16 @@
 name: sideswap_websocket
 description: Sideswap local endpoint websocket
-version: 0.0.11
+version: 0.0.12
 publish_to: none
 
 environment:
-  sdk: ">=3.5.3 <4.0.0"
-  flutter: ">=3.24.3"
+  sdk: ^3.8.0
+  flutter: ^3.32.0
 
 dependencies:
-  basic_utils: ^5.8.2
   flutter:
     sdk: flutter
+  basic_utils: ^5.8.2
   fpdart: ^1.1.1
   freezed_annotation: ^3.0.0
   hooks_riverpod: ^2.6.1
@@ -23,18 +23,17 @@ dependencies:
       url: https://github.com/sideswap-io/sideswap_logger.git
       ref: master
   uuid: ^4.5.1
-  web_socket_channel: ^3.0.2
+  web_socket_channel: ^3.0.3
   websocket_universal: ^1.2.5
 
 dev_dependencies:
-  base_codecs: ^1.0.1
+  flutter_test:
+    sdk: flutter
   build_runner: ^2.4.15
   custom_lint: ^0.7.5
   flutter_hooks: ^0.21.2
   flutter_lints: ^5.0.0
-  flutter_test:
-    sdk: flutter
-  freezed: ^3.0.3
-  json_serializable: ^6.9.4
+  freezed: ^3.0.6
+  json_serializable: ^6.9.5
   riverpod_lint: ^2.6.5
   riverpod_generator: ^2.6.5
