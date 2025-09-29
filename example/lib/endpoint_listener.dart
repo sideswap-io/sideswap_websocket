@@ -16,7 +16,7 @@ class EndpointListener extends HookConsumerWidget {
       return;
     }, [endpointServerHelper]);
 
-    final endpointClientHelper = ref.watch(endpointClientProvider);
+    final endpointClientHelper = ref.watch(endpointClientHelperProvider);
 
     useEffect(() {
       if (endpointClientHelper.isConnected) {

@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:sideswap_websocket/sideswap_endpoint.dart';
 import 'package:sideswap_websocket/src/endpoint_logger.dart';
+
+part 'server_test.g.dart';
 
 final endpointServerProvider = Provider((ref) {
   final endpointServer = EndpointServerProvider(ref);
@@ -62,18 +65,30 @@ class EndpointServerProvider {
   }
 }
 
-final newAddressStateProvider = StateProvider((ref) => '');
+@riverpod
+class NewAddressState extends _$NewAddressState {
+  @override
+  String build() {
+    return '';
+  }
 
-final endpointClientProvider = ChangeNotifierProvider<EndpointClientProvider>(
-    (ref) => EndpointClientProvider(ref));
+  void setState(String value) {
+    state = value;
+  }
+}
 
-class EndpointClientProvider extends ChangeNotifier {
+@riverpod
+EndpointClientHelper endpointClientHelper(Ref ref) {
+  return EndpointClientHelper(ref);
+}
+
+class EndpointClientHelper {
   final Ref ref;
   EndpointClient? endpointClient;
   bool _isConnected = false;
   bool get isConnected => _isConnected;
 
-  EndpointClientProvider(this.ref) {
+  EndpointClientHelper(this.ref) {
     _init();
   }
 
@@ -101,17 +116,17 @@ class EndpointClientProvider extends ChangeNotifier {
     final data = replyModel.reply?.data;
     (switch (type) {
       EndpointReplyType.newAddress => switch (data) {
-          EndpointReplyDataNewAddress(address: final address) =>
-            ref.read(newAddressStateProvider.notifier).state = address,
-          _ => () {}(),
-        },
+        EndpointReplyDataNewAddress(address: final address) =>
+          ref.read(newAddressStateProvider.notifier).state = address,
+        _ => () {}(),
+      },
       _ => () {}(),
     });
   }
 
   Future<void> onDisconnected() async {
     _isConnected = false;
-    notifyListeners();
+    ref.notifyListeners();
 
     logger.d('Endpoint client disconnected');
     Future.delayed(const Duration(seconds: 1), () {
@@ -121,7 +136,7 @@ class EndpointClientProvider extends ChangeNotifier {
 
   Future<void> onConnected() async {
     _isConnected = true;
-    notifyListeners();
+    ref.notifyListeners();
 
     logger.d('Endpoint client connected');
   }
@@ -140,7 +155,7 @@ class EndpointListener extends HookConsumerWidget {
       return;
     }, [endpointServer]);
 
-    final endpointClient = ref.watch(endpointClientProvider);
+    final endpointClient = ref.watch(endpointClientHelperProvider);
 
     useEffect(() {
       if (endpointClient.isConnected) {
@@ -166,7 +181,9 @@ void main() {
                 const EndpointListener(),
                 Consumer(
                   builder: (context, ref, child) {
-                    final endpointClient = ref.watch(endpointClientProvider);
+                    final endpointClient = ref.watch(
+                      endpointClientHelperProvider,
+                    );
 
                     if (!endpointClient.isConnected) {
                       return const CircularProgressIndicator();

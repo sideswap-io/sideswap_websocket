@@ -6,58 +6,138 @@ part of 'endpoint_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(endpointServer)
+const endpointServerProvider = EndpointServerProvider._();
+
+final class EndpointServerProvider extends $FunctionalProvider<
+    EndpointServerHelper,
+    EndpointServerHelper,
+    EndpointServerHelper> with $Provider<EndpointServerHelper> {
+  const EndpointServerProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'endpointServerProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$endpointServerHash();
+
+  @$internal
+  @override
+  $ProviderElement<EndpointServerHelper> $createElement(
+          $ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  EndpointServerHelper create(Ref ref) {
+    return endpointServer(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(EndpointServerHelper value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<EndpointServerHelper>(value),
+    );
+  }
+}
+
 String _$endpointServerHash() => r'79b4a76971a4a64db421019519fd9cc2525e3fc3';
 
-/// See also [endpointServer].
-@ProviderFor(endpointServer)
-final endpointServerProvider =
-    AutoDisposeProvider<EndpointServerHelper>.internal(
-  endpointServer,
-  name: r'endpointServerProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$endpointServerHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+@ProviderFor(NewAddress)
+const newAddressProvider = NewAddressProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef EndpointServerRef = AutoDisposeProviderRef<EndpointServerHelper>;
-String _$endpointClientHash() => r'3bc2f6e694effb368ad98fc5dd1467a997e891ca';
+final class NewAddressProvider extends $NotifierProvider<NewAddress, String> {
+  const NewAddressProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'newAddressProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
 
-/// See also [endpointClient].
-@ProviderFor(endpointClient)
-final endpointClientProvider =
-    AutoDisposeProvider<EndpointClientHelper>.internal(
-  endpointClient,
-  name: r'endpointClientProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$endpointClientHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+  @override
+  String debugGetCreateSourceHash() => _$newAddressHash();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef EndpointClientRef = AutoDisposeProviderRef<EndpointClientHelper>;
-String _$newAddressNotifierHash() =>
-    r'630893ac44a14fd89b68f236ba7cc107158de198';
+  @$internal
+  @override
+  NewAddress create() => NewAddress();
 
-/// See also [NewAddressNotifier].
-@ProviderFor(NewAddressNotifier)
-final newAddressNotifierProvider =
-    AutoDisposeNotifierProvider<NewAddressNotifier, String>.internal(
-  NewAddressNotifier.new,
-  name: r'newAddressNotifierProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$newAddressNotifierHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(String value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<String>(value),
+    );
+  }
+}
 
-typedef _$NewAddressNotifier = AutoDisposeNotifier<String>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+String _$newAddressHash() => r'63fa75b22fdcacde36b062837a884aba6083ac43';
+
+abstract class _$NewAddress extends $Notifier<String> {
+  String build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<String, String>;
+    final element = ref.element as $ClassProviderElement<
+        AnyNotifier<String, String>, String, Object?, Object?>;
+    element.handleValue(ref, created);
+  }
+}
+
+@ProviderFor(endpointClientHelper)
+const endpointClientHelperProvider = EndpointClientHelperProvider._();
+
+final class EndpointClientHelperProvider extends $FunctionalProvider<
+    EndpointClientHelper,
+    EndpointClientHelper,
+    EndpointClientHelper> with $Provider<EndpointClientHelper> {
+  const EndpointClientHelperProvider._()
+      : super(
+          from: null,
+          argument: null,
+          retry: null,
+          name: r'endpointClientHelperProvider',
+          isAutoDispose: true,
+          dependencies: null,
+          $allTransitiveDependencies: null,
+        );
+
+  @override
+  String debugGetCreateSourceHash() => _$endpointClientHelperHash();
+
+  @$internal
+  @override
+  $ProviderElement<EndpointClientHelper> $createElement(
+          $ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  EndpointClientHelper create(Ref ref) {
+    return endpointClientHelper(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(EndpointClientHelper value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<EndpointClientHelper>(value),
+    );
+  }
+}
+
+String _$endpointClientHelperHash() =>
+    r'0534ec8a30c9aa7f38c3909f9f1e2075a1bc1832';

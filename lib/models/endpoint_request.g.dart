@@ -7,30 +7,32 @@ part of 'endpoint_request.dart';
 // **************************************************************************
 
 _EndpointRequestModel _$EndpointRequestModelFromJson(
-        Map<String, dynamic> json) =>
-    _EndpointRequestModel(
-      request: _$JsonConverterFromJson<Map<String, dynamic>, EndpointRequest>(
-          json['request'], const EndpointRequestConverter().fromJson),
-    );
+  Map<String, dynamic> json,
+) => _EndpointRequestModel(
+  request: _$JsonConverterFromJson<Map<String, dynamic>, EndpointRequest>(
+    json['request'],
+    const EndpointRequestConverter().fromJson,
+  ),
+);
 
 Map<String, dynamic> _$EndpointRequestModelToJson(
-        _EndpointRequestModel instance) =>
-    <String, dynamic>{
-      'request': _$JsonConverterToJson<Map<String, dynamic>, EndpointRequest>(
-          instance.request, const EndpointRequestConverter().toJson),
-    };
+  _EndpointRequestModel instance,
+) => <String, dynamic>{
+  'request': _$JsonConverterToJson<Map<String, dynamic>, EndpointRequest>(
+    instance.request,
+    const EndpointRequestConverter().toJson,
+  ),
+};
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);
+) => value == null ? null : toJson(value);
 
 _EndpointRequest _$EndpointRequestFromJson(Map<String, dynamic> json) =>
     _EndpointRequest(
@@ -53,43 +55,35 @@ const _$EndpointRequestTypeEnumMap = {
 };
 
 EndpointRequestDataPing _$EndpointRequestDataPingFromJson(
-        Map<String, dynamic> json) =>
-    EndpointRequestDataPing(
-      $type: json['runtimeType'] as String?,
-    );
+  Map<String, dynamic> json,
+) => EndpointRequestDataPing($type: json['runtimeType'] as String?);
 
 Map<String, dynamic> _$EndpointRequestDataPingToJson(
-        EndpointRequestDataPing instance) =>
-    <String, dynamic>{
-      'runtimeType': instance.$type,
-    };
+  EndpointRequestDataPing instance,
+) => <String, dynamic>{'runtimeType': instance.$type};
 
 EndpointRequestDataNewAddress _$EndpointRequestDataNewAddressFromJson(
-        Map<String, dynamic> json) =>
-    EndpointRequestDataNewAddress(
+  Map<String, dynamic> json,
+) => EndpointRequestDataNewAddress($type: json['runtimeType'] as String?);
+
+Map<String, dynamic> _$EndpointRequestDataNewAddressToJson(
+  EndpointRequestDataNewAddress instance,
+) => <String, dynamic>{'runtimeType': instance.$type};
+
+EndpointRequestDataCreateTransaction
+_$EndpointRequestDataCreateTransactionFromJson(Map<String, dynamic> json) =>
+    EndpointRequestDataCreateTransaction(
+      address: json['address'] as String?,
+      assetId: json['asset_id'] as String?,
+      amount: json['amount'] as String?,
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$EndpointRequestDataNewAddressToJson(
-        EndpointRequestDataNewAddress instance) =>
-    <String, dynamic>{
-      'runtimeType': instance.$type,
-    };
-
-EndpointRequestDataCreateTransaction
-    _$EndpointRequestDataCreateTransactionFromJson(Map<String, dynamic> json) =>
-        EndpointRequestDataCreateTransaction(
-          address: json['address'] as String?,
-          assetId: json['asset_id'] as String?,
-          amount: json['amount'] as String?,
-          $type: json['runtimeType'] as String?,
-        );
-
 Map<String, dynamic> _$EndpointRequestDataCreateTransactionToJson(
-        EndpointRequestDataCreateTransaction instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-      'asset_id': instance.assetId,
-      'amount': instance.amount,
-      'runtimeType': instance.$type,
-    };
+  EndpointRequestDataCreateTransaction instance,
+) => <String, dynamic>{
+  'address': instance.address,
+  'asset_id': instance.assetId,
+  'amount': instance.amount,
+  'runtimeType': instance.$type,
+};

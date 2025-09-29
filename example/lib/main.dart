@@ -30,7 +30,7 @@ class MyHomePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final endpointClient = ref.watch(endpointClientProvider);
+    final endpointClient = ref.watch(endpointClientHelperProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -64,8 +64,7 @@ class MyHomePage extends HookConsumerWidget {
                   ),
                   Consumer(
                     builder: (context, ref, child) {
-                      final receivedAddress =
-                          ref.watch(newAddressNotifierProvider);
+                      final receivedAddress = ref.watch(newAddressProvider);
                       return Text('Received address is: $receivedAddress');
                     },
                   )

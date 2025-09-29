@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:base_codecs/base_codecs.dart';
 import 'package:example/custom_logger.dart';
 import 'package:flutter/foundation.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:sideswap_websocket/sideswap_endpoint.dart';
 import 'package:uuid/uuid.dart';
@@ -68,7 +67,7 @@ class EndpointServerHelper {
 }
 
 @riverpod
-class NewAddressNotifier extends _$NewAddressNotifier {
+class NewAddress extends _$NewAddress {
   @override
   String build() {
     return '';
@@ -80,7 +79,7 @@ class NewAddressNotifier extends _$NewAddressNotifier {
 }
 
 @riverpod
-EndpointClientHelper endpointClient(Ref ref) {
+EndpointClientHelper endpointClientHelper(Ref ref) {
   return EndpointClientHelper(ref);
 }
 
@@ -120,7 +119,7 @@ class EndpointClientHelper extends ChangeNotifier {
     (switch (type) {
       EndpointReplyType.newAddress => switch (data) {
           EndpointReplyDataNewAddress(address: final address) =>
-            ref.read(newAddressNotifierProvider.notifier).setState(address),
+            ref.read(newAddressProvider.notifier).setState(address),
           _ => () {}(),
         },
       _ => () {}(),
