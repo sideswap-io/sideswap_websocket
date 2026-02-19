@@ -10,11 +10,11 @@ part of 'server_test.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(NewAddressState)
-const newAddressStateProvider = NewAddressStateProvider._();
+final newAddressStateProvider = NewAddressStateProvider._();
 
 final class NewAddressStateProvider
     extends $NotifierProvider<NewAddressState, String> {
-  const NewAddressStateProvider._()
+  NewAddressStateProvider._()
     : super(
         from: null,
         argument: null,
@@ -48,7 +48,6 @@ abstract class _$NewAddressState extends $Notifier<String> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<String, String>;
     final element =
         ref.element
@@ -58,12 +57,12 @@ abstract class _$NewAddressState extends $Notifier<String> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }
 
 @ProviderFor(endpointClientHelper)
-const endpointClientHelperProvider = EndpointClientHelperProvider._();
+final endpointClientHelperProvider = EndpointClientHelperProvider._();
 
 final class EndpointClientHelperProvider
     extends
@@ -73,7 +72,7 @@ final class EndpointClientHelperProvider
           EndpointClientHelper
         >
     with $Provider<EndpointClientHelper> {
-  const EndpointClientHelperProvider._()
+  EndpointClientHelperProvider._()
     : super(
         from: null,
         argument: null,
